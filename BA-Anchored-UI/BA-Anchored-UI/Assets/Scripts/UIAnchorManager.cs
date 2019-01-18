@@ -21,8 +21,7 @@ public static class UIAnchorManager {
         LINE,
         CIRCLE,
         RECTANGLE,
-        CYLINDER,
-        SPHERE
+        CYLINDER
     };
 
     private static ArrayList[] anchors = new ArrayList[3];

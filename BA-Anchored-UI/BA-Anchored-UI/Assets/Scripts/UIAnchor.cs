@@ -24,6 +24,7 @@ public class UIAnchor : MonoBehaviour {
     void Start() {
         StartCoroutine("addAnchorQueue", 0);
         elements = GetComponentsInChildren<AnchoredUI>();
+        setupElements();
     }
 
     // Update is called once per frame
@@ -31,6 +32,18 @@ public class UIAnchor : MonoBehaviour {
         if (isUsed)
         {
             move();
+        }
+    }
+
+    private void setupElements()
+    {
+        if(style == UIAnchorManager.AnchorStyle.CIRCLE || style == UIAnchorManager.AnchorStyle.CYLINDER)
+        {
+            foreach(AnchoredUI element in elements)
+            {
+                RectTransform position = (RectTransform) element.transform;
+                position.localPosition = new Vector3(Mathf.Cos(360 * position.anchoredPosition.x), 0, Mathf.Sin(360 * position.anchoredPosition.x));
+            }
         }
     }
 
