@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIAnchor : MonoBehaviour {
+public class UIAnchor : MonoBehaviour
+{
 
+    public AnchoredUI.Priority minPriority;
     private AnchoredUI[] elements;
     [SerializeField]
     private bool isStaticToObject = true;
@@ -21,35 +23,34 @@ public class UIAnchor : MonoBehaviour {
     private UIAnchorManager.AnchorStyle style;
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         StartCoroutine("addAnchorQueue", 0);
         elements = GetComponentsInChildren<AnchoredUI>();
         setupElements();
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         if (isUsed)
         {
             if (!isStaticToObject)
             {
                 move();
+                rotate();
             }
         }
     }
 
     private void setupElements()
     {
-        if (style == UIAnchorManager.AnchorStyle.CIRCLE || style == UIAnchorManager.AnchorStyle.CYLINDER)
+        foreach (AnchoredUI element in elements)
         {
-            foreach(AnchoredUI element in elements)
+            element.setAnchor(this);
+            if (style == UIAnchorManager.AnchorStyle.CYLINDER)
             {
-                RectTransform elementTrans = (RectTransform) element.transform;
-                //float rotationAngle = convertRectXToCylinderX(elementTrans.anchoredPosition.x);
-                //Debug.Log(rotationAngle);
-                //elementTrans.localPosition = Vector3.zero;
-                //elementTrans.Rotate(Vector3.up, rotationAngle, Space.Self);
-                //elementTrans.Translate(Vector3.forward * distance, Space.Self);
+                RectTransform elementTrans = (RectTransform)element.transform;
                 elementTrans.localPosition = new Vector3(Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance, elementTrans.anchoredPosition.y, Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance);
                 elementTrans.LookAt(new Vector3(transform.position.x, elementTrans.position.y, transform.position.z));
             }
@@ -63,19 +64,22 @@ public class UIAnchor : MonoBehaviour {
 
     private void rotate()
     {
-        if(type != UIAnchorManager.AnchorType.HEAD)
+        if (style == UIAnchorManager.AnchorStyle.CYLINDER && type != UIAnchorManager.AnchorType.HEAD)
         {
-            foreach(AnchoredUI element in elements)
+            foreach (AnchoredUI element in elements)
             {
-                //element.transform.LookAt()//Look at head
+                element.transform.LookAt(UIAnchorManager.getHeadPosition());
             }
         }
-        //transform.LookAt();
+        else
+        {
+            transform.LookAt(UIAnchorManager.getHeadPosition());
+        }
     }
 
     public void setAnchorObjectTransform(Transform anchorPosition)
     {
-        if(anchorPosition == null)
+        if (anchorPosition == null)
         {
             isUsed = false;
         }
@@ -105,12 +109,12 @@ public class UIAnchor : MonoBehaviour {
     {
         //Add element to elements
         //For testing UI is placed in the editor
+        //Check priority behaviour!
     }
 
-    private float convertRectXToCylinderX(float xPos)
+    public float convertRectXToCylinderX(float xPos)
     {
         float canvasWidth = ((RectTransform)transform).rect.width;
-        Debug.Log((xPos + canvasWidth / 2) / canvasWidth);
         return (xPos + canvasWidth / 2) / canvasWidth * 2 * Mathf.PI;
     }
 
@@ -120,7 +124,7 @@ public class UIAnchor : MonoBehaviour {
         {
             tryCounter++;
             yield return new WaitForSeconds(0.1f);
-            if(tryCounter > 10)
+            if (tryCounter > 10)
             {
                 break;
             }

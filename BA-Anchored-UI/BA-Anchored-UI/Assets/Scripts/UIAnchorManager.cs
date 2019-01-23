@@ -18,8 +18,6 @@ public static class UIAnchorManager {
 
     public enum AnchorStyle
     {
-        LINE,
-        CIRCLE,
         RECTANGLE,
         CYLINDER
     };
@@ -111,5 +109,10 @@ public static class UIAnchorManager {
         {
             return null;
         }
+    }
+
+    public static Vector3 getHeadPosition()
+    {
+        return trackedHeadTransform.position;
     }
 }
