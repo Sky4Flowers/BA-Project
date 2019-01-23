@@ -6,7 +6,7 @@ public class UIAnchor : MonoBehaviour {
 
     private AnchoredUI[] elements;
     [SerializeField]
-    private bool shouldRotate = false;
+    private bool isStaticToObject = true;
     private bool isUsed = false;
     private Vector3 rotateDirection;
     private Transform anchorObjectTransform;
@@ -31,28 +31,46 @@ public class UIAnchor : MonoBehaviour {
     void Update() {
         if (isUsed)
         {
-            move();
+            if (!isStaticToObject)
+            {
+                move();
+            }
         }
     }
 
     private void setupElements()
     {
-        if(style == UIAnchorManager.AnchorStyle.CIRCLE || style == UIAnchorManager.AnchorStyle.CYLINDER)
+        if (style == UIAnchorManager.AnchorStyle.CIRCLE || style == UIAnchorManager.AnchorStyle.CYLINDER)
         {
             foreach(AnchoredUI element in elements)
             {
-                RectTransform position = (RectTransform) element.transform;
-                position.localPosition = new Vector3(Mathf.Cos(360 * position.anchoredPosition.x), 0, Mathf.Sin(360 * position.anchoredPosition.x));
+                RectTransform elementTrans = (RectTransform) element.transform;
+                //float rotationAngle = convertRectXToCylinderX(elementTrans.anchoredPosition.x);
+                //Debug.Log(rotationAngle);
+                //elementTrans.localPosition = Vector3.zero;
+                //elementTrans.Rotate(Vector3.up, rotationAngle, Space.Self);
+                //elementTrans.Translate(Vector3.forward * distance, Space.Self);
+                elementTrans.localPosition = new Vector3(Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance, elementTrans.anchoredPosition.y, Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance);
+                elementTrans.LookAt(new Vector3(transform.position.x, elementTrans.position.y, transform.position.z));
             }
         }
     }
 
     private void move()
     {
-        if (shouldRotate)
+        transform.position = anchorObjectTransform.position;
+    }
+
+    private void rotate()
+    {
+        if(type != UIAnchorManager.AnchorType.HEAD)
         {
-            transform.position = anchorObjectTransform.position;
+            foreach(AnchoredUI element in elements)
+            {
+                //element.transform.LookAt()//Look at head
+            }
         }
+        //transform.LookAt();
     }
 
     public void setAnchorObjectTransform(Transform anchorPosition)
@@ -64,7 +82,8 @@ public class UIAnchor : MonoBehaviour {
         else
         {
             isUsed = true;
-            if (shouldRotate)
+            transform.position = anchorPosition.position;
+            if (!isStaticToObject)
             {
                 transform.SetParent(anchorPosition);
             }
@@ -86,6 +105,13 @@ public class UIAnchor : MonoBehaviour {
     {
         //Add element to elements
         //For testing UI is placed in the editor
+    }
+
+    private float convertRectXToCylinderX(float xPos)
+    {
+        float canvasWidth = ((RectTransform)transform).rect.width;
+        Debug.Log((xPos + canvasWidth / 2) / canvasWidth);
+        return (xPos + canvasWidth / 2) / canvasWidth * 2 * Mathf.PI;
     }
 
     IEnumerable addAnchorQueue(int tryCounter)
