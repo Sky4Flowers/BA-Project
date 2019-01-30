@@ -12,8 +12,8 @@ public static class UIAnchorManager {
     public enum AnchorType
     {
         HEAD,
-        LEFTHAND,
-        RIGHTHAND
+        LEFT_HAND,
+        RIGHT_HAND
     };
 
     public enum AnchorStyle
@@ -21,6 +21,15 @@ public static class UIAnchorManager {
         RECTANGLE,
         CYLINDER
     };
+
+    public enum AnchorExpansionType
+    {
+        SWITCH,
+        DIRECTION_LEFT,
+        DIRECTION_TOP,
+        DIRECTION_RIGHT,
+        DIRECTION_BOTTOM,
+    }
 
     private static ArrayList[] anchors = new ArrayList[3];
 
@@ -49,7 +58,7 @@ public static class UIAnchorManager {
                 anchor.setAnchorObjectTransform(trackedHeadTransform);
                 break;
 
-            case AnchorType.LEFTHAND:
+            case AnchorType.LEFT_HAND:
                 if (anchors[1] == null)
                 {
                     anchors[1] = new ArrayList();
@@ -58,7 +67,7 @@ public static class UIAnchorManager {
                 anchor.setAnchorObjectTransform(trackedLeftHandTransform);
                 break;
 
-            case AnchorType.RIGHTHAND:
+            case AnchorType.RIGHT_HAND:
                 if (anchors[2] == null)
                 {
                     anchors[2] = new ArrayList();
@@ -74,7 +83,7 @@ public static class UIAnchorManager {
     {
         switch (anchor.getType())
         {
-            case AnchorType.LEFTHAND:
+            case AnchorType.LEFT_HAND:
                 if(anchors[2] != null && anchors[2].Count != 0)
                 {
                     return (UIAnchor)anchors[2][0];
@@ -87,7 +96,7 @@ public static class UIAnchorManager {
                     }
                 }
                 break;
-            case AnchorType.RIGHTHAND:
+            case AnchorType.RIGHT_HAND:
                 if (anchors[1] != null && anchors[1].Count != 0)
                 {
                     return (UIAnchor)anchors[1][0];

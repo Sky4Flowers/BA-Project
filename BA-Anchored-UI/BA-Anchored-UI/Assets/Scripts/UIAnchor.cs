@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class UIAnchor : MonoBehaviour
 {
-
     public AnchoredUI.Priority minPriority;
     private AnchoredUI[] elements;
+    private List<UIAnchor> childAnchors = new List<UIAnchor>();
     [SerializeField]
     private bool isStaticToObject = true;
     private bool isUsed = false;
@@ -21,6 +21,10 @@ public class UIAnchor : MonoBehaviour
     private UIAnchorManager.AnchorType type;
     [SerializeField]
     private UIAnchorManager.AnchorStyle style;
+    [SerializeField]
+    private UIAnchorManager.AnchorExpansionType expType;
+
+    private float oldObjectXRotation = 0;
 
     // Use this for initialization
     void Start()
@@ -39,6 +43,27 @@ public class UIAnchor : MonoBehaviour
             {
                 move();
                 rotate();
+            }
+            //TODO transfer into method
+            if(type == UIAnchorManager.AnchorType.HEAD && isStaticToObject)
+            {
+                float newXRotation = anchorObjectTransform.rotation.eulerAngles.x;
+                if(newXRotation < oldObjectXRotation)
+                {
+                    oldObjectXRotation = newXRotation;
+                }else if(newXRotation > oldObjectXRotation + 3){
+                    for (int i = 0; i < elements.Length; i++)
+                    {
+                        if (elements[i].priority > AnchoredUI.Priority.LOW)
+                        {
+                            //elements[i].transform. // ins Bild verschieben
+                            if(elements[i].shouldMoveInFieldOfView && elements[i].isActiveUI)
+                            {
+                                //Move in view
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -82,12 +107,13 @@ public class UIAnchor : MonoBehaviour
         if (anchorPosition == null)
         {
             isUsed = false;
+            //TODO inform children and call searchAnchorFallback
         }
         else
         {
             isUsed = true;
             transform.position = anchorPosition.position;
-            if (!isStaticToObject)
+            if (isStaticToObject)
             {
                 transform.SetParent(anchorPosition);
             }
@@ -112,10 +138,74 @@ public class UIAnchor : MonoBehaviour
         //Check priority behaviour!
     }
 
+    public bool expand(UIAnchor anchor)
+    {
+        if (anchor.minPriority >= minPriority)
+        {
+            switch (expType)
+            {
+                case UIAnchorManager.AnchorExpansionType.SWITCH:
+                    //Show switch
+                    //Move elements to this anchor 
+                    break;
+                case UIAnchorManager.AnchorExpansionType.DIRECTION_TOP:
+                    //Expand...
+                    //height + new window height
+                    //move old elements (new window height / 2) down
+                    break;
+                case UIAnchorManager.AnchorExpansionType.DIRECTION_LEFT:
+                    //width + new window
+                    //move old elements (new window width / 2) right
+                    break;
+                case UIAnchorManager.AnchorExpansionType.DIRECTION_BOTTOM:
+                    //height + new window
+                    //move old elements (new window height / 2) up
+                    break;
+                case UIAnchorManager.AnchorExpansionType.DIRECTION_RIGHT:
+                    //width + new window
+                    //move old elements (new window width / 2) left
+                    break;
+            }
+            return true;
+        }
+        else
+        {
+            for (int i = 0; i < childAnchors.Count; i++)
+            {
+                if (childAnchors[i].expand(anchor))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
     public float convertRectXToCylinderX(float xPos)
     {
         float canvasWidth = ((RectTransform)transform).rect.width;
         return (xPos + canvasWidth / 2) / canvasWidth * 2 * Mathf.PI;
+    }
+
+    public bool activateUIWithID(int ID)
+    {
+        for (int i = 0; i < elements.Length; i++)
+        {
+            if (elements[i].UIPositionID == ID)
+            {
+                elements[i].gameObject.SetActive(true);
+                return true;
+            }
+        }
+
+        for (int i = 0; i < childAnchors.Count; i++)
+        {
+            if (childAnchors[i].activateUIWithID(ID))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     IEnumerable addAnchorQueue(int tryCounter)
