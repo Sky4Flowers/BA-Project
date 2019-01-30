@@ -31,7 +31,8 @@ public static class UIAnchorManager {
         DIRECTION_BOTTOM,
     }
 
-    private static ArrayList[] anchors = new ArrayList[3];
+    [SerializeField]
+    private static UIAnchor[] mainAnchors = new UIAnchor[3];
 
     public static void setTrackedTransforms(Transform head, Transform left, Transform right)
     {
@@ -41,7 +42,7 @@ public static class UIAnchorManager {
         trackedRightHandTransform = right;
     }
 
-    public static bool addAnchor(UIAnchor anchor)
+    /*public static bool addAnchor(UIAnchor anchor)
     {
         if (!isInitialised)
         {
@@ -77,16 +78,16 @@ public static class UIAnchorManager {
                 break;
         }
         return true;
-    }
+    }*/
 
     public static UIAnchor getAnchorFallback(UIAnchor anchor, AnchoredUI.Priority priority)
     {
         switch (anchor.getType())
         {
             case AnchorType.LEFT_HAND:
-                if(anchors[2] != null && anchors[2].Count != 0)
+                if(mainAnchors[2] != null)
                 {
-                    return (UIAnchor)anchors[2][0];
+                    return (UIAnchor)mainAnchors[2];
                 }
                 else
                 {
@@ -97,9 +98,9 @@ public static class UIAnchorManager {
                 }
                 break;
             case AnchorType.RIGHT_HAND:
-                if (anchors[1] != null && anchors[1].Count != 0)
+                if (mainAnchors[1] != null)
                 {
-                    return (UIAnchor)anchors[1][0];
+                    return (UIAnchor)mainAnchors[1];
                 }
                 else
                 {
@@ -110,9 +111,9 @@ public static class UIAnchorManager {
                 }
                 break;
         }
-        if(anchors[0] != null && anchors[1].Count != 0)
+        if(mainAnchors[0] != null)
         {
-            return (UIAnchor)anchors[0][0];
+            return (UIAnchor)mainAnchors[0];
         }
         else
         {

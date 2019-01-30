@@ -83,7 +83,7 @@ public class AnchoredUI : MonoBehaviour {
                 }
                 break;
             case PositioningType.USE_UI_INDEX:
-                anchor.activateUIWithID(UIPositionID);
+                anchor.activateElementWithID(UIPositionID);
                 gameObject.SetActive(false);
                 break;
         }
@@ -132,5 +132,13 @@ public class AnchoredUI : MonoBehaviour {
         }
 
         //TODO
+    }
+
+    public void resize(Vector2 oldParentSize, Vector2 newParentSize)
+    {
+        RectTransform rectTransform = ((RectTransform)transform);
+        float newHeight = rectTransform.rect.height * (newParentSize.y/oldParentSize.y);
+        float newWidth = rectTransform.rect.width * (newParentSize.x / oldParentSize.x);
+        ((RectTransform)transform).sizeDelta.Set(newWidth, newHeight);
     }
 }

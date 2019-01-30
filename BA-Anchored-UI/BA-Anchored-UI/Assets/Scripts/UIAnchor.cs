@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIAnchor : MonoBehaviour
+public class UIAnchor : MonoBehaviour, UIContainer
 {
+    #region variables
     public AnchoredUI.Priority minPriority;
     private AnchoredUI[] elements;
-    private List<UIAnchor> childAnchors = new List<UIAnchor>();
+    private UIAnchor childAnchor;
+    private UIContainer[] subContainers;
     [SerializeField]
     private bool isStaticToObject = true;
     private bool isUsed = false;
@@ -25,13 +27,16 @@ public class UIAnchor : MonoBehaviour
     private UIAnchorManager.AnchorExpansionType expType;
 
     private float oldObjectXRotation = 0;
+    #endregion
 
     // Use this for initialization
     void Start()
     {
-        StartCoroutine("addAnchorQueue", 0);
+        //StartCoroutine("addAnchorQueue", 0);
         elements = GetComponentsInChildren<AnchoredUI>();
-        setupElements();
+        subContainers = GetComponentsInChildren<UIContainer>();
+        childAnchor = GetComponentInChildren<UIAnchor>();
+        setupCylinderElements();
     }
 
     // Update is called once per frame
@@ -44,31 +49,14 @@ public class UIAnchor : MonoBehaviour
                 move();
                 rotate();
             }
-            //TODO transfer into method
-            if(type == UIAnchorManager.AnchorType.HEAD && isStaticToObject)
+            else
             {
-                float newXRotation = anchorObjectTransform.rotation.eulerAngles.x;
-                if(newXRotation < oldObjectXRotation)
-                {
-                    oldObjectXRotation = newXRotation;
-                }else if(newXRotation > oldObjectXRotation + 3){
-                    for (int i = 0; i < elements.Length; i++)
-                    {
-                        if (elements[i].priority > AnchoredUI.Priority.LOW)
-                        {
-                            //elements[i].transform. // ins Bild verschieben
-                            if(elements[i].shouldMoveInFieldOfView && elements[i].isActiveUI)
-                            {
-                                //Move in view
-                            }
-                        }
-                    }
-                }
+                moveHPHElements();
             }
         }
     }
 
-    private void setupElements()
+    public void setupCylinderElements()
     {
         foreach (AnchoredUI element in elements)
         {
@@ -79,6 +67,10 @@ public class UIAnchor : MonoBehaviour
                 elementTrans.localPosition = new Vector3(Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance, elementTrans.anchoredPosition.y, Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance);
                 elementTrans.LookAt(new Vector3(transform.position.x, elementTrans.position.y, transform.position.z));
             }
+        }
+        foreach (UIContainer container in subContainers)
+        {
+            container.setupCylinderElements();
         }
     }
 
@@ -99,6 +91,33 @@ public class UIAnchor : MonoBehaviour
         else
         {
             transform.LookAt(UIAnchorManager.getHeadPosition());
+        }
+    }
+
+    private void moveHPHElements()
+    {
+        //TODO transfer into method
+        if (type == UIAnchorManager.AnchorType.HEAD && isStaticToObject)
+        {
+            float newXRotation = anchorObjectTransform.rotation.eulerAngles.x;
+            if (newXRotation < oldObjectXRotation)
+            {
+                oldObjectXRotation = newXRotation;
+            }
+            else if (newXRotation > oldObjectXRotation + 3)
+            {
+                for (int i = 0; i < elements.Length; i++)
+                {
+                    if (elements[i].priority > AnchoredUI.Priority.LOW)
+                    {
+                        //elements[i].transform. // ins Bild verschieben
+                        if (elements[i].shouldMoveInFieldOfView && elements[i].isActiveUI)
+                        {
+                            //Move in view
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -138,6 +157,13 @@ public class UIAnchor : MonoBehaviour
         //Check priority behaviour!
     }
 
+    public void addContainer(UIContainer container)
+    {
+        //Add container to elements
+        //For testing UI is placed in the editor
+        //Check priority behaviour!
+    }
+
     public bool expand(UIAnchor anchor)
     {
         if (anchor.minPriority >= minPriority)
@@ -146,7 +172,11 @@ public class UIAnchor : MonoBehaviour
             {
                 case UIAnchorManager.AnchorExpansionType.SWITCH:
                     //Show switch
-                    //Move elements to this anchor 
+                    System.Array.Copy(subContainers, subContainers, subContainers.Length);
+                    subContainers[subContainers.Length - 1] = anchor;
+                    anchor.transform.parent = transform;
+                    anchor.transform.localPosition = Vector3.zero;
+                    anchor.transform.localRotation.Set(0,0,0,0);
                     break;
                 case UIAnchorManager.AnchorExpansionType.DIRECTION_TOP:
                     //Expand...
@@ -170,12 +200,9 @@ public class UIAnchor : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < childAnchors.Count; i++)
+            if (childAnchor.expand(anchor))
             {
-                if (childAnchors[i].expand(anchor))
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }
@@ -187,7 +214,7 @@ public class UIAnchor : MonoBehaviour
         return (xPos + canvasWidth / 2) / canvasWidth * 2 * Mathf.PI;
     }
 
-    public bool activateUIWithID(int ID)
+    public bool activateElementWithID(int ID)
     {
         for (int i = 0; i < elements.Length; i++)
         {
@@ -198,9 +225,9 @@ public class UIAnchor : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < childAnchors.Count; i++)
+        for (int i = 0; i < subContainers.Length; i++)
         {
-            if (childAnchors[i].activateUIWithID(ID))
+            if (subContainers[i].activateElementWithID(ID))
             {
                 return true;
             }
@@ -208,7 +235,26 @@ public class UIAnchor : MonoBehaviour
         return false;
     }
 
-    IEnumerable addAnchorQueue(int tryCounter)
+    public void resize(float newX, float newY)
+    {
+        RectTransform rectTransform = ((RectTransform)transform);
+        float oldWidth = rectTransform.rect.width;
+        float oldHeight = rectTransform.rect.height;
+        rectTransform.sizeDelta = new Vector2(newX, newY);
+        for(int i = 0; i < elements.Length; i++)
+        {
+            //Positionierung
+            elements[i].resize(new Vector2(oldWidth, oldHeight), new Vector2(newX, newY)); //Nochmal überdenken
+        }
+    }
+
+    public Vector2 getRelativeSize()
+    {
+        //TODO
+        return Vector2.zero;
+    }
+
+    /*IEnumerable addAnchorQueue(int tryCounter)
     {
         while (!UIAnchorManager.addAnchor(this))
         {
@@ -219,5 +265,5 @@ public class UIAnchor : MonoBehaviour
                 break;
             }
         }
-    }
+    }*/
 }
