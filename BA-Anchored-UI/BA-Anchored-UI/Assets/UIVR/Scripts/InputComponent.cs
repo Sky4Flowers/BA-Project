@@ -13,6 +13,10 @@ public class InputComponent : MonoBehaviour
     public Transform left;
     public Transform right;
 
+    public UIAnchor headAnchor;
+    public UIAnchor leftAnchor;
+    public UIAnchor rightAnchor;
+
     // A SteamVR device got connected/disconnected
     /*private void OnDeviceConnected(int index, bool connected)
     {
@@ -53,6 +57,7 @@ public class InputComponent : MonoBehaviour
         {
             UIAnchorManager.setTrackedRightHand(right);
         }
+        UIAnchorManager.setMainAnchors(headAnchor, leftAnchor, rightAnchor);
         UIAnchorManager.setInitialised();
         UIAnchorManager.initialiseAnchors();
     }

@@ -139,6 +139,13 @@ public static class UIAnchorManager {
         return trackedHeadTransform.position;
     }
 
+    public static void setMainAnchors(UIAnchor head, UIAnchor left, UIAnchor right)
+    {
+        mainAnchors[0] = head;
+        mainAnchors[1] = left;
+        mainAnchors[2] = right;
+    }
+
     public static void initialiseAnchors()
     {
         if (!isInitialised)

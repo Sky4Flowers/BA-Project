@@ -7,6 +7,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
     #region variables
     public AnchoredUI.Priority minPriority;
     private AnchoredUI[] elements;
+    [SerializeField]
     private UIAnchor childAnchor;
     private UIContainer[] subContainers;
     [SerializeField]
@@ -35,7 +36,6 @@ public class UIAnchor : MonoBehaviour, UIContainer
         //StartCoroutine("addAnchorQueue", 0);
         elements = GetComponentsInChildren<AnchoredUI>();
         subContainers = GetComponentsInChildren<UIContainer>();
-        childAnchor = GetComponentInChildren<UIAnchor>();
         setupCylinderElements();
     }
 
@@ -138,7 +138,10 @@ public class UIAnchor : MonoBehaviour, UIContainer
             }
             anchorObjectTransform = anchorPosition;
         }
-        childAnchor.setAnchorObjectTransform(anchorPosition);
+        if (childAnchor)
+        {
+            childAnchor.setAnchorObjectTransform(anchorPosition);
+        }
     }
 
     public void setDirection(Vector3 direction)
@@ -201,7 +204,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
         }
         else
         {
-            if (childAnchor.expand(anchor))
+            if (childAnchor && childAnchor.expand(anchor))
             {
                 return true;
             }
