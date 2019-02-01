@@ -68,10 +68,10 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 elementTrans.LookAt(new Vector3(transform.position.x, elementTrans.position.y, transform.position.z));
             }
         }
-        foreach (UIContainer container in subContainers)
+        /*foreach (UIContainer container in subContainers)
         {
             container.setupCylinderElements();
-        }
+        }*/
     }
 
     private void move()
