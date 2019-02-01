@@ -40,10 +40,22 @@ public class UIAnchor : MonoBehaviour, UIContainer
     // Use this for initialization
     void Start()
     {
-        //StartCoroutine("addAnchorQueue", 0);
         elements = GetComponentsInChildren<AnchoredUI>();
         subContainers = GetComponentsInChildren<UIContainer>();
+
+        foreach (AnchoredUI element in elements)
+        {
+            if (element.isFallback())
+            {
+                element.gameObject.SetActive(false);
+            }
+        }
+
         setupCylinderElements();
+        if(type == UIAnchorManager.AnchorType.HEAD)
+        {
+            distance *= -1;
+        }
     }
 
     // Update is called once per frame
@@ -103,7 +115,6 @@ public class UIAnchor : MonoBehaviour, UIContainer
 
     private void moveHPHElements()
     {
-        //TODO transfer into method
         if (type == UIAnchorManager.AnchorType.HEAD && isStaticToObject)
         {
             float newXRotation = anchorObjectTransform.rotation.eulerAngles.x;
@@ -118,7 +129,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                     if (elements[i].priority > AnchoredUI.Priority.LOW)
                     {
                         //elements[i].transform. // ins Bild verschieben
-                        if (elements[i].shouldMoveInFieldOfView && elements[i].isActiveUI)
+                        if (elements[i].shouldMoveInFieldOfView && elements[i].isInteractableUI)
                         {
                             //Move in view
                         }
@@ -133,7 +144,10 @@ public class UIAnchor : MonoBehaviour, UIContainer
         if (anchorPosition == null)
         {
             isUsed = false;
-            //TODO inform children and call searchAnchorFallback
+            for (int i = 0; i < elements.Length; i++)
+            {
+                elements[i].moveToFallbackAnchor(UIAnchorManager.getAnchorFallback(this));
+            }
         }
         else
         {
@@ -249,12 +263,16 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 return true;
             }
         }
+        if (childAnchor && childAnchor.activateElementWithID(ID))
+        {
+            return true;
+        }
         return false;
     }
 
     public void resize(float newX, float newY)
     {
-        RectTransform rectTransform = ((RectTransform)transform);
+        /*RectTransform rectTransform = ((RectTransform)transform);
         float oldWidth = rectTransform.rect.width;
         float oldHeight = rectTransform.rect.height;
         rectTransform.sizeDelta = new Vector2(newX, newY);
@@ -262,7 +280,8 @@ public class UIAnchor : MonoBehaviour, UIContainer
         {
             //Positionierung
             elements[i].resize(new Vector2(oldWidth, oldHeight), new Vector2(newX, newY)); //Nochmal überdenken
-        }
+        }*/
+        transform.localScale = new Vector3(newX, newY, newX);
     }
 
     public Vector2 getRelativeSize()

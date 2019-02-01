@@ -32,10 +32,12 @@ public class AnchoredUI : MonoBehaviour {
     public PositioningType type;
     [Tooltip("Negative values will be ignored")]
     public int UIPositionID = -1;
-    public bool isActiveUI = false;
+    public bool isInteractableUI = false;
     [Tooltip("Should this object be deformed according to the anchor style")]
     public bool shouldBeDeformed = false;
     public bool shouldMoveInFieldOfView = false;
+    [SerializeField]
+    private bool isFallbackElement = false;
 
 
 	// Use this for initialization
@@ -140,5 +142,10 @@ public class AnchoredUI : MonoBehaviour {
         float newHeight = rectTransform.rect.height * (newParentSize.y/oldParentSize.y);
         float newWidth = rectTransform.rect.width * (newParentSize.x / oldParentSize.x);
         ((RectTransform)transform).sizeDelta.Set(newWidth, newHeight);
+    }
+
+    public bool isFallback()
+    {
+        return isFallbackElement;
     }
 }

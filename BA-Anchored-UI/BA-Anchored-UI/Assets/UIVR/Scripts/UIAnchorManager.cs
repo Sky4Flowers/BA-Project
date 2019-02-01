@@ -93,40 +93,26 @@ public static class UIAnchorManager {
         return true;
     }*/
 
-    public static UIAnchor getAnchorFallback(UIAnchor anchor, AnchoredUI.Priority priority)
+    public static UIAnchor getAnchorFallback(UIAnchor anchor)
     {
         switch (anchor.getType())
         {
             case AnchorType.LEFT_HAND:
                 if(mainAnchors[2] != null)
                 {
-                    return (UIAnchor)mainAnchors[2];
-                }
-                else
-                {
-                    if(priority == AnchoredUI.Priority.NONE)
-                    {
-                        return null;//Evtl überdenken
-                    }
+                    return mainAnchors[2];
                 }
                 break;
             case AnchorType.RIGHT_HAND:
                 if (mainAnchors[1] != null)
                 {
-                    return (UIAnchor)mainAnchors[1];
-                }
-                else
-                {
-                    if (priority == AnchoredUI.Priority.NONE)
-                    {
-                        return null;//Evtl überdenken
-                    }
+                    return mainAnchors[1];
                 }
                 break;
         }
         if(mainAnchors[0] != null)
         {
-            return (UIAnchor)mainAnchors[0];
+            return mainAnchors[0];
         }
         else
         {
