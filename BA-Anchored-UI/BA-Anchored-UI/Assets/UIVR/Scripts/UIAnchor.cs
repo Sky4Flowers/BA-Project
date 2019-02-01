@@ -136,6 +136,8 @@ public class UIAnchor : MonoBehaviour, UIContainer
             {
                 transform.SetParent(anchorPosition);
             }
+            transform.localPosition = new Vector3(0, 0, distance);
+            transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             anchorObjectTransform = anchorPosition;
         }
         if (childAnchor)
