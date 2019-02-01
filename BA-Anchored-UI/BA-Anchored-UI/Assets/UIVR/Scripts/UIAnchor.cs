@@ -42,7 +42,6 @@ public class UIAnchor : MonoBehaviour, UIContainer
     {
         elements = GetComponentsInChildren<AnchoredUI>();
         subContainers = GetComponentsInChildren<UIContainer>();
-        Debug.Log(subContainers.Length);
 
         foreach (AnchoredUI element in elements)
         {

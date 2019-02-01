@@ -66,12 +66,13 @@ public class InputComponent : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(head.position, head.TransformDirection(Vector3.forward), out hit, 2, 5))
+        if (Physics.Raycast(head.position, head.TransformDirection(Vector3.forward), out hit, 200, 5))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.DrawRay(head.position, head.TransformDirection(Vector3.forward) * 200, Color.yellow);
             Debug.Log("Hit");
             //set selected object
         }
+        Debug.DrawRay(head.position, head.TransformDirection(Vector3.forward) * 200, Color.yellow);
         //Manipulation ermöglichen
         /*UIAnchorManager.setTrackedHead();
         ...
