@@ -5,12 +5,16 @@ using Valve.VR;
 
 public class InputComponent : MonoBehaviour
 {
-    public bool headIsTracked;
-    public bool leftHandIsTracked;
-    public bool rightHandIsTracked;
+    public bool headIsShown;
+    public bool leftHandIsShown;
+    public bool rightHandIsShown;
+
+    public Transform head;
+    public Transform left;
+    public Transform right;
 
     // A SteamVR device got connected/disconnected
-    private void OnDeviceConnected(int index, bool connected)
+    /*private void OnDeviceConnected(int index, bool connected)
     {
         if (OpenVR.System != null)
         {
@@ -29,14 +33,28 @@ public class InputComponent : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     // Use this for initialization
     void Start()
     {
-        string[] controllers = Input.GetJoystickNames();
-        Debug.Log("Controller count: " + controllers.Length + " " + controllers.ToString());
-        SteamVR_Events.DeviceConnected.Listen(OnDeviceConnected);
+        //string[] controllers = Input.GetJoystickNames();
+        //Debug.Log("Controller count: " + controllers.Length + " " + controllers.ToString());
+        //SteamVR_Events.DeviceConnected.Listen(OnDeviceConnected);
+        if (headIsShown)
+        {
+            UIAnchorManager.setTrackedHead(head);
+        }
+        if (leftHandIsShown)
+        {
+            UIAnchorManager.setTrackedLeftHand(left);
+        }
+        if (rightHandIsShown)
+        {
+            UIAnchorManager.setTrackedRightHand(right);
+        }
+        UIAnchorManager.setInitialised();
+        UIAnchorManager.initialiseAnchors();
     }
 
     // Update is called once per frame
