@@ -32,14 +32,27 @@ public static class UIAnchorManager {
     }
 
     [SerializeField]
+    [Tooltip("Order should be:\n 0 - Head\n 1 - LeftHand\n 2 - RightHand")]
     private static UIAnchor[] mainAnchors = new UIAnchor[3];
 
-    public static void setTrackedTransforms(Transform head, Transform left, Transform right)
+    public static void setTrackedHead(Transform head)
+    {
+        trackedHeadTransform = head;
+    }
+
+    public static void setTrackedLeftHand(Transform left)
+    {
+        trackedLeftHandTransform = left;
+    }
+
+    public static void setTrackedRightHand(Transform right)
+    {
+        trackedRightHandTransform = right;
+    }
+
+    public static void setInitialised()
     {
         isInitialised = true;
-        trackedHeadTransform = head;
-        trackedLeftHandTransform = left;
-        trackedRightHandTransform = right;
     }
 
     /*public static bool addAnchor(UIAnchor anchor)
@@ -124,5 +137,17 @@ public static class UIAnchorManager {
     public static Vector3 getHeadPosition()
     {
         return trackedHeadTransform.position;
+    }
+
+    public static void initialiseAnchors()
+    {
+        if (!isInitialised)
+        {
+            Debug.LogError("UIAnchorManager failed initialising: Trying to initialise anchors without setting initialised-state");
+            return;
+        }
+        mainAnchors[0].setAnchorObjectTransform(trackedHeadTransform);
+        mainAnchors[1].setAnchorObjectTransform(trackedLeftHandTransform);
+        mainAnchors[2].setAnchorObjectTransform(trackedRightHandTransform);
     }
 }

@@ -138,6 +138,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
             }
             anchorObjectTransform = anchorPosition;
         }
+        childAnchor.setAnchorObjectTransform(anchorPosition);
     }
 
     public void setDirection(Vector3 direction)
