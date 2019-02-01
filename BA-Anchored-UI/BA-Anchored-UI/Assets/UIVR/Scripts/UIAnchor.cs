@@ -18,8 +18,15 @@ public class UIAnchor : MonoBehaviour, UIContainer
     [SerializeField]
     [Tooltip("Distance to anchor object")]
     private float distance;
+    [SerializeField]
+    [Tooltip("Height Factor")]
     private float height;
+    [SerializeField]
+    [Tooltip("Width Faktor")]
     private float width;
+    [SerializeField]
+    [Tooltip("Rotation relative to parent")]
+    private Vector3 relativeRotation;
     [SerializeField]
     private UIAnchorManager.AnchorType type;
     [SerializeField]
@@ -136,8 +143,8 @@ public class UIAnchor : MonoBehaviour, UIContainer
             {
                 transform.SetParent(anchorPosition);
                 transform.localPosition = new Vector3(0, 0, distance);
-                transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
-                transform.rotation = anchorPosition.rotation;
+                transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                transform.rotation = Quaternion.Euler(anchorPosition.rotation.eulerAngles + relativeRotation);
             }
             anchorObjectTransform = anchorPosition;
         }
