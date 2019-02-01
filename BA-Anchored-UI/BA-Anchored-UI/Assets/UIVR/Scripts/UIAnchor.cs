@@ -42,6 +42,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
     {
         elements = GetComponentsInChildren<AnchoredUI>();
         subContainers = GetComponentsInChildren<UIContainer>();
+        Debug.Log(subContainers.Length);
 
         foreach (AnchoredUI element in elements)
         {
@@ -256,15 +257,16 @@ public class UIAnchor : MonoBehaviour, UIContainer
             }
         }
 
-        for (int i = 0; i < subContainers.Length; i++)
+        /*for (int i = 0; i < subContainers.Length; i++)
         {
             if (subContainers[i].activateElementWithID(ID))
             {
                 return true;
             }
-        }
+        }*/
         if (childAnchor && childAnchor.activateElementWithID(ID))
         {
+
             return true;
         }
         return false;
