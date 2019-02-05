@@ -148,4 +148,9 @@ public class AnchoredUI : MonoBehaviour {
     {
         return isFallbackElement;
     }
+
+    public bool isInteractable()
+    {
+        return isInteractableUI;
+    }
 }

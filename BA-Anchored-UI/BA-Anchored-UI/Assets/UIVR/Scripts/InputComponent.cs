@@ -17,27 +17,10 @@ public class InputComponent : MonoBehaviour
     public UIAnchor leftAnchor;
     public UIAnchor rightAnchor;
 
-    // A SteamVR device got connected/disconnected
-    /*private void OnDeviceConnected(int index, bool connected)
-    {
-        if (OpenVR.System != null)
-        {
-            if (connected)
-            {
-                ETrackedDeviceClass deviceClass = OpenVR.System.GetTrackedDeviceClass((uint)index);
-                if (deviceClass == ETrackedDeviceClass.Controller)
-                {
-                    Debug.Log("Got Controller");
-                    leftHandIsTracked = true;
-                }
-                else if (deviceClass == ETrackedDeviceClass.GenericTracker)
-                {
-                    Debug.Log("Got Head");
-                    headIsTracked = true;
-                }
-            }
-        }
-    }*/
+    private GameObject hoveringOver;
+    private float triggerTimer = 0;
+
+    public static GameObject selectedObject;
 
     // Use this for initialization
     void Start()
@@ -66,17 +49,26 @@ public class InputComponent : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(head.position, head.TransformDirection(Vector3.forward), out hit, 200, 5))
+        if (Physics.Raycast(head.position, head.TransformDirection(Vector3.forward), out hit, 10))
         {
-            Debug.DrawRay(head.position, head.TransformDirection(Vector3.forward) * 200, Color.yellow);
-            Debug.Log("Hit");
+            if (hit.collider.gameObject.Equals(hoveringOver) && hit.collider.gameObject.layer.Equals(5))
+            {
+                Debug.Log("Hit");
+                triggerTimer += Time.deltaTime;
+                if(triggerTimer > 2 && hoveringOver.GetComponent<AnchoredUI>().isInteractable())
+                {
+                    //TODO: save Scale
+                    selectedObject.transform.parent = hoveringOver.transform;
+                    selectedObject.transform.position = Vector3.zero;
+                }
+            }
+            else
+            {
+                hoveringOver = hit.collider.gameObject;
+                triggerTimer = 0;
+            }
             //set selected object
         }
         Debug.DrawRay(head.position, head.TransformDirection(Vector3.forward) * 200, Color.yellow);
-        //Manipulation ermöglichen
-        /*UIAnchorManager.setTrackedHead();
-        ...
-        UIAnchorManager.setInitialised();
-        UIAnchorManager.initialiseAnchors();*/
     }
 }
