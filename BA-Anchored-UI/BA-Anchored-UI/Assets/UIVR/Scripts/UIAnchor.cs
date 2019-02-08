@@ -54,6 +54,12 @@ public class UIAnchor : MonoBehaviour, UIContainer
         setupCylinderElements();
         if(type == UIAnchorManager.AnchorType.HEAD)
         {
+            Debug.Log("Here " + gameObject.name);
+            if(isStaticToObject)
+            {
+                height = height * distance * 6 / 5;
+                width = width * distance * 6 / 5;
+            }
             distance *= -1;
         }
     }
