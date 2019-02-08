@@ -45,6 +45,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
 
         foreach (AnchoredUI element in elements)
         {
+            element.setAnchor(this);
             if (element.isFallback())
             {
                 element.gameObject.SetActive(false);
@@ -52,10 +53,9 @@ public class UIAnchor : MonoBehaviour, UIContainer
         }
 
         setupCylinderElements();
-        if(type == UIAnchorManager.AnchorType.HEAD)
+        if (type == UIAnchorManager.AnchorType.HEAD)
         {
-            Debug.Log("Here " + gameObject.name);
-            if(isStaticToObject)
+            if (isStaticToObject)
             {
                 height = height * distance * 6 / 5;
                 width = width * distance * 6 / 5;
@@ -83,14 +83,20 @@ public class UIAnchor : MonoBehaviour, UIContainer
 
     public void setupCylinderElements()
     {
-        foreach (AnchoredUI element in elements)
+        if (style == UIAnchorManager.AnchorStyle.CYLINDER)
         {
-            element.setAnchor(this);
-            if (style == UIAnchorManager.AnchorStyle.CYLINDER)
+            foreach (AnchoredUI element in elements)
             {
-                RectTransform elementTrans = (RectTransform)element.transform;
-                elementTrans.localPosition = new Vector3(Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance, elementTrans.anchoredPosition.y, Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance);
-                elementTrans.LookAt(new Vector3(transform.position.x, elementTrans.position.y, transform.position.z));
+                if (element.shouldBeDeformed)
+                {
+                    
+                }
+                else
+                {
+                    RectTransform elementTrans = (RectTransform)element.transform;
+                    elementTrans.localPosition = new Vector3(Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance, elementTrans.anchoredPosition.y, Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance);
+                    elementTrans.LookAt(new Vector3(transform.position.x, elementTrans.position.y, transform.position.z));
+                }
             }
         }
         /*foreach (UIContainer container in subContainers)
@@ -164,7 +170,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 transform.SetParent(anchorPosition);
                 transform.localScale = new Vector3(width / 100, height / 100, width / 100);
                 transform.rotation = Quaternion.Euler(anchorPosition.rotation.eulerAngles + relativeRotation);
-                if(style == UIAnchorManager.AnchorStyle.RECTANGLE)
+                if (style == UIAnchorManager.AnchorStyle.RECTANGLE)
                 {
                     transform.Translate(new Vector3(0, 0, -distance), Space.Self);
                 }
@@ -213,7 +219,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                     subContainers[subContainers.Length - 1] = anchor;
                     anchor.transform.parent = transform;
                     anchor.transform.localPosition = Vector3.zero;
-                    anchor.transform.localRotation.Set(0,0,0,0);
+                    anchor.transform.localRotation.Set(0, 0, 0, 0);
                     break;
                 case UIAnchorManager.AnchorExpansionType.DIRECTION_TOP:
                     //Expand...
@@ -295,6 +301,11 @@ public class UIAnchor : MonoBehaviour, UIContainer
     {
         //TODO
         return Vector2.zero;
+    }
+
+    public float getDistanceFromObject()
+    {
+        return distance;
     }
 
     /*IEnumerable addAnchorQueue(int tryCounter)

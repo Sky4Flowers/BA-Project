@@ -119,9 +119,8 @@ public class AnchoredUI : MonoBehaviour {
         for(int i = 0; i < vertices.Length; i++)
         {
             float circlePos = lowerX + vertices[i].x * 100 * (higherX - lowerX);
-            Debug.Log(circlePos);
-            vertices[i].x = Mathf.Sin(circlePos);
-            vertices[i].z = Mathf.Cos(circlePos);
+            vertices[i].x = Mathf.Sin(circlePos) * anchor.getDistanceFromObject();
+            vertices[i].z = Mathf.Cos(circlePos) * anchor.getDistanceFromObject();
         }
         mesh.vertices = vertices;
     }
