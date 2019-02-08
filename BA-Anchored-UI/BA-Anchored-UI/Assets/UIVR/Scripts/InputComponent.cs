@@ -71,7 +71,11 @@ public class InputComponent : MonoBehaviour
             }
             //set selected object
         }
-        Debug.DrawRay(head.position, head.TransformDirection(Vector3.forward) * 200, Color.yellow);
+        else
+        {
+            triggerTimer = 0;
+        }
+        //Debug.DrawRay(head.position, head.TransformDirection(Vector3.forward) * 200, Color.yellow);
         if (cursorIndicator)
         {
             cursorIndicator.fillAmount = triggerTimer / 2;

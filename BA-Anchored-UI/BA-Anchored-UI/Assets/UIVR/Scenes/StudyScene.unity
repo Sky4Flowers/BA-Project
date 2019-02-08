@@ -1780,8 +1780,8 @@ MonoBehaviour:
   childAnchor: {fileID: 0}
   isStaticToObject: 1
   distance: 0.01
-  height: 0.1
-  width: 0.1
+  height: 0.5
+  width: 0.5
   relativeRotation: {x: 90, y: 0, z: 0}
   type: 2
   style: 0
@@ -3078,8 +3078,8 @@ MonoBehaviour:
   childAnchor: {fileID: 1867490001}
   isStaticToObject: 1
   distance: 0.01
-  height: 0.1
-  width: 0.1
+  height: 0.5
+  width: 0.5
   relativeRotation: {x: 90, y: 0, z: 0}
   type: 1
   style: 0
@@ -3620,8 +3620,8 @@ MonoBehaviour:
   childAnchor: {fileID: 854244753}
   isStaticToObject: 1
   distance: 0.01
-  height: 0.1
-  width: 0.1
+  height: 0.5
+  width: 0.5
   relativeRotation: {x: 90, y: 0, z: 0}
   type: 2
   style: 0
@@ -4721,8 +4721,8 @@ MonoBehaviour:
   childAnchor: {fileID: 0}
   isStaticToObject: 1
   distance: 0.01
-  height: 0.1
-  width: 0.1
+  height: 0.5
+  width: 0.5
   relativeRotation: {x: 90, y: 0, z: 0}
   type: 1
   style: 0
