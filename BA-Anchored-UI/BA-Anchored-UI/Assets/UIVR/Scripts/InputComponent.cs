@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using UnityEngine.UI;
 
 public class InputComponent : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class InputComponent : MonoBehaviour
     private float triggerTimer = 0;
 
     public static GameObject selectedObject;
+    public Image cursorIndicator;
 
     // Use this for initialization
     void Start()
@@ -70,5 +72,9 @@ public class InputComponent : MonoBehaviour
             //set selected object
         }
         Debug.DrawRay(head.position, head.TransformDirection(Vector3.forward) * 200, Color.yellow);
+        if (cursorIndicator)
+        {
+            cursorIndicator.fillAmount = triggerTimer / 2;
+        }
     }
 }
