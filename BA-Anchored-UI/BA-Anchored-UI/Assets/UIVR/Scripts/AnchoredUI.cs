@@ -39,7 +39,6 @@ public class AnchoredUI : MonoBehaviour {
     [SerializeField]
     private bool isFallbackElement = false;
 
-
 	// Use this for initialization
 	void Start () {
         
@@ -120,6 +119,7 @@ public class AnchoredUI : MonoBehaviour {
         {
             float circlePos = lowerX + vertices[i].x * 100 * (higherX - lowerX);
             vertices[i].x = Mathf.Sin(circlePos) * anchor.getDistanceFromObject();
+            vertices[i].y = (rect.anchoredPosition.y - rect.sizeDelta.y / 2) + vertices[i].y * 9000;
             vertices[i].z = Mathf.Cos(circlePos) * anchor.getDistanceFromObject();
         }
         mesh.vertices = vertices;
