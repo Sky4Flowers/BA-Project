@@ -5288,6 +5288,7 @@ GameObject:
   - component: {fileID: 2114799353}
   - component: {fileID: 2114799352}
   - component: {fileID: 2114799351}
+  - component: {fileID: 2114799354}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -5359,6 +5360,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2114799349}
   m_CullTransparentMesh: 0
+--- !u!114 &2114799354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114799349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e4e1c14d4918f468305e3125d65cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 0
+  type: 0
+  UIPositionID: -1
+  isInteractableUI: 0
+  shouldBeDeformed: 0
+  shouldMoveInFieldOfView: 0
+  isFallbackElement: 0
 --- !u!1 &2134736771
 GameObject:
   m_ObjectHideFlags: 0
