@@ -12,6 +12,11 @@ public class UIAnchor : MonoBehaviour, UIContainer
     private UIContainer[] subContainers;
     [SerializeField]
     private bool isStaticToObject = true;
+    [SerializeField]
+    [Tooltip("Only used when not static to object")]
+    private bool rotatesWithObject = true;
+    [Tooltip("Only used when not static to object.\nFor delayed rotation")]
+    public float rotationDelayOffset = 0;
     private bool isUsed = false;
     private Vector3 rotateDirection;
     private Transform anchorObjectTransform;
@@ -27,6 +32,8 @@ public class UIAnchor : MonoBehaviour, UIContainer
     [SerializeField]
     [Tooltip("Rotation relative to parent")]
     private Vector3 relativeRotation;
+    private Vector3 lastRotationState = Vector3.zero;
+    private Vector2 rotationOffsetBuffer = Vector2.zero;
     [SerializeField]
     private UIAnchorManager.AnchorType type;
     [SerializeField]
@@ -40,6 +47,16 @@ public class UIAnchor : MonoBehaviour, UIContainer
     // Use this for initialization
     void Start()
     {
+        if (type == UIAnchorManager.AnchorType.HEAD)
+        {
+            if (isStaticToObject)
+            {
+                height = height * distance * 6 / 5;
+                width = width * distance * 6 / 5;
+            }
+            distance *= -1;
+        }
+
         elements = GetComponentsInChildren<AnchoredUI>();
         subContainers = GetComponentsInChildren<UIContainer>();
 
@@ -53,15 +70,6 @@ public class UIAnchor : MonoBehaviour, UIContainer
         }
 
         setupCylinderElements();
-        if (type == UIAnchorManager.AnchorType.HEAD)
-        {
-            if (isStaticToObject)
-            {
-                height = height * distance * 6 / 5;
-                width = width * distance * 6 / 5;
-            }
-            distance *= -1;
-        }
     }
 
     // Update is called once per frame
@@ -87,14 +95,10 @@ public class UIAnchor : MonoBehaviour, UIContainer
         {
             foreach (AnchoredUI element in elements)
             {
-                if (element.shouldBeDeformed)
-                {
-                    
-                }
-                else
+                if (!element.shouldBeDeformed)
                 {
                     RectTransform elementTrans = (RectTransform)element.transform;
-                    elementTrans.localPosition = new Vector3(Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance, elementTrans.anchoredPosition.y, Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance);
+                    element.setLocal3DPosition(new Vector3(Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance, elementTrans.anchoredPosition.y, Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance));
                     elementTrans.LookAt(new Vector3(transform.position.x, elementTrans.position.y, transform.position.z));
                 }
             }
@@ -107,7 +111,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
 
     private void move()
     {
-        transform.position = anchorObjectTransform.position;
+        transform.position = anchorObjectTransform.position + transform.forward * distance;
     }
 
     private void rotate()
@@ -121,7 +125,42 @@ public class UIAnchor : MonoBehaviour, UIContainer
         }
         else
         {
-            transform.LookAt(UIAnchorManager.getHeadPosition());
+            if (type == UIAnchorManager.AnchorType.HEAD && rotatesWithObject)
+            {
+                rotationOffsetBuffer.x += transform.rotation.eulerAngles.x - lastRotationState.x;
+                rotationOffsetBuffer.y += transform.rotation.eulerAngles.y - lastRotationState.y;
+
+                float rotationX = 0;
+                float rotationY = 0;
+
+                if (rotationOffsetBuffer.x > rotationDelayOffset)
+                {
+                    rotationX = rotationOffsetBuffer.x - rotationDelayOffset;
+                    rotationOffsetBuffer.x = rotationDelayOffset;
+                }
+                else if (rotationOffsetBuffer.x < -rotationDelayOffset)
+                {
+                    rotationX = rotationOffsetBuffer.x + rotationDelayOffset;
+                    rotationOffsetBuffer.x = -rotationDelayOffset;
+                }
+
+                if (rotationOffsetBuffer.y > rotationDelayOffset)
+                {
+                    rotationY = rotationOffsetBuffer.y - rotationDelayOffset;
+                    rotationOffsetBuffer.y = rotationDelayOffset;
+                }
+                else if (rotationOffsetBuffer.y < -rotationDelayOffset)
+                {
+                    rotationY = rotationOffsetBuffer.y + rotationDelayOffset;
+                    rotationOffsetBuffer.y = -rotationDelayOffset;
+                }
+                transform.RotateAround(anchorObjectTransform.position, anchorObjectTransform.right, rotationX);
+                transform.RotateAround(anchorObjectTransform.position, anchorObjectTransform.up, rotationY);
+            }
+            else
+            {
+                transform.LookAt(UIAnchorManager.getHeadPosition());
+            }
         }
     }
 
@@ -173,6 +212,13 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 if (style == UIAnchorManager.AnchorStyle.RECTANGLE)
                 {
                     transform.Translate(new Vector3(0, 0, -distance), Space.Self);
+                }
+            }
+            else
+            {
+                if (rotatesWithObject)
+                {
+                    lastRotationState = anchorPosition.rotation.eulerAngles;
                 }
             }
             anchorObjectTransform = anchorPosition;
@@ -268,16 +314,15 @@ public class UIAnchor : MonoBehaviour, UIContainer
             }
         }
 
-        /*for (int i = 0; i < subContainers.Length; i++)
+        for (int i = 0; i < subContainers.Length; i++)
         {
-            if (subContainers[i].activateElementWithID(ID))
+            if (!subContainers[i].Equals(this) && subContainers[i].activateElementWithID(ID))
             {
                 return true;
             }
-        }*/
+        }
         if (childAnchor && childAnchor.activateElementWithID(ID))
         {
-
             return true;
         }
         return false;
@@ -306,6 +351,16 @@ public class UIAnchor : MonoBehaviour, UIContainer
     public float getDistanceFromObject()
     {
         return distance;
+    }
+
+    public Vector3 getAnchorObjectPosition()
+    {
+        return anchorObjectTransform.position;
+    }
+
+    public bool isUsedAsAnchor()
+    {
+        return isUsed;
     }
 
     /*IEnumerable addAnchorQueue(int tryCounter)

@@ -4,7 +4,8 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class AnchoredUI : MonoBehaviour {
+public class AnchoredUI : MonoBehaviour
+{
 
     /// <summary>
     /// High:       Should always be shown
@@ -38,27 +39,32 @@ public class AnchoredUI : MonoBehaviour {
     public bool shouldMoveInFieldOfView = false;
     [SerializeField]
     private bool isFallbackElement = false;
+    [SerializeField]
+    private bool isInContainerElement = false;
 
-	// Use this for initialization
-	void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void setAnchor(UIAnchor anchor)
     {
         this.anchor = anchor;
-        if(anchor.getType() == UIAnchorManager.AnchorType.HEAD && shouldBeDeformed) //TODO Typ abfragen
+        if (anchor.getType() == UIAnchorManager.AnchorType.HEAD && shouldBeDeformed) //TODO Typ abfragen
         {
             try
             {
                 createCurvedMesh();
+                setLocal3DPosition(Vector3.zero);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 shouldBeDeformed = false;
                 Debug.Log("Changed shouldBeDeformed on " + gameObject.name + " to false. Caused by: " + e);
@@ -74,7 +80,7 @@ public class AnchoredUI : MonoBehaviour {
                 //Expand other canvas
                 break;
             case PositioningType.USE_PRIORITY:
-                if(priority == Priority.NONE && anchor.getType() == UIAnchorManager.AnchorType.HEAD)
+                if (priority == Priority.NONE && anchor.getType() == UIAnchorManager.AnchorType.HEAD)
                 {
                     //Disable
                 }
@@ -108,18 +114,18 @@ public class AnchoredUI : MonoBehaviour {
 
         Mesh mesh = GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;
-        
+
         //Calculate rangepoints
         RectTransform rect = ((RectTransform)transform);
         float lowerX = anchor.convertRectXToCylinderX(rect.anchoredPosition.x - rect.sizeDelta.x / 2);
         float higherX = anchor.convertRectXToCylinderX(rect.anchoredPosition.x + rect.sizeDelta.x / 2);
 
         //Project vertices on cylinder
-        for(int i = 0; i < vertices.Length; i++)
+        for (int i = 0; i < vertices.Length; i++)
         {
-            float circlePos = lowerX + vertices[i].x * 100 * (higherX - lowerX);
+            float circlePos = lowerX + vertices[i].x * (higherX - lowerX);
             vertices[i].x = Mathf.Sin(circlePos) * anchor.getDistanceFromObject();
-            vertices[i].y = (rect.anchoredPosition.y - rect.sizeDelta.y / 2) + vertices[i].y * 9000;
+            vertices[i].y = (rect.anchoredPosition.y - rect.sizeDelta.y / 2) + vertices[i].y * rect.sizeDelta.y;
             vertices[i].z = Mathf.Cos(circlePos) * anchor.getDistanceFromObject();
         }
         mesh.vertices = vertices;
@@ -131,16 +137,30 @@ public class AnchoredUI : MonoBehaviour {
         {
             return;
         }
-        
+
         //TODO
     }
 
     public void resize(Vector2 oldParentSize, Vector2 newParentSize)
     {
         RectTransform rectTransform = ((RectTransform)transform);
-        float newHeight = rectTransform.rect.height * (newParentSize.y/oldParentSize.y);
+        float newHeight = rectTransform.rect.height * (newParentSize.y / oldParentSize.y);
         float newWidth = rectTransform.rect.width * (newParentSize.x / oldParentSize.x);
         ((RectTransform)transform).sizeDelta.Set(newWidth, newHeight);
+    }
+
+    public void setLocal3DPosition(Vector3 localPosition)
+    {
+        RectTransform rectTransform = ((RectTransform)transform);
+        if (anchor.isUsedAsAnchor() && !isInContainerElement)
+        {
+            rectTransform.localPosition = localPosition;
+        }
+        else
+        {
+            Vector3 currentLocalXOffset = transform.parent.transform.localPosition;
+            rectTransform.localPosition = localPosition - currentLocalXOffset;
+        }
     }
 
     public bool isFallback()
