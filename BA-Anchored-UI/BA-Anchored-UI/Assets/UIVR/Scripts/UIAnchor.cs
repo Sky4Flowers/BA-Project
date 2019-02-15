@@ -164,7 +164,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 }
                 transform.RotateAround(anchorObjectTransform.position, transform.right, rotationX);
                 transform.RotateAround(anchorObjectTransform.position, transform.up, rotationY);
-                //transform.RotateAround(anchorObjectTransform.position, transform.forward, rotationOffsetBuffer.z);
+                transform.RotateAround(anchorObjectTransform.position, transform.forward, rotationOffsetBuffer.z);
             }
             else
             {
