@@ -33,7 +33,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
     [Tooltip("Rotation relative to parent")]
     private Vector3 relativeRotation;
     private Vector3 lastRotationState = Vector3.zero;
-    private Vector2 rotationOffsetBuffer = Vector2.zero;
+    private Vector3 rotationOffsetBuffer = Vector3.zero;
     [SerializeField]
     private UIAnchorManager.AnchorType type;
     [SerializeField]
@@ -133,6 +133,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 }
                 rotationOffsetBuffer.x += anchorObjectTransform.rotation.eulerAngles.x - lastRotationState.x;
                 rotationOffsetBuffer.y += anchorObjectTransform.rotation.eulerAngles.y - lastRotationState.y;
+                rotationOffsetBuffer.z += anchorObjectTransform.rotation.eulerAngles.z - lastRotationState.z;
                 lastRotationState = anchorObjectTransform.rotation.eulerAngles;
 
                 rotationOffsetBuffer = handleEndsOfAngles(rotationOffsetBuffer);
@@ -163,6 +164,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 }
                 transform.RotateAround(anchorObjectTransform.position, anchorObjectTransform.right, rotationX);
                 transform.RotateAround(anchorObjectTransform.position, anchorObjectTransform.up, rotationY);
+                transform.RotateAround(anchorObjectTransform.position, anchorObjectTransform.forward, rotationOffsetBuffer.z);
             }
             else
             {
@@ -171,7 +173,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
         }
     }
 
-    private Vector2 handleEndsOfAngles(Vector2 rotationOffsetBuffer)
+    private Vector3 handleEndsOfAngles(Vector3 rotationOffsetBuffer)
     {
         if (rotationOffsetBuffer.x > 300)
         {
@@ -189,6 +191,15 @@ public class UIAnchor : MonoBehaviour, UIContainer
         else if (rotationOffsetBuffer.y < -300)
         {
             rotationOffsetBuffer.y += 360;
+        }
+
+        if (rotationOffsetBuffer.z > 300)
+        {
+            rotationOffsetBuffer.z -= 360;
+        }
+        else if (rotationOffsetBuffer.z < -300)
+        {
+            rotationOffsetBuffer.z += 360;
         }
 
         return rotationOffsetBuffer;
