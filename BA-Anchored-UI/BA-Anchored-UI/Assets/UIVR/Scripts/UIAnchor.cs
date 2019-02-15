@@ -259,6 +259,10 @@ public class UIAnchor : MonoBehaviour, UIContainer
             {
                 if (rotatesWithObject)
                 {
+                    if(type == UIAnchorManager.AnchorType.HEAD)
+                    {
+                        transform.rotation = anchorPosition.rotation;
+                    }
                     lastRotationState = anchorPosition.rotation.eulerAngles;
                 }
             }
