@@ -133,7 +133,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 }
                 rotationOffsetBuffer.x += anchorObjectTransform.rotation.eulerAngles.x - lastRotationState.x;
                 rotationOffsetBuffer.y += anchorObjectTransform.rotation.eulerAngles.y - lastRotationState.y;
-                rotationOffsetBuffer.z += anchorObjectTransform.rotation.eulerAngles.z - lastRotationState.z;
+                rotationOffsetBuffer.z = anchorObjectTransform.rotation.eulerAngles.z - lastRotationState.z;
                 lastRotationState = anchorObjectTransform.rotation.eulerAngles;
 
                 rotationOffsetBuffer = handleEndsOfAngles(rotationOffsetBuffer);
