@@ -81,4 +81,10 @@ public class InputComponent : MonoBehaviour
             cursorIndicator.fillAmount = triggerTimer / 2;
         }
     }
+
+    public static void setSelectedObject(GameObject selected)
+    {
+        selectedObject = selected;
+        //TODO
+    }
 }
