@@ -127,8 +127,15 @@ public class UIAnchor : MonoBehaviour, UIContainer
         {
             if (type == UIAnchorManager.AnchorType.HEAD && rotatesWithObject)
             {
-                rotationOffsetBuffer.x += transform.rotation.eulerAngles.x - lastRotationState.x;
-                rotationOffsetBuffer.y += transform.rotation.eulerAngles.y - lastRotationState.y;
+                if (anchorObjectTransform.rotation.eulerAngles.Equals(lastRotationState))
+                {
+                    return;
+                }
+                rotationOffsetBuffer.x += anchorObjectTransform.rotation.eulerAngles.x - lastRotationState.x;
+                rotationOffsetBuffer.y += anchorObjectTransform.rotation.eulerAngles.y - lastRotationState.y;
+                lastRotationState = anchorObjectTransform.rotation.eulerAngles;
+
+                rotationOffsetBuffer = handleEndsOfAngles(rotationOffsetBuffer);
 
                 float rotationX = 0;
                 float rotationY = 0;
@@ -162,6 +169,29 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 transform.LookAt(UIAnchorManager.getHeadPosition());
             }
         }
+    }
+
+    private Vector2 handleEndsOfAngles(Vector2 rotationOffsetBuffer)
+    {
+        if (rotationOffsetBuffer.x > 300)
+        {
+            rotationOffsetBuffer.x -= 360;
+        }
+        else if (rotationOffsetBuffer.x < -300)
+        {
+            rotationOffsetBuffer.x += 360;
+        }
+
+        if (rotationOffsetBuffer.y > 300)
+        {
+            rotationOffsetBuffer.y -= 360;
+        }
+        else if (rotationOffsetBuffer.y < -300)
+        {
+            rotationOffsetBuffer.y += 360;
+        }
+
+        return rotationOffsetBuffer;
     }
 
     private void moveHPHElements()

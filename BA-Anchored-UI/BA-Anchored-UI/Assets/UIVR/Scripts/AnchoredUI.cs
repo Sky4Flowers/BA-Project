@@ -41,6 +41,7 @@ public class AnchoredUI : MonoBehaviour
     private bool isFallbackElement = false;
     [SerializeField]
     private bool isInContainerElement = false;
+    public Image backgroundImage;
 
     // Use this for initialization
     void Start()
@@ -96,15 +97,6 @@ public class AnchoredUI : MonoBehaviour
         }
     }
 
-    /*public void searchAnchorFallback(UIAnchor anchor)                             //Removed: Should be moved to anchor
-    {
-        this.anchor = UIAnchorManager.getAnchorFallback(anchor, priority);
-        if(this.anchor == null)
-        {
-            gameObject.SetActive(false);
-        }
-    }*/
-
     public void createCurvedMesh()
     {
         if (!shouldBeDeformed)
@@ -129,6 +121,25 @@ public class AnchoredUI : MonoBehaviour
             vertices[i].z = Mathf.Cos(circlePos) * anchor.getDistanceFromObject();
         }
         mesh.vertices = vertices;
+    }
+
+    public static Texture2D createTextureForCurvedMesh(Sprite source)
+    {
+        if (source.rect.width != source.texture.width)
+        {
+            Texture2D curvedTexture = new Texture2D((int)source.rect.width, (int)source.rect.height);
+            Color[] newColors = source.texture.GetPixels(
+                (int)source.textureRect.x,
+                (int)source.textureRect.y,
+                (int)source.textureRect.width,
+                (int)source.textureRect.height
+            );
+            curvedTexture.SetPixels(newColors);
+            curvedTexture.Apply();
+            return curvedTexture;
+        }
+        else
+            return source.texture;
     }
 
     public void createCurvedText()
