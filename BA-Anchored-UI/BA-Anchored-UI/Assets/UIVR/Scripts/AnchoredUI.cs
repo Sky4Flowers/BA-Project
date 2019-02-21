@@ -46,7 +46,10 @@ public class AnchoredUI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        /*MeshRenderer mr = GetComponent<MeshRenderer>();
+        Material mat = mr.material;
+        Image image = GetComponent<Image>();
+        mat.mainTexture = image.mainTexture;*/
     }
 
     // Update is called once per frame
@@ -58,7 +61,8 @@ public class AnchoredUI : MonoBehaviour
     public void setAnchor(UIAnchor anchor)
     {
         this.anchor = anchor;
-        if (anchor.getType() == UIAnchorManager.AnchorType.HEAD && shouldBeDeformed) //TODO Typ abfragen
+        //MOVED TO SlicedSpriteMesh
+        /*if (anchor.getType() == UIAnchorManager.AnchorType.HEAD && shouldBeDeformed) //TODO Typ abfragen
         {
             try
             {
@@ -70,11 +74,29 @@ public class AnchoredUI : MonoBehaviour
                 shouldBeDeformed = false;
                 Debug.Log("Changed shouldBeDeformed on " + gameObject.name + " to false. Caused by: " + e);
             }
-        }
+        }*/
+    }
+
+    public Vector3 calculateSlicedSpriteInitValues()
+    {
+        Vector3 initValues = Vector3.zero;
+        //Calculate extremes
+        RectTransform rect = ((RectTransform)transform);
+        initValues.x = anchor.convertRectXToCylinderX(rect.anchoredPosition.x - rect.sizeDelta.x / 2);
+        initValues.y = anchor.convertRectXToCylinderX(rect.anchoredPosition.x + rect.sizeDelta.x / 2);
+        initValues.z = anchor.getDistanceFromObject();
+        return initValues;
     }
 
     public void moveToFallbackAnchor(UIAnchor anchor)
     {
+        if(anchor == null)
+        {
+            Debug.LogError("No Fallback found. Information is lost.");
+            gameObject.SetActive(false);
+            return;
+        }
+        Debug.Log("Switching "+ gameObject.name);
         switch (type)
         {
             case PositioningType.KEEP_POSITION:
@@ -91,7 +113,10 @@ public class AnchoredUI : MonoBehaviour
                 }
                 break;
             case PositioningType.USE_UI_INDEX:
-                anchor.activateElementWithID(UIPositionID);
+                if (!anchor.activateElementWithID(UIPositionID))
+                {
+                    Debug.LogError("No Fallback found. Information is lost.");
+                }
                 gameObject.SetActive(false);
                 break;
         }

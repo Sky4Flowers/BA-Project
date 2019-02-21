@@ -98,13 +98,13 @@ public static class UIAnchorManager {
         switch (anchor.getType())
         {
             case AnchorType.LEFT_HAND:
-                if(mainAnchors[2] != null)
+                if(mainAnchors[2] != null && trackedRightHandTransform != null)
                 {
                     return mainAnchors[2];
                 }
                 break;
             case AnchorType.RIGHT_HAND:
-                if (mainAnchors[1] != null)
+                if (mainAnchors[1] != null && trackedLeftHandTransform != null)
                 {
                     return mainAnchors[1];
                 }

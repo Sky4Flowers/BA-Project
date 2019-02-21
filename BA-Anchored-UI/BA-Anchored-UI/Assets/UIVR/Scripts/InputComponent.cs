@@ -56,7 +56,7 @@ public class InputComponent : MonoBehaviour
             if (hit.collider.gameObject.Equals(hoveringOver) && hit.collider.gameObject.layer.Equals(5))
             {
                 triggerTimer += Time.deltaTime;
-                if(triggerTimer > 2 && hoveringOver.GetComponent<AnchoredUI>().isInteractable())
+                if (triggerTimer > 2 && hoveringOver.GetComponent<AnchoredUI>().isInteractable())
                 {
                     //TODO: save Scale
                     //selectedObject.transform.parent = hoveringOver.transform;

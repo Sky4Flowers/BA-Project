@@ -13,4 +13,6 @@ public interface UIContainer {
     void resize(float newX, float newY);
 
     void setupCylinderElements();
+
+    bool isAnchor();
 }
