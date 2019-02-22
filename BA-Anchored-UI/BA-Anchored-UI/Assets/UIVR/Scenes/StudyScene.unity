@@ -4029,6 +4029,7 @@ GameObject:
   - component: {fileID: 671209656}
   - component: {fileID: 671209655}
   - component: {fileID: 671209659}
+  - component: {fileID: 671209660}
   m_Layer: 5
   m_Name: Trader
   m_TagString: Untagged
@@ -4127,6 +4128,26 @@ MonoBehaviour:
   - {fileID: 39600577}
   - {fileID: 1560429189}
   - {fileID: 277102808}
+--- !u!114 &671209660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671209654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e4e1c14d4918f468305e3125d65cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 0
+  type: 0
+  UIPositionID: -1
+  isInteractableUI: 1
+  shouldBeDeformed: 0
+  shouldMoveInFieldOfView: 0
+  isFallbackElement: 0
+  isInContainerElement: 0
+  backgroundImage: {fileID: 0}
 --- !u!1 &689599377
 GameObject:
   m_ObjectHideFlags: 0
@@ -10351,8 +10372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headIsShown: 1
-  leftHandIsShown: 0
-  rightHandIsShown: 0
+  leftHandIsShown: 1
+  rightHandIsShown: 1
   head: {fileID: 1805256471}
   left: {fileID: 1805256473}
   right: {fileID: 1805256472}
