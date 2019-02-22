@@ -16,6 +16,6 @@ public class SelectableObject : MonoBehaviour, ISelectable {
 
     public void select()
     {
-
+        InputComponent.staticTrader.unselect();
     }
 }

@@ -24,12 +24,21 @@ public class InputComponent : MonoBehaviour
     public static GameObject selectedObject;
     public Image cursorIndicator;
 
+    public Trader trader;
+    public static Trader staticTrader;
+    
+    public SteamVR_Behaviour_Pose trackedControllerLeft;
+    public SteamVR_Behaviour_Pose trackedControllerRight;
+    public SteamVR_Behaviour_Pose trackedStaticControllerLeft;
+    public SteamVR_Behaviour_Pose trackedStaticControllerRight;
+
     // Use this for initialization
     void Start()
     {
-        //string[] controllers = Input.GetJoystickNames();
-        //Debug.Log("Controller count: " + controllers.Length + " " + controllers.ToString());
-        //SteamVR_Events.DeviceConnected.Listen(OnDeviceConnected);
+        staticTrader = trader;
+        trackedStaticControllerLeft = trackedControllerLeft;
+        trackedStaticControllerRight = trackedControllerRight;
+        
         if (headIsShown)
         {
             UIAnchorManager.setTrackedHead(head);
@@ -62,7 +71,7 @@ public class InputComponent : MonoBehaviour
                     //selectedObject.transform.parent = hoveringOver.transform;
                     //selectedObject.transform.position = Vector3.zero;
 
-                    hoveringOver.GetComponent<SelectableUI>().select();
+                    hoveringOver.GetComponent<ISelectable>().select();
                 }
             }
             else
@@ -81,6 +90,9 @@ public class InputComponent : MonoBehaviour
         {
             cursorIndicator.fillAmount = triggerTimer / 2;
         }
+
+        
+        //if(trackedStaticControllerLeft.poseAction.actionSet.)
     }
 
     public static void setSelectedObject(GameObject selected)
