@@ -53,6 +53,9 @@ public class UIAnchor : MonoBehaviour, UIContainer
 
     void Awake()
     {
+        elements = GetComponentsInChildren<AnchoredUI>();
+        subContainers = GetComponentsInChildren<UIContainer>();
+
         if (type == UIAnchorManager.AnchorType.HEAD)
         {
             if (isStaticToObject)
@@ -61,16 +64,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 width = width * distance * 6 / 5;
                 distance *= -1;
             }
-
         }
-
-        if (style == UIAnchorManager.AnchorStyle.CYLINDER)
-        {
-            distance *= 100;
-        }
-
-        elements = GetComponentsInChildren<AnchoredUI>();
-        subContainers = GetComponentsInChildren<UIContainer>();
 
         foreach (AnchoredUI element in elements)
         {
@@ -80,8 +74,6 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 element.gameObject.SetActive(false);
             }
         }
-
-        setupCylinderElements();
     }
 
     // Update is called once per frame
@@ -105,13 +97,20 @@ public class UIAnchor : MonoBehaviour, UIContainer
     {
         if (style == UIAnchorManager.AnchorStyle.CYLINDER)
         {
+            move();
             foreach (AnchoredUI element in elements)
             {
                 if (!element.shouldBeDeformed)
                 {
                     RectTransform elementTrans = (RectTransform)element.transform;
-                    element.setLocal3DPosition(new Vector3(Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance, elementTrans.anchoredPosition.y, Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance));
-                    elementTrans.LookAt(new Vector3(transform.position.x, elementTrans.position.y, transform.position.z));
+                    element.setLocal3DPosition(new Vector3(
+                        Mathf.Sin(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance * 100,
+                        elementTrans.anchoredPosition.y,
+                        Mathf.Cos(convertRectXToCylinderX(elementTrans.anchoredPosition.x)) * distance * 100
+                        ) - transform.forward * distance * 100
+                    );
+                    Vector3 headPos = UIAnchorManager.getHeadPosition();
+                    elementTrans.LookAt(new Vector3(headPos.x, elementTrans.position.y, headPos.z));
                 }
             }
         }
@@ -126,16 +125,19 @@ public class UIAnchor : MonoBehaviour, UIContainer
 
     private void move()
     {
-        transform.position = anchorObjectTransform.position + transform.forward * (style != UIAnchorManager.AnchorStyle.CYLINDER ? distance : 0);
+        transform.position = anchorObjectTransform.position + transform.forward * distance;
     }
 
     private void rotate()
     {
-        if (style == UIAnchorManager.AnchorStyle.CYLINDER && type != UIAnchorManager.AnchorType.HEAD)
+        if (style == UIAnchorManager.AnchorStyle.CYLINDER)
         {
-            foreach (AnchoredUI element in elements)
+            if (type != UIAnchorManager.AnchorType.HEAD)
             {
-                element.transform.LookAt(UIAnchorManager.getHeadPosition());
+                foreach (AnchoredUI element in elements)
+                {
+                    element.transform.LookAt(UIAnchorManager.getHeadPosition());
+                }
             }
         }
         else
@@ -378,6 +380,8 @@ public class UIAnchor : MonoBehaviour, UIContainer
         {
             childAnchor.setAnchorObjectTransform(anchorPosition);
         }
+
+        setupCylinderElements();
     }
 
     public UIAnchorManager.AnchorType getType()
