@@ -8,7 +8,7 @@ public class Trader : MonoBehaviour, ISelectable {
 
 	// Use this for initialization
 	void Start () {
-		
+        unselect();
 	}
 	
 	// Update is called once per frame

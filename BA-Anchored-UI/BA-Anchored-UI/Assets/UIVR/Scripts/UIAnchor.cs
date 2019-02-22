@@ -229,7 +229,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                     rotationY = rotationOffsetBuffer.y + rotationDelayOffset;
                     rotationOffsetBuffer.y = -rotationDelayOffset;
                 }
-                Debug.Log(rotationY);
+                //Debug.Log(rotationY);
                 transform.RotateAround(anchorObjectTransform.position, transform.right, rotationX);
                 transform.RotateAround(anchorObjectTransform.position, Vector3.up, rotationY);
                 //transform.RotateAround(transform.position, transform.forward, rotationOffsetBuffer.z);
