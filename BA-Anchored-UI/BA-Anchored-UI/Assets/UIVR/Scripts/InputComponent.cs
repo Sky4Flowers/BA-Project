@@ -35,6 +35,8 @@ public class InputComponent : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Debug.Log(Input.GetJoystickNames());
+
         staticTrader = trader;
         trackedStaticControllerLeft = trackedControllerLeft;
         trackedStaticControllerRight = trackedControllerRight;
