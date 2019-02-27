@@ -30,9 +30,10 @@ public class SelectableUI : MonoBehaviour, ISelectable
             if(content == null)
             {
                 content = Instantiate(InputComponent.selectedObject);
-                content.transform.parent = transform;
+                content.transform.SetParent(transform);
                 content.transform.position = Vector3.zero;
                 content.transform.localScale = Vector3.one * 10;
+                InputComponent.setSelectedObject(null);
             }
             else
             {

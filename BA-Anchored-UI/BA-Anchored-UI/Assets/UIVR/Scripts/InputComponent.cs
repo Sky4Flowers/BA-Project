@@ -145,6 +145,12 @@ public class InputComponent : MonoBehaviour
 
     public static void setSelectedObject(GameObject selected)
     {
+        if(selected == null)
+        {
+            Destroy(selectedObject);
+            selectedObject = null;
+            return;
+        }
         selectedObject = selected;
         selected.transform.SetParent(statAuswahl.transform);
         selected.transform.localPosition = Vector3.zero;
