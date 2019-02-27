@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIAnchor : MonoBehaviour, UIContainer
 {
     #region variables
+    public bool isActiveAtStart = true;
     public AnchoredUI.Priority minPriority;
     private AnchoredUI[] elements;
     [SerializeField]
@@ -48,7 +49,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     void Awake()
@@ -382,6 +383,11 @@ public class UIAnchor : MonoBehaviour, UIContainer
         }
 
         setupCylinderElements();
+
+        if (!isActiveAtStart)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public UIAnchorManager.AnchorType getType()

@@ -26,21 +26,15 @@ public class InputComponent : MonoBehaviour
 
     public Trader trader;
     public static Trader staticTrader;
-    
-    public SteamVR_Behaviour_Pose trackedControllerLeft;
-    public SteamVR_Behaviour_Pose trackedControllerRight;
-    public SteamVR_Behaviour_Pose trackedStaticControllerLeft;
-    public SteamVR_Behaviour_Pose trackedStaticControllerRight;
+
+    public UIAnchor[] leftObjects;
+    public UIAnchor[] rightObjects;
 
     // Use this for initialization
     void Start()
     {
-        Debug.Log(Input.GetJoystickNames());
-
         staticTrader = trader;
-        trackedStaticControllerLeft = trackedControllerLeft;
-        trackedStaticControllerRight = trackedControllerRight;
-        
+
         if (headIsShown)
         {
             UIAnchorManager.setTrackedHead(head);
@@ -61,7 +55,38 @@ public class InputComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetButton("HTC_VIVE_Left_Pad"));
+        if (SteamVR_Input._default.inActions.Teleport.GetStateDown(SteamVR_Input_Sources.LeftHand))
+        {
+            for (int i = 0; i < leftObjects.Length; i++)
+            {
+                leftObjects[i].gameObject.SetActive(true);
+            }
+        }
+
+        if (SteamVR_Input._default.inActions.Teleport.GetStateUp(SteamVR_Input_Sources.LeftHand))
+        {
+            for (int i = 0; i < leftObjects.Length; i++)
+            {
+                leftObjects[i].gameObject.SetActive(false);
+            }
+        }
+
+        if (SteamVR_Input._default.inActions.Teleport.GetStateDown(SteamVR_Input_Sources.RightHand))
+        {
+            for (int i = 0; i < leftObjects.Length; i++)
+            {
+                rightObjects[i].gameObject.SetActive(true);
+            }
+        }
+
+        if (SteamVR_Input._default.inActions.Teleport.GetStateUp(SteamVR_Input_Sources.RightHand))
+        {
+            for (int i = 0; i < leftObjects.Length; i++)
+            {
+                rightObjects[i].gameObject.SetActive(false);
+            }
+        }
+        
         RaycastHit hit;
         if (Physics.Raycast(head.position, head.TransformDirection(Vector3.forward), out hit, 10))
         {
@@ -75,7 +100,7 @@ public class InputComponent : MonoBehaviour
                     //selectedObject.transform.position = Vector3.zero;
 
                     ISelectable selectComponent = hoveringOver.GetComponent<ISelectable>();
-                    if(selectComponent != null)
+                    if (selectComponent != null)
                     {
                         selectComponent.select();
                     }
@@ -98,7 +123,7 @@ public class InputComponent : MonoBehaviour
             cursorIndicator.fillAmount = triggerTimer / 2;
         }
 
-        
+
         //if(trackedStaticControllerLeft.poseAction.actionSet.)
     }
 
