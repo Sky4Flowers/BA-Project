@@ -98,16 +98,13 @@ public class InputComponent : MonoBehaviour
             if (hit.collider.gameObject.Equals(hoveringOver) && hit.collider.gameObject.layer.Equals(5))
             {
                 triggerTimer += Time.deltaTime;
-                if (triggerTimer > 2)
+                if (triggerTimer > 1)
                 {
-                    //TODO: save Scale
-                    //selectedObject.transform.parent = hoveringOver.transform;
-                    //selectedObject.transform.position = Vector3.zero;
-
                     ISelectable selectComponent = hoveringOver.GetComponent<ISelectable>();
                     if (selectComponent != null)
                     {
                         selectComponent.select();
+                        triggerTimer = 0;
                     }
                 }
             }
