@@ -37,13 +37,13 @@ public class SelectableUI : MonoBehaviour, ISelectable
             }
             else
             {
-                /*GameObject obj = content;
+                GameObject obj = content;
                 content = Instantiate(InputComponent.selectedObject);
                 content.transform.parent = transform;
                 content.transform.position = Vector3.zero;
 
                 InputComponent.setSelectedObject(obj);
-                obj.SetActive(false);*/
+                obj.SetActive(false);
             }
         }
     }
