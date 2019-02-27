@@ -99,6 +99,11 @@ public class UIAnchor : MonoBehaviour, UIContainer
         if (style == UIAnchorManager.AnchorStyle.CYLINDER)
         {
             move();
+            if(elements == null)
+            {
+                Debug.Log(gameObject.name);
+                return;
+            }
             foreach (AnchoredUI element in elements)
             {
                 if (!element.shouldBeDeformed)
