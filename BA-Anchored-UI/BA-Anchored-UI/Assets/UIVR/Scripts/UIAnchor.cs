@@ -101,7 +101,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
             move();
             if(elements == null)
             {
-                Debug.Log(gameObject.name);
+                Debug.Log(gameObject.name + " no elements found");
                 return;
             }
             foreach (AnchoredUI element in elements)
@@ -119,6 +119,11 @@ public class UIAnchor : MonoBehaviour, UIContainer
                     elementTrans.LookAt(new Vector3(headPos.x, elementTrans.position.y, headPos.z));
                 }
             }
+        }
+        if(subContainers == null)
+        {
+            Debug.Log(gameObject.name + " no subcontainers found");
+            return;
         }
         foreach (UIContainer container in subContainers)
         {
