@@ -61,6 +61,7 @@ public class InputComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Input.GetButton("HTC_VIVE_Left_Pad"));
         RaycastHit hit;
         if (Physics.Raycast(head.position, head.TransformDirection(Vector3.forward), out hit, 10))
         {
