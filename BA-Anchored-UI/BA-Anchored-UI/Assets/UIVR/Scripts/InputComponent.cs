@@ -27,6 +27,8 @@ public class InputComponent : MonoBehaviour
     public Trader trader;
     public static Trader staticTrader;
     public UISwitch switchButton;
+    public GameObject auswahl;
+    public static GameObject statAuswahl;
 
     public UIAnchor[] leftObjects;
     public UIAnchor[] rightObjects;
@@ -35,6 +37,7 @@ public class InputComponent : MonoBehaviour
     void Start()
     {
         staticTrader = trader;
+        statAuswahl = auswahl;
 
         if (headIsShown)
         {
@@ -122,7 +125,7 @@ public class InputComponent : MonoBehaviour
         //Debug.DrawRay(head.position, head.TransformDirection(Vector3.forward) * 200, Color.yellow);
         if (cursorIndicator)
         {
-            cursorIndicator.fillAmount = triggerTimer / 2;
+            cursorIndicator.fillAmount = triggerTimer;
         }
 
 
@@ -132,6 +135,8 @@ public class InputComponent : MonoBehaviour
     public static void setSelectedObject(GameObject selected)
     {
         selectedObject = selected;
-        //TODO
+        selected.transform.SetParent(statAuswahl.transform);
+        selected.transform.localPosition = Vector3.zero;
+        selected.transform.localScale = Vector3.one * 10;
     }
 }
