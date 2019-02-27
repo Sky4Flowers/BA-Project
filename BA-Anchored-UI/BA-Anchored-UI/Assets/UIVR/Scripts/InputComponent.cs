@@ -26,6 +26,7 @@ public class InputComponent : MonoBehaviour
 
     public Trader trader;
     public static Trader staticTrader;
+    public UISwitch switchButton;
 
     public UIAnchor[] leftObjects;
     public UIAnchor[] rightObjects;
@@ -42,6 +43,10 @@ public class InputComponent : MonoBehaviour
         if (leftHandIsShown)
         {
             UIAnchorManager.setTrackedLeftHand(left);
+        }
+        else
+        {
+            switchButton.gameObject.SetActive(true);
         }
         if (rightHandIsShown)
         {
