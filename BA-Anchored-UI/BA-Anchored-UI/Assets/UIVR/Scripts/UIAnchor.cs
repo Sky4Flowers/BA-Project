@@ -383,11 +383,6 @@ public class UIAnchor : MonoBehaviour, UIContainer
         }
 
         setupCylinderElements();
-
-        if (!isActiveAtStart)
-        {
-            gameObject.SetActive(false);
-        }
     }
 
     public UIAnchorManager.AnchorType getType()
