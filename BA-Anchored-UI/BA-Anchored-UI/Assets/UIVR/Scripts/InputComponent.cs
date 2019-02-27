@@ -27,7 +27,7 @@ public class InputComponent : MonoBehaviour
     public Trader trader;
     public static Trader staticTrader;
     public UISwitch switchButton;
-    public GameObject auswahl;
+    public GameObject[] auswahl;
     public static GameObject statAuswahl;
 
     public UIAnchor[] leftObjects;
@@ -37,7 +37,6 @@ public class InputComponent : MonoBehaviour
     void Start()
     {
         staticTrader = trader;
-        statAuswahl = auswahl;
 
         if (headIsShown)
         {
@@ -54,6 +53,18 @@ public class InputComponent : MonoBehaviour
         if (rightHandIsShown)
         {
             UIAnchorManager.setTrackedRightHand(right);
+            statAuswahl = auswahl[2];
+        }
+        else
+        {
+            if (leftHandIsShown)
+            {
+                statAuswahl = auswahl[1];
+            }
+            else
+            {
+                statAuswahl = auswahl[0];
+            }
         }
         UIAnchorManager.setMainAnchors(headAnchor, leftAnchor, rightAnchor);
         UIAnchorManager.setInitialised();
@@ -94,7 +105,7 @@ public class InputComponent : MonoBehaviour
                 rightObjects[i].gameObject.SetActive(false);
             }
         }
-        
+
         RaycastHit hit;
         if (Physics.Raycast(head.position, head.TransformDirection(Vector3.forward), out hit, 10))
         {
