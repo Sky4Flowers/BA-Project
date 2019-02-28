@@ -50,13 +50,13 @@ public class Trader : MonoBehaviour, ISelectable {
         if (input.leftHandIsShown)
         {
             vermoegenL.gameObject.SetActive(false);
-            vermoegenR.gameObject.SetActive(true);
+            vermoegenR.gameObject.SetActive(false);
         }
         else
         {
             if (input.rightHandIsShown)
             {
-                vermoegenL.gameObject.SetActive(true);
+                vermoegenL.gameObject.SetActive(false);
                 vermoegenR.gameObject.SetActive(false);
             }
         }
