@@ -1023,7 +1023,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &71708129
 MonoBehaviour:
@@ -4054,7 +4054,7 @@ MonoBehaviour:
   isStaticToObject: 0
   rotatesWithObject: 0
   rotationDelayOffset: 0
-  distance: 1.5
+  distance: 1.7
   height: 1
   width: 1
   relativeRotation: {x: 0, y: 0, z: 0}
