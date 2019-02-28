@@ -36,8 +36,9 @@ public class SelectableUI : MonoBehaviour, ISelectable
             else
             {
                 content = InputComponent.setSelectedObject(content);
-                content.transform.parent = transform;
-                content.transform.position = Vector3.zero;
+                content.transform.SetParent(transform);
+                content.transform.localPosition = Vector3.zero;
+                content.transform.localScale = Vector3.one * 10;
             }
         }
     }
