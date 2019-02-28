@@ -22,7 +22,6 @@ public class SelectableUI : MonoBehaviour, ISelectable
             if(content != null)
             {
                 InputComponent.setSelectedObject(content);
-                content.SetActive(false);
             }
         }
         else
@@ -43,7 +42,6 @@ public class SelectableUI : MonoBehaviour, ISelectable
                 content.transform.position = Vector3.zero;
 
                 InputComponent.setSelectedObject(obj);
-                obj.SetActive(false);
             }
         }
     }
