@@ -21,27 +21,23 @@ public class SelectableUI : MonoBehaviour, ISelectable
         {
             if(content != null)
             {
-                InputComponent.setSelectedObject(content);
+                content = InputComponent.setSelectedObject(content);
             }
         }
         else
         {
             if(content == null)
             {
-                content = Instantiate(InputComponent.selectedObject);
+                content = InputComponent.setSelectedObject(null);
                 content.transform.SetParent(transform);
                 content.transform.localPosition = Vector3.zero;
                 content.transform.localScale = Vector3.one * 10;
-                InputComponent.setSelectedObject(null);
             }
             else
             {
-                GameObject obj = content;
-                content = Instantiate(InputComponent.selectedObject);
+                content = InputComponent.setSelectedObject(content);
                 content.transform.parent = transform;
                 content.transform.position = Vector3.zero;
-
-                InputComponent.setSelectedObject(obj);
             }
         }
     }

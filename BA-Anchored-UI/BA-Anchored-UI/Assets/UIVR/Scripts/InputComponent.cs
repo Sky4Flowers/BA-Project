@@ -74,7 +74,7 @@ public class InputComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!rightHandIsShown && !leftHandIsShown)
+        if (!rightHandIsShown && !leftHandIsShown)
         {
             switchButton.gameObject.SetActive(false);
         }
@@ -148,17 +148,26 @@ public class InputComponent : MonoBehaviour
         //if(trackedStaticControllerLeft.poseAction.actionSet.)
     }
 
-    public static void setSelectedObject(GameObject selected)
+    public static GameObject setSelectedObject(GameObject selected)
     {
-        if(selected == null)
+        GameObject toBeReturned = null;
+        if (selectedObject)
         {
-            Destroy(selectedObject);
-            selectedObject = null;
-            return;
+            toBeReturned = selectedObject;
         }
-        selectedObject = selected;
-        selected.transform.SetParent(statAuswahl.transform);
-        selected.transform.localPosition = Vector3.zero;
-        selected.transform.localScale = Vector3.one * 10;
+
+        if (selected == null)
+        {
+            selectedObject = null;
+            return null;
+        }
+        else
+        {
+            selectedObject = selected;
+            selected.transform.SetParent(statAuswahl.transform);
+            selected.transform.localPosition = Vector3.zero;
+            selected.transform.localScale = Vector3.one * 10;
+        }
+        return toBeReturned;
     }
 }
