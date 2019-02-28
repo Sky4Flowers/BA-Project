@@ -159,7 +159,6 @@ public class InputComponent : MonoBehaviour
         if (selected == null)
         {
             selectedObject = null;
-            return null;
         }
         else
         {
