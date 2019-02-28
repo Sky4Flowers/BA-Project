@@ -74,6 +74,11 @@ public class InputComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!rightHandIsShown && !leftHandIsShown)
+        {
+            switchButton.gameObject.SetActive(false);
+        }
+
         if (SteamVR_Input._default.inActions.Teleport.GetStateDown(SteamVR_Input_Sources.LeftHand))
         {
             for (int i = 0; i < leftObjects.Length; i++)
