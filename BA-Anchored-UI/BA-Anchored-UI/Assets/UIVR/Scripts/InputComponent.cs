@@ -151,7 +151,7 @@ public class InputComponent : MonoBehaviour
     public static GameObject setSelectedObject(GameObject selected)
     {
         GameObject toBeReturned = null;
-        if (selectedObject)
+        if (selectedObject != null)
         {
             toBeReturned = selectedObject;
         }

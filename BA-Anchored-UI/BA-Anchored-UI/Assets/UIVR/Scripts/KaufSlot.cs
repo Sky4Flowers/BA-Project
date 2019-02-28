@@ -20,6 +20,6 @@ public class KaufSlot : MonoBehaviour, ISelectable{
 
     public void select()
     {
-        InputComponent.setSelectedObject(Instantiate(content));
+        Destroy(InputComponent.setSelectedObject(Instantiate(content)));
     }
 }
