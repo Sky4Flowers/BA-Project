@@ -6,6 +6,7 @@ public class UISwitch : MonoBehaviour, ISelectable {
 
     public GameObject selection1;
     public GameObject selection2;
+    public GameObject selection2Anchor;
 
     private int selectedIndex = 0;
 
@@ -26,12 +27,14 @@ public class UISwitch : MonoBehaviour, ISelectable {
             selectedIndex = 1;
             selection1.SetActive(false);
             selection2.SetActive(true);
+            selection2Anchor.SetActive(true);
         }
         else
         {
             selectedIndex = 0;
             selection1.SetActive(true);
             selection2.SetActive(false);
+            selection2Anchor.SetActive(false);
         }
     }
 
