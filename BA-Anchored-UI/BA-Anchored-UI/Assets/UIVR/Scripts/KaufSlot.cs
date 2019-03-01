@@ -5,6 +5,7 @@ using UnityEngine;
 public class KaufSlot : MonoBehaviour, ISelectable{
 
     public GameObject content;
+    public int price;
     // Use this for initialization
     void Start () {
         content = Instantiate(content);
@@ -21,5 +22,6 @@ public class KaufSlot : MonoBehaviour, ISelectable{
     public void select()
     {
         Destroy(InputComponent.setSelectedObject(Instantiate(content)));
+        InputComponent.buy(price);
     }
 }

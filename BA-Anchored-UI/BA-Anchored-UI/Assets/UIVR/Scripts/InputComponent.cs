@@ -33,10 +33,17 @@ public class InputComponent : MonoBehaviour
     public UIAnchor[] leftObjects;
     public UIAnchor[] rightObjects;
 
+    public Text vermögenL;
+    public Text vermögenR;
+    public Text vermögenH;
+    public static InputComponent instance;
+    private static int money = 1000;
+
     // Use this for initialization
     void Start()
     {
         staticTrader = trader;
+        instance = this;
 
         if (headIsShown)
         {
@@ -168,5 +175,11 @@ public class InputComponent : MonoBehaviour
             selected.transform.localScale = Vector3.one * 10;
         }
         return toBeReturned;
+    }
+
+    public static void buy(int price)
+    {
+        money -= price;
+        InputComponent.instance.vermögenL.text = money + " €";
     }
 }
