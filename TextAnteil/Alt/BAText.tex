@@ -1,0 +1,78 @@
+\documentclass[a4paper]{scrartcl}
+
+\input{settings.tex}
+\input{commands.tex}
+
+\begin{document}
+	\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+	\maketitle %Titel
+	
+	\tableofcontents %Inhaltsverzeichnis
+	\newpage %Nächste Seite
+	\pagenumbering{arabic}% Arabic page numbers (and reset to 1)
+	\setcounter{page}{1}
+	\addsec{Abstract}
+	\newpage %Nächste Seite
+	\section{Begriffserklärung}
+	
+	\subsection{Was ist eine Benutzeroberfläche?}
+	- Schnittstelle zwischen Nutzer und Programm
+	-Stellt Information zur Verfügung und ermöglicht die Erfassung und Manipulation der virtuellen Umgebung
+	
+	\subsubsection{Element}
+	- Beispiele: Textfeld, Bild, Schaltfläche...
+	
+	\subsubsection{Anker}
+	- Position an welcher Elemente der Benutzeroberfläche platziert werden
+	- In Desktop-Programmen werden dafür meist die Bildschirmkanten beziehungsweise Ecken verwendet
+	-Beispiel aus Unity
+	
+	\subsection{Was bedeutet umgebungsgebunden?}
+	- UI befindet sich im 3D Raum und kann von Objekten verdeckt werden. Sie ist an eine 3D Position gebunden und kann sich unabhängig vom Benutzer verschieben und rotieren, sie muss also nicht statisch zur Kamera sein
+	- In 3D Programmen wird solche UI meist an Objekten positioniert und ist zu diesen statisch
+	-In dieser Arbeit wurden als Ankerpunkte die beiden Handpositionen des Benutzers und die Kopfposition verwendet
+	
+	\subsection{Was ist VR/AR?}
+	- Head Mounted Display
+	- Mischung von Realität und virtuellen Elementen
+	- Augmented Reality = Erweiterte Realität
+	- Virtual Reality = Virtuelle oder künstliche Realität
+	- AR lebt von der realen Welt und somit von freiem Bewegen
+	-> nicht an Pc gebunden
+	--> weniger Leistung
+	--> kein Handtracking
+	
+	\section{Related Work - Zu übersetzen}
+	
+	\subsection{Priorisieren von Benutzeroberflächen}
+	
+	\subsection{Positionierung in 2D}
+	- Fenstergebunden WIMP
+	- Menüs / Fenster
+	- Bildschirmränder
+	
+	\subsection{Positionierung in 3D (VR/AR auch ohne)}
+	- 3D Programm: UI in Welt platziert
+	- Üblich Hände und Kopf 
+	- Beispiele!
+	- dreidimensionale Benutzeroberflächen
+	
+	\section{Problemdiskussion}
+	Da es viele verschiedene Umsetzungen von VR- und AR-Brillen gibt, steht man als Entwickler eines Mixed-Reality-Programms über Kurz oder Lang vor einigen Problemen. Eins davon ist die Platzierung der Benutzeroberfläche, welche in dieser Arbeit eine große Rolle spielt. 
+	
+	%Not working... \newpackcom{\Main}{Program}{Worked!}
+	%\begin{enumerate}
+	%Aufzählung
+	%\item Itemname
+	%\end{enumerate}
+	
+	%Dies ist ein Satz :D \footnote{Hahahaha, du hast nun vergessen, wo du warst :P \textcopyright$$\pi=3$$\texttrademark}
+	%\begin{figure}[h]
+	%\centering
+	%\includegraphics[width=.7\linewidth]{../Info/Active_Sports/GameOverImg.jpg}
+	%\caption{Titel der Graphik}
+	%\label{keyword}
+	%\end{figure}
+	%Ei häf dauz if dis is korrekt Inglisch!\footnote{\url{google.de}\href{koogl.de}{Jay :D}}
+
+\end{document}

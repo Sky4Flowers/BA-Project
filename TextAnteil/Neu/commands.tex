@@ -1,0 +1,65 @@
+
+% Textual Commands:
+\newcommand{\term}[1]{\textit{#1}}
+
+
+% Default (not implemented yet function)
+\newcommand{\error}{\textbf{ERROR}}
+
+
+% Quotations:
+\newcommand{\quot}[2]{''#1'' \cite{#2}}
+\newcommand{\takenFrom}[1]{\cite[taken from][]{#1}}
+
+
+% References:
+\newcommand{\refFigure}[1]{\hyperref[#1]{Figure \ref{#1}}}
+\newcommand{\refTable}[1]{\hyperref[#1]{Table \ref{#1}}}
+\newcommand{\refChapter}[1]{\hyperref[#1]{chapter \ref{#1}}}
+
+
+% Pictures:
+\newcommand{\pic}{Insert Picture here \error}
+
+
+% Tables:
+
+
+% Math commands
+\newcommand{\set}[1]{\mathcal{#1}}
+\renewcommand{\vec}[1]{\bm{#1}}
+\newcommand{\mat}[1]{\bm{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\trans}{{\raisebox{.1ex}{$\mathrm{\mathsmaller T}$}}}
+\newcommand{\inv}{{\raisebox{.2ex}{$\mathsmaller{\text{-}1}$}}}
+\newcommand{\given}{;\,}
+\newcommand{\abs}[1]{\left|#1\right|}
+
+\newcommand{\lmin}{\ell_{\text{min}}}
+\newcommand{\lmint}{\ell_{\text{min}, t}}
+\newcommand{\lmax}{\ell_{\text{max}}}
+\newcommand{\tol}{\epsilon_{\text{tol}}}
+\newcommand{\refineTol}{r_{\text{tol}}}
+\newcommand{\maxError}{\epsilon_{\text{max}}}
+\newcommand{\Vsparse}{V_{\text{sparse}, n}}
+
+
+\newcommand{\bigO}{\mathcal{O}} % Big-O notation
+\newcommand{\dx}{\text{d}x}
+
+\newcommand{\Span}[1]{ \text{span} \begin{Bmatrix}
+		#1 \end{Bmatrix}}
+
+% ToDoNotes
+\usepackage[bordercolor=TUMBlue,
+backgroundcolor=TUMAccentLightBlue,
+linecolor=TUMBlue
+]{todonotes}
+%\makeatletter%Disable tixexternalize for todonotes
+%\newcommand{\Todo}[1]{\tikzexternaldisable\@todo[#1][]{<TODO>}\tikzexternalenable}
+% \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{<TODO>}\tikzexternalenable}
+%\makeatother
+
+\newcommand{\bigcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}

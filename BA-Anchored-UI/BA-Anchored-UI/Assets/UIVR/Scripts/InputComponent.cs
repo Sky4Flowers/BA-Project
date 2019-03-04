@@ -181,5 +181,7 @@ public class InputComponent : MonoBehaviour
     {
         money -= price;
         InputComponent.instance.vermögenL.text = money + " €";
+        InputComponent.instance.vermögenR.text = money + " €";
+        InputComponent.instance.vermögenH.text = money + " €";
     }
 }

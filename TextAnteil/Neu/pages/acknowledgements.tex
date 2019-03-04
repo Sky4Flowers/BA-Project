@@ -1,0 +1,27 @@
+\makeatletter
+\ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+{\addcontentsline{toc}{chapter}{Acknowledgments}}
+{\addcontentsline{toc}{chapter}{Danksagungen}}
+\makeatother
+\thispagestyle{empty}
+
+\vspace*{20mm}
+
+\begin{center}
+\makeatletter
+\ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+{\usekomafont{section} Acknowledgments}
+{\usekomafont{section} Danksagungen}
+\makeatother
+\end{center}
+
+\vspace{10mm}
+
+I want to acknowledge
+\begin{itemize}
+	\item \dots acknowledgement 01, 
+	\item \dots acknowledgement 02, 
+	\item \dots acknowledgement 03. 
+\end{itemize}
+
+\cleardoublepage{}

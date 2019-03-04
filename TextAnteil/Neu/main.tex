@@ -1,0 +1,62 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+
+
+%\documentclass[headsepline,footsepline,footinclude=false,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc,BCOR=12mm,DIV=12]{scrbook} % two-sided
+\documentclass[headsepline,footsepline,footinclude=false,oneside,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc]{scrbook} % one-sided
+
+
+\input{settings}
+\input{commands}
+
+
+\newcommand*{\getUniversity}{Technische Universität München}
+\newcommand*{\getFaculty}{Fakultät für Informatik}
+\newcommand*{\getTitle}{Concepts for realizing environment dependent user interfaces in mixed reality scenarios} %TODO Title
+\newcommand*{\getTitleGer}{Konzepte zur Realisierung von umgebungsabhängigen Benutzeroberflächen für die Anwendung in Mixed-Reality-Szenarios} %TODO Titel
+\newcommand*{\getAuthor}{Oliver Jung} %TODO Author
+\newcommand*{\getDoctype}{Bachelorarbeit in Informatik: Games Engineering}
+\newcommand*{\getSupervisor}{Prof. Gudrun Klinker, Ph.D.} %TODO Supervisor
+\newcommand*{\getAdvisor}{Sven Liedtke, M.Sc.} %TODO Advisor
+\newcommand*{\getSubmissionDate}{15. März, 2019}
+\newcommand*{\getSubmissionLocation}{München}
+
+\begin{document}
+
+
+\selectlanguage{ngerman}
+%\selectlanguage{english}
+
+% Set page numbering to avoid "destination with the same identifier has been already used" warning for cover page.
+% (see https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Problems_with_Links_and_Pages).
+\pagenumbering{alph}
+\input{pages/cover}
+
+\frontmatter{}
+
+\input{pages/title}
+\input{pages/disclaimer}
+\input{pages/acknowledgements}
+\input{pages/abstract}
+\microtypesetup{protrusion=false}
+\tableofcontents{}
+\input{notations}
+\microtypesetup{protrusion=true}
+
+\mainmatter{}
+
+\input{chapters/01_introduction}
+\input{chapters/02_background}
+\input{chapters/03_hierarchical_approach}
+\input{chapters/04_results}
+\input{chapters/05_conclusion}
+
+
+\appendix{}
+
+\microtypesetup{protrusion=false}
+\listoffigures{}
+\listoftables{}
+\microtypesetup{protrusion=true}
+\printglossaries
+\printbibliography{}
+\end{document}
