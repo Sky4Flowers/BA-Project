@@ -1,22 +1,74 @@
 % !TeX root = ../main.tex
 
-\chapter{Praxis Chapter}\label{chapter:dimensionwise_refinement}
+\chapter{Problemdiskussion}\label{chapter:dimensionwise_refinement}
 
-	References for chapters work like this. blblbla see \refChapter{chapter:background}.
+	%References for chapters work like this. blblbla see \refChapter{chapter:background}.
 			
-	\section{Program Structure}
+	%\section{Program Structure}
 	
-		For program code, use the following structure:
+		%For program code, use the following structure:
 		
-		\begin{figure}[htbp]
-			\centering
-			\begin{tabular}{c}
-				\begin{lstlisting}[language=python]
-				# enter your code here (# marks a comment in python)
-				def (stuff as stuff):
-					x = 1
-				\end{lstlisting}
-			\end{tabular}
-			\caption{Caption Example}
-			\label{fig:code_integrator}
-		\end{figure}
+		%\begin{figure}[htbp]
+			%\centering
+			%\begin{tabular}{c}
+			%\begin{lstlisting}[language=python]
+			%	# enter your code here (# marks a comment in python)
+			%	def (stuff as stuff):
+			%		x = 1
+			%	\end{lstlisting}
+			%\end{tabular}
+			%\caption{Caption Example}
+			%\label{fig:code_integrator}
+		%\end{figure}
+		
+	\section{Problembeschreibung}
+		Da es viele verschiedene Umsetzungen der virtuellen und erweiterten Realität gibt, steht man als Entwickler eines Mixed-Reality Programms über Kurz oder Lang vor einigen Hindernissen. Eines davon ist die Platzierung der Benutzeroberfläche...
+		Bisher wird diese in einem neuen Projekt immer wieder von Neuem, der Situation angepasst, platziert.
+		\todo{Bis hier überarbeiten}
+		Besondere Schwierigkeiten entstehen aber noch zusätzlich, wenn man das Programm auf verschiedenen Geräten nutzen möchte. So werden zum Beispiel bei vielen Varianten der erweiterten Realität die Handpositionen nie oder zumindest nicht kontinuierlich verfolgt und ermöglichen somit kein konstantes Anzeigen von virtuellen Elementen an diesen Stellen. Sie können daher schlecht als Ankerpositionen für die Benutzeroberfläche verwendet werden.
+		Andere Geräte stellen durch die Positionsbestimmung \todo{Finde Formulierung für Controller und VrBrille und an allen Stellen übernehmen} Hand- und Kopfpositionen zu jeder Zeit zur Verfügung. Das Wegfallen von Controllern durch niedrigen Akkustand oder andere Umstände erzeugt dabei allerdings ein ähnliches Problem wie bei den Varianten ohne solche Controller.
+		Da die Positionierung der Benutzeroberfläche an den Handpositionen deutlich mehr Möglichkeiten eröffnet \todo{Beweis?}, sollten diese auch genutzt werden, solange sie vorhanden sind. Für den Fall ihrer Abwesenheit ist es dann allerdings nötig eine Rückfallmöglichkeit bereitzustellen, damit keine Elemente der Benutzeroberfläche verloren gehen und mit ihnen deren Funktion und Information...
+		
+	\section{Ansatz}
+		Um die Verwendung von allen Elementen der Benutzeroberfläche auch beim Verlust einer oder mehrerer möglicher Ankerpositionen zu gewährleisten, wurden in dieser Arbeit mehrere Möglichkeiten erarbeitet, um eine Umverteilung der enthaltenen Informationen von einem nicht verwendeten Anker auf einen oder mehrere aktive Anker durchführen zu können.
+		Dafür wird betrachtet wie wichtig die einzelnen Inhalte sind und welche Ankerpositionen zur Verfügung stehen.
+		\todo{fortsetzen}
+		
+		\subsection{Umsetzung der Prioritätsstufen}
+			Um herauszufinden wie wichtig ein Element ungefähr ist, werden erst klare Klassen benötigt, welche unterschiedliche Prioritäten darstellen.
+			- vorbild S.H.I.T.
+			- wichtig für Verarbeitung bei Fallback
+			- High/Medium/Low/None
+			
+		\subsection{UIAnchor}
+			- stellt Anker dar
+			- gibt Anweisungen an Kinderanker weiter
+			- Manipuliert Elemente abhängig von Ankertyp
+			- Setzt Fallback um
+		
+		\subsection{UIContainer}
+			- enthält Elemente
+			- ermöglicht strukturierte Platzierung von dynamischem Inhalt
+		
+		\subsection{AnchoredUI}
+			- Stellt Element dar
+			- Beinhaltet Informationen für die Fallback Umsetzung
+		
+		\subsection{AnchorManager}
+			- Regelt das Wegfallen von Ankern
+			- Weist FBAnker zu
+		
+		\subsection{Erweiterung}
+			...
+			
+		\subsection{Fallback Arten}
+			...
+			
+	\section{Evaluierung}
+	
+		\subsection{Studie}
+		
+		\subsection{Ergebnisse}
+		
+		\subsection{Folgerung?}
+		
