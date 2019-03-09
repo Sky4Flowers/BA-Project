@@ -31,7 +31,8 @@
 		
 	\section{Ansatz}
 		Um die Verwendung von allen Elementen der Benutzeroberfläche auch beim Verlust einer oder mehrerer möglicher Ankerpositionen zu gewährleisten, wurden in dieser Arbeit mehrere Möglichkeiten erarbeitet, um eine Umverteilung der enthaltenen Informationen von einem nicht verwendeten Anker auf einen oder mehrere aktive Anker durchführen zu können.
-		Dafür wird betrachtet wie wichtig die einzelnen Inhalte sind und welche Ankerpositionen zur Verfügung stehen.
+		Dafür wird betrachtet wie wichtig die einzelnen Inhalte sind, welche Ankerpositionen zur Verfügung stehen und was für eine Rückfallart bei der Verschiebung verwendet werden soll. Letztere entscheidet darüber wie der Rückfall aufgefangen wird.
+		Die Neuplatzierung der umverteilten Bausteine übernimmt jeweils der neue Anker.
 		\todo{fortsetzen}
 		
 		\subsection{Umsetzung der Prioritätsstufen}
@@ -40,11 +41,32 @@
 			- wichtig für Verarbeitung bei Fallback
 			- High/Medium/Low/None
 			
+		\subsection{Erweiterung}
+			- Switch
+			- Directional
+		
+		\subsection{Rückfallarten}
+			- Über ID
+			- Über Container
+			- Innerhalb eines Containers
+			
+		\subsection{TODO}
+			\todo{Bereich benennen}
+			
+	\section{Umsetzung}
+		- Erklärung der Struktur
+			
 		\subsection{UIAnchor}
 			- stellt Anker dar
 			- gibt Anweisungen an Kinderanker weiter
 			- Manipuliert Elemente abhängig von Ankertyp
 			- Setzt Fallback um
+			
+			- Cylinder (Beispiel Bild)
+			- Rectangle 
+			- Umsetzungen abhängig von Prio und Position
+			- Vorbild Rectangle Hololens
+			- Cylinder Abwandlung von Planetarium und Ähnlichem
 		
 		\subsection{UIContainer}
 			- enthält Elemente
@@ -57,18 +79,26 @@
 		\subsection{AnchorManager}
 			- Regelt das Wegfallen von Ankern
 			- Weist FBAnker zu
-		
-		\subsection{Erweiterung}
-			...
-			
-		\subsection{Fallback Arten}
-			...
 			
 	\section{Evaluierung}
+		%- Studie
+		%- 13 Teilnehmer
+		Um die beschriebene Umsetzung zu evaluieren wurde eine Nutzerstudie durchgeführt, an der dreizehn Freiwillige im Alter zwischen ... und ... teilnahmen. \todo{Altersbereich herausfinden}
 	
-		\subsection{Studie}
+		\subsection{Studienablauf}
+			%- 4 Szenarien
+			In der Studie mussten die Probanden in vier verschiedenen Szenarien jeweils eine Reihe von Aufgaben durchführen. Die Reihenfolge der Szenarios wurde dabei jedes Mal variiert und war für jeden Teilnehmer unterschiedlich, um einen Einfluss der Reihenfolge auf das Gesamtergebnis möglichst gering zu halten. Die Aufgabenstellung blieb in allen Szenarien die Gleiche.
+			
+			
+			
+			Zu Anfang sollten die Tester ein paar einleitende Fragen beantworten, dann führten sie die Aufgaben ein erstes Mal in einer der \todo{Anderes Wort für Szenarien} und beantworteten danach Fragen zu dem Szenario und einzelnen Elementen darin.
+			- Aufzählung der Fragen
+			- Wie wurden Elemente ausgewählt?
+			Dies wurde viermal wiederholt. Zum Abschluss sollten sie noch angeben, wie schwierig sie die Aufgabenstellung und die Steuerung unabhängig von den Szenarien fanden und in welche der Prioritätskategorien (siehe \todo{Verlinkung zu Prioritäten}) sie die ausgewählten Elemente einordnen würden.
 		
-		\subsection{Ergebnisse}
+		\subsection{Szenario-Beschreibung}
+			- Szenenbeschreibung
+			- verwendete UI Elemente
+			- 
 		
-		\subsection{Folgerung?}
 		
