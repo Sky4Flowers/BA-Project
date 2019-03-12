@@ -1,4 +1,4 @@
-% !TeX root = ../main.tex
+ !TeX root = ../main.tex
 
 \chapter{Problemdiskussion}\label{chapter:dimensionwise_refinement}
 
@@ -22,36 +22,82 @@
 		%\end{figure}
 		
 	\section{Problembeschreibung}
-		Da es viele verschiedene Umsetzungen der virtuellen und erweiterten Realität gibt, steht man als Entwickler eines Mixed-Reality Programms über Kurz oder Lang vor einigen Hindernissen. Eines davon ist die Platzierung der Benutzeroberfläche...
-		Bisher wird diese in einem neuen Projekt immer wieder von Neuem, der Situation angepasst, platziert.
-		\todo{Bis hier überarbeiten}
+		Da es viele verschiedene Umsetzungen der virtuellen und erweiterten Realität gibt, steht man als Entwickler eines Mixed-Reality Programms über Kurz oder Lang vor einigen Hindernissen. Eines davon ist die Platzierung der Benutzeroberfläche, da hierbei im Gegensatz zu gewöhnlichen Desktop-Anwendungen keine Bildschirmränder oder vergleichbare Begrenzungen existieren.
+		Zudem gibt es keine konkrete Vorgabe wie die Benutzeroberfläche in der dreidimensionalen Welt platziert werden sollte. \todo{Weiter}
+		Häufige Umsetzung - Hände oder Zylinder
+		\todo{Bis hier überprüfen}
 		Besondere Schwierigkeiten entstehen aber noch zusätzlich, wenn man das Programm auf verschiedenen Geräten nutzen möchte. So werden zum Beispiel bei vielen Varianten der erweiterten Realität die Handpositionen nie oder zumindest nicht kontinuierlich verfolgt und ermöglichen somit kein konstantes Anzeigen von virtuellen Elementen an diesen Stellen. Sie können daher schlecht als Ankerpositionen für die Benutzeroberfläche verwendet werden.
-		Andere Geräte stellen durch die Positionsbestimmung \todo{Finde Formulierung für Controller und VrBrille und an allen Stellen übernehmen} Hand- und Kopfpositionen zu jeder Zeit zur Verfügung. Das Wegfallen von Controllern durch niedrigen Akkustand oder andere Umstände erzeugt dabei allerdings ein ähnliches Problem wie bei den Varianten ohne solche Controller.
-		Da die Positionierung der Benutzeroberfläche an den Handpositionen deutlich mehr Möglichkeiten eröffnet \todo{Beweis?}, sollten diese auch genutzt werden, solange sie vorhanden sind. Für den Fall ihrer Abwesenheit ist es dann allerdings nötig eine Rückfallmöglichkeit bereitzustellen, damit keine Elemente der Benutzeroberfläche verloren gehen und mit ihnen deren Funktion und Information...
+		Andere Geräte stellen durch die Positionserfassung der Controller und der VR- oder AR-Brille die Kopf- und Handpositionen zu jeder Zeit zur Verfügung. Das Wegfallen von Controllern durch niedrigen Akkustand oder andere Umstände erzeugt dabei allerdings ein ähnliches Problem wie bei den Varianten ohne solche Controller.
+		Da die Positionierung der Benutzeroberfläche an den Handpositionen deutlich mehr Möglichkeiten eröffnet \todo{Beweis?}, sollten diese auch genutzt werden, solange sie vorhanden sind. Für den Fall ihrer Abwesenheit ist es dann allerdings nötig eine Rückfallmöglichkeit bereitzustellen, damit keine Elemente der Benutzeroberfläche verloren gehen und mit ihnen deren Funktion und Information. Diese Verluste könnten sonst eine produktive Nutzung erschweren oder sie sogar gänzlich verhindern.
 		
 	\section{Ansatz}
 		Um die Verwendung von allen Elementen der Benutzeroberfläche auch beim Verlust einer oder mehrerer möglicher Ankerpositionen zu gewährleisten, wurden in dieser Arbeit mehrere Möglichkeiten erarbeitet, um eine Umverteilung der enthaltenen Informationen von einem nicht verwendeten Anker auf einen oder mehrere aktive Anker durchführen zu können.
-		Dafür wird betrachtet wie wichtig die einzelnen Inhalte sind, welche Ankerpositionen zur Verfügung stehen und was für eine Rückfallart bei der Verschiebung verwendet werden soll. Letztere entscheidet darüber wie der Rückfall aufgefangen wird.
+		Dafür wird betrachtet wie wichtig die einzelnen Inhalte sind, welche aktiven Ankerpositionen zur Verfügung stehen und was für eine Rückfallart bei der Verschiebung verwendet werden soll. Letztere entscheidet darüber wie der Rückfall aufgefangen wird.
 		Die Neuplatzierung der umverteilten Bausteine übernimmt jeweils der neue Anker.
-		\todo{fortsetzen}
+		\todo{fortsetzen?}
 		
 		\subsection{Umsetzung der Prioritätsstufen}
-			Um herauszufinden wie wichtig ein Element ungefähr ist, werden erst klare Klassen benötigt, welche unterschiedliche Prioritäten darstellen.
-			- vorbild S.H.I.T.
-			- wichtig für Verarbeitung bei Fallback
+			Um herauszufinden wie wichtig ein Element ungefähr ist, werden erst klare Klassen benötigt, welche unterschiedliche Prioritäten darstellen. Diese entscheiden darüber wie und wo eine Information dargestellt wird und ebenso wohin sie, im Falle des Verlusts des zugehörigen Ankers, verschoben wird.
+			Als Vorbild für das in dieser Arbeit verwendete Modell dient das Konzept S.H.I.T., welches von ...
+			Es teilt Informationen in vier \todo{?} Kategorien ein:
+			- Should
+			- 
+			-
+			- Treasure
+			
+			%- vorbild S.H.I.T.
+			%- wichtig für Verarbeitung bei Fallback
+			
 			- High/Medium/Low/None
+			Zudem wurde es abhängig vom aktuellen Kontext und dem Typ der Ankerposition gemacht.
+			%- Kontextabhängigkeit
+			
+			Hand:
+			-Hoch Immer angezeigt
+			-Medium Immer angezeigt
+			-Low Zuschaltbar
+			-None Zuschaltbar 
+			
+			Kopf:
+			-Hoch: immer angezeigt, immer sichtbar
+			-Medium immer angezeigt
+			-Low Zuschaltbar
+			-None Fällt weg
+			
+		\subsection{Rückfallarten}
+			Beim Umverteilen der Ankerinhalte ... irgendwas mit Balance zwischen individueller Platzierung und automatisiert in Blöcken sowie Nutzbarkeit\todo{Formulieren}
+			%- Über ID
+			Eine Variante, welche manuelles Platzieren ermöglicht, ist die Verschiebung über eine Identifikationsnummer. Dabei werden, gegebenenfalls veränderte, Kopien des zu verschiebenden Inhalts bereits vorher auf den Rückfall-Ankern platziert. Beim Wegfallen des Ankers wird dann lediglich auf diesen Ankern nach einem Element mit der gleichen Identifikationsnummer gesucht und dieses aktiviert. - Nachteile - Vorteile \todo{Formulieren}
+			
+			
+			%- Über Container
+			Eine andere Möglichkeit, welche ein automatisiertes geordnetes Platzieren umsetzt, benötigt eine Art Container für Inhalte. Ein Beispiel für einen solchen Container sind die Anker selbst, da sie ebenso Elemente enthalten. Allerdings ordnen diese von sich aus keine neuen Informationen auf bestimmte Weise neben den Bestehenden an, sondern übergeben diese Aufgabe an andere Container, welche in ihnen enthalten sind. Die Art und Weise wie ein Container neue Inhalte handhabt muss manuell festgelegt werden und wird dann zur Laufzeit automatisiert ausgeführt. - Nachteile - Vorteile \todo{Formulieren}
+			
+			
+			%- Innerhalb eines Containers
+			Zuletzt gibt es noch eine Art der Verschiebung, bei der die betroffenen Elemente innerhalb ihres Behälters bleiben und dieser dann mitsamt seinem Inhalt als ein Objekt verschoben wird. Dabei muss der Zielanker auf eine, in \todo{Kapitelverweis}beschriebene, Weise erweitert werden, da dem Anker die genaue Lage des Inhalts nicht bekannt ist. - Nachteile - Vorteile \todo{Formulieren}
+			%- Wichtigkeit entscheidet über nutzbare Anker
+			Bei allen Varianten wird geprüft ob die Priorität des verschobenen Objekts höher oder gleich wie die Mindestpriorität des Zielankers ist, um jederzeit möglichst nur die benötigte Information anzuzeigen und unwichtige Inhalte gegebenenfalls zu verbergen. Falls die Priorität nicht zu dem Anker passen sollte, wird das Verfahren auf einem anderen Anker weitergeführt, solange noch ein weiterer zur Verfügung steht.
 			
 		\subsection{Erweiterung}
-			- Switch
-			- Directional
-		
-		\subsection{Rückfallarten}
-			- Über ID
-			- Über Container
-			- Innerhalb eines Containers
+			\todo{Überarbeiten und Kapitel darüber referenzieren}
+			Wie bereits in ... erwähnt, kann es vorkommen, dass ein Anker durch das Verschieben von Informationen eines anderen Ankers gegebenenfalls erweitert werden muss, um die zusätzlichen Elemente platzieren zu können.
+			Zum Erweitern eines Ankers wurden hierbei folgende zwei Varianten erarbeitet.
 			
-		\subsection{TODO}
-			\todo{Bereich benennen}
+			%- Directional
+			Bei der ersten Art wird der Bereich, in dem der Inhalt platziert werden kann, in eine vorgegebene Richtung erweitert. Daraufhin werden der neue und der alte Inhalt darin untereinander beziehungsweise nebeneinander platziert.
+			
+			
+			- Switch
+			
+			Die andere Variante nutzt das ... Umschalten
+			Somit wird nicht mehr Platz eingenommen.
+			Allerdings kann man dann die verschiedenen Informationen nicht alle gleichzeitig sehen.
+			
+			
+			
+		%\subsection{TODO}
+			%\todo{Bereich benennen}
 			
 	\section{Umsetzung}
 		- Erklärung der Struktur
