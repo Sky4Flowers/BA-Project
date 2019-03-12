@@ -2004,7 +2004,9 @@
     <bcf:citekey order="7">asc_notes</bcf:citekey>
     <bcf:citekey order="8">asc_notes</bcf:citekey>
     <bcf:citekey order="9">asc_notes</bcf:citekey>
-    <bcf:citekey order="10">milgram</bcf:citekey>
+    <bcf:citekey order="10">asc_notes</bcf:citekey>
+    <bcf:citekey order="11">asc_notes</bcf:citekey>
+    <bcf:citekey order="12">milgram</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
