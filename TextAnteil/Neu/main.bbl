@@ -19,30 +19,184 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{milgram}{book}{}
+    \entry{tidjane}{miscellaneous}{}
       \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=d57f1b339e2089ac1411a8c32cef1cb7}{%
-           family={Milgram},
-           familyi={M\bibinitperiod},
-           given={Paul},
-           giveni={P\bibinitperiod},
+        {{uniquename=0,uniquepart=base,hash=e6f3d6a8786c7dfdc6b5234909c92e62}{%
+           family={Tall},
+           familyi={T\bibinitperiod},
+           given={Tidjane},
+           giveni={T\bibinitperiod},
            givenun=0}}%
       }
-      \list{publisher}{1}{%
-        {Todo}%
-      }
-      \strng{namehash}{d57f1b339e2089ac1411a8c32cef1cb7}
-      \strng{fullhash}{d57f1b339e2089ac1411a8c32cef1cb7}
-      \strng{bibnamehash}{d57f1b339e2089ac1411a8c32cef1cb7}
-      \strng{authorbibnamehash}{d57f1b339e2089ac1411a8c32cef1cb7}
-      \strng{authornamehash}{d57f1b339e2089ac1411a8c32cef1cb7}
-      \strng{authorfullhash}{d57f1b339e2089ac1411a8c32cef1cb7}
+      \strng{namehash}{e6f3d6a8786c7dfdc6b5234909c92e62}
+      \strng{fullhash}{e6f3d6a8786c7dfdc6b5234909c92e62}
+      \strng{bibnamehash}{e6f3d6a8786c7dfdc6b5234909c92e62}
+      \strng{authorbibnamehash}{e6f3d6a8786c7dfdc6b5234909c92e62}
+      \strng{authornamehash}{e6f3d6a8786c7dfdc6b5234909c92e62}
+      \strng{authorfullhash}{e6f3d6a8786c7dfdc6b5234909c92e62}
       \field{sortinit}{3}
       \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{note}{Eingesehen am 10.03.2019}
+      \field{title}{Augmented Reality vs. Virtual Reality vs. Mixed Reality – An Introductory Guide}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.toptal.com/designers/ui/augmented-reality-vs-virtual-reality-vs-mixed-reality
+      \endverb
+      \verb{url}
+      \verb https://www.toptal.com/designers/ui/augmented-reality-vs-virtual-reality-vs-mixed-reality
+      \endverb
+    \endentry
+    \entry{azuma}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=5ce52a12ff948b0f7fd7ec3f1abef63a}{%
+           family={Azuma},
+           familyi={A\bibinitperiod},
+           given={R.\bibnamedelimi T.},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
+      \strng{fullhash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
+      \strng{bibnamehash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
+      \strng{authorbibnamehash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
+      \strng{authornamehash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
+      \strng{authorfullhash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1054-7460}
+      \field{journaltitle}{Presence: Teleoperators and Virtual Environments}
+      \field{month}{8}
+      \field{title}{A Survey of Augmented Reality}
+      \field{volume}{6.4}
+      \field{year}{1997}
+      \field{pages}{355\bibrangedash 385}
+      \range{pages}{31}
+    \endentry
+    \entry{milgram}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=3d361485c7612c1cbafda0dc9aace152}{%
+           family={Milgram},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=da00d4f323fc5b9ef3dd57629c5abf72}{%
+           family={Takemura},
+           familyi={T\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=6c4e1f5f7346dadff559aa8caba928aa}{%
+           family={Utsumi},
+           familyi={U\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=87a4326bc6fbbe229b6ccb54d636b39b}{%
+           family={Kishino},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {International Society for Optics}%
+        {Photonics}%
+      }
+      \strng{namehash}{8bc402c6751d7350ecaa8c16f1805d46}
+      \strng{fullhash}{8bc402c6751d7350ecaa8c16f1805d46}
+      \strng{bibnamehash}{8bc402c6751d7350ecaa8c16f1805d46}
+      \strng{authorbibnamehash}{8bc402c6751d7350ecaa8c16f1805d46}
+      \strng{authornamehash}{8bc402c6751d7350ecaa8c16f1805d46}
+      \strng{authorfullhash}{8bc402c6751d7350ecaa8c16f1805d46}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Telemanipulator and telepresence technologies}
       \field{title}{Augmented Reality: A class of displays on the reality-virtuality continuum}
-      \field{year}{1994}
+      \field{volume}{2351}
+      \field{year}{1995}
+      \field{pages}{282\bibrangedash 292}
+      \range{pages}{11}
+    \endentry
+    \entry{unity}{miscellaneous}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{note}{Eingesehen am 10.03.2019}
+      \field{title}{Unity User Manual (2018.3)}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/Manual/UIBasicLayout.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/Manual/UIBasicLayout.html
+      \endverb
+    \endentry
+    \entry{diegetic}{miscellaneous}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=a134680d19454b82defe53ab901b5dd3}{%
+           family={Stonehouse},
+           familyi={S\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a134680d19454b82defe53ab901b5dd3}
+      \strng{fullhash}{a134680d19454b82defe53ab901b5dd3}
+      \strng{bibnamehash}{a134680d19454b82defe53ab901b5dd3}
+      \strng{authorbibnamehash}{a134680d19454b82defe53ab901b5dd3}
+      \strng{authornamehash}{a134680d19454b82defe53ab901b5dd3}
+      \strng{authorfullhash}{a134680d19454b82defe53ab901b5dd3}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{note}{Zuletzt eingesehen am 11.03.2019}
+      \field{title}{Considering the narrative in user interface design for video games}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://medium.com/@thewanderlust/considering-the-narrative-in-user-interface-design-for-video-games-c45953c22760
+      \endverb
+      \verb{url}
+      \verb https://medium.com/@thewanderlust/considering-the-narrative-in-user-interface-design-for-video-games-c45953c22760
+      \endverb
+    \endentry
+    \entry{hololens}{miscellaneous}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=316cd2ab016674872b2aae85990c9c22}{%
+           family={Pietschmann},
+           familyi={P\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{316cd2ab016674872b2aae85990c9c22}
+      \strng{fullhash}{316cd2ab016674872b2aae85990c9c22}
+      \strng{bibnamehash}{316cd2ab016674872b2aae85990c9c22}
+      \strng{authorbibnamehash}{316cd2ab016674872b2aae85990c9c22}
+      \strng{authornamehash}{316cd2ab016674872b2aae85990c9c22}
+      \strng{authorfullhash}{316cd2ab016674872b2aae85990c9c22}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{Eingesehen am 10.03.2019}
+      \field{title}{HoloLens Start Menu UI}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=ES_ntyV7ITI
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=ES_ntyV7ITI
+      \endverb
     \endentry
   \enddatalist
   \missing{asc_notes}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.12)  12 MAR 2019 22:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.12)  13 MAR 2019 18:16
 entering extended mode
 **./main.tex
 (main.tex
@@ -1725,11 +1725,7 @@ Package biblatex Info: ... file 'german.lbx' found.
 ("D:\Eigene Dateien\Programme\MiKTeX\tex/latex/biblatex/lbx\german.lbx"
 File: german.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 ))
-(main.aux
-
-LaTeX Warning: Label `fig:cylinder_mapping' multiply defined.
-
-)
+(main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -1764,7 +1760,8 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (main.bbl
+
+(main.bbl
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
@@ -2080,9 +2077,6 @@ Overfull \hbox (22.39389pt too wide) in paragraph at lines 14--14
 [][]\T1/pplx/m/n/10.95 (-20) Verkaufszahlen 
  []
 
-
-LaTeX Warning: Marginpar on page 1 moved.
-
 <figures/IDC-2018.jpg, id=164, 621.82312pt x 488.57532pt>
 File: figures/IDC-2018.jpg Graphic file (type jpg)
 <use figures/IDC-2018.jpg>
@@ -2096,75 +2090,45 @@ Package pdftex.def Info: figures/IDC-2018.jpg  used on input line 18.
 
 LaTeX Warning: Marginpar on page 2 moved.
 
-
-Overfull \hbox (1.6447pt too wide) in paragraph at lines 35--35
-[][]\T1/pplx/m/n/10.95 (-20) Fortsetzen!  
- []
-
-
-Overfull \hbox (1.6447pt too wide) in paragraph at lines 35--35
-[][]\T1/pplx/m/n/10.95 (-20) Fortsetzen!  
- []
-
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 37.
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-<figures/mixed_reality.png, id=177, 456.95718pt x 140.77594pt>
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 41.
+[2]
+<figures/mixed_reality.png, id=186, 456.95718pt x 140.77594pt>
 File: figures/mixed_reality.png Graphic file (type png)
 <use figures/mixed_reality.png>
-Package pdftex.def Info: figures/mixed_reality.png  used on input line 54.
+Package pdftex.def Info: figures/mixed_reality.png  used on input line 60.
 (pdftex.def)             Requested size: 313.69167pt x 96.64357pt.
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-[2]
-Overfull \hbox (21.75pt too wide) in paragraph at lines 77--77
-[][]\T1/pplx/m/n/10.95 (-20) Übersetzungen 
- []
-
-
-Overfull \hbox (21.75pt too wide) in paragraph at lines 77--77
-[][]\T1/pplx/m/n/10.95 (-20) Übersetzungen 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--82
-\T1/pplx/m/n/10.95 (+20) Schnitt-stel-le.
- []
-
-
-LaTeX Warning: Marginpar on page 3 moved.
-
-
-LaTeX Warning: Marginpar on page 3 moved.
-
-
-LaTeX Warning: Marginpar on page 3 moved.
-
-[3 <./figures/mixed_reality.png>]
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 89.
-<figures/Ui_Anchor_Unity.png, id=207, 261.97874pt x 300.12125pt>
-File: figures/Ui_Anchor_Unity.png Graphic file (type png)
-<use figures/Ui_Anchor_Unity.png>
-Package pdftex.def Info: figures/Ui_Anchor_Unity.png  used on input line 102.
-(pdftex.def)             Requested size: 167.29967pt x 191.6602pt.
-
+ [3 <./figures/mixed_reality.png>]
 
 LaTeX Warning: Marginpar on page 4 moved.
 
-[4 <./figures/Ui_Anchor_Unity.png>]) (chapters/02_background.tex [5]
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
+\T1/pplx/m/n/10.95 (+20) Schnitt-stel-le.
+ []
+
+[4]
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 90.
+<figures/Ui_Anchor_Unity.png, id=207, 261.97874pt x 300.12125pt>
+File: figures/Ui_Anchor_Unity.png Graphic file (type png)
+<use figures/Ui_Anchor_Unity.png>
+Package pdftex.def Info: figures/Ui_Anchor_Unity.png  used on input line 103.
+(pdftex.def)             Requested size: 167.29967pt x 191.6602pt.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+[5 <./figures/Ui_Anchor_Unity.png>]
+<figures/diegeticUI.jpeg, id=225, 803.0pt x 451.6875pt>
+File: figures/diegeticUI.jpeg Graphic file (type jpg)
+<use figures/diegeticUI.jpeg>
+Package pdftex.def Info: figures/diegeticUI.jpeg  used on input line 122.
+(pdftex.def)             Requested size: 167.29967pt x 94.10591pt.
+) (chapters/02_background.tex [6 <./figures/diegeticUI.jpeg>]
 chapter 2.
 
 Overfull \hbox (8.61787pt too wide) in paragraph at lines 29--29
@@ -2177,40 +2141,40 @@ Overfull \hbox (8.61787pt too wide) in paragraph at lines 29--29
  []
 
 
-LaTeX Warning: Marginpar on page 6 moved.
+LaTeX Warning: Marginpar on page 7 moved.
 
 
-LaTeX Warning: Marginpar on page 6 moved.
+LaTeX Warning: Marginpar on page 7 moved.
 
 
-LaTeX Warning: Marginpar on page 6 moved.
+LaTeX Warning: Marginpar on page 7 moved.
 
 
-LaTeX Warning: Marginpar on page 6 moved.
+LaTeX Warning: Marginpar on page 7 moved.
 
 
-LaTeX Warning: Marginpar on page 6 moved.
+LaTeX Warning: Marginpar on page 7 moved.
 
 
-LaTeX Warning: Marginpar on page 6 moved.
+LaTeX Warning: Marginpar on page 7 moved.
 
 
-LaTeX Warning: Marginpar on page 6 moved.
+LaTeX Warning: Marginpar on page 7 moved.
 
-<figures/cylinder_mapping.png, id=224, 702.625pt x 428.60126pt>
+<figures/cylinder_mapping.png, id=236, 702.625pt x 428.60126pt>
 File: figures/cylinder_mapping.png Graphic file (type png)
 <use figures/cylinder_mapping.png>
 Package pdftex.def Info: figures/cylinder_mapping.png  used on input line 65.
 (pdftex.def)             Requested size: 313.69167pt x 191.35805pt.
-[6
+[7
 
 
-]) (chapters/03_hierarchical_approach.tex [7 <./figures/cylinder_mapping.png>]
+]) (chapters/03_hierarchical_approach.tex [8 <./figures/cylinder_mapping.png>]
 chapter 3.
 
-LaTeX Warning: Marginpar on page 8 moved.
+LaTeX Warning: Marginpar on page 9 moved.
 
-[8
+[9
 
 
 ]
@@ -2263,9 +2227,9 @@ Overfull \hbox (8.61787pt too wide) in paragraph at lines 78--78
 [][]\T1/pplx/m/n/10.95 (-20) Formulieren  
  []
 
-[9]
+[10]
 
-LaTeX Warning: Marginpar on page 10 moved.
+LaTeX Warning: Marginpar on page 11 moved.
 
 
 Overfull \hbox (11.8131pt too wide) in paragraph at lines 83--83
@@ -2285,7 +2249,7 @@ Underfull \hbox (badness 3168) in paragraph at lines 103--104
  []
 
 
-LaTeX Warning: Marginpar on page 10 moved.
+LaTeX Warning: Marginpar on page 11 moved.
 
 
 Overfull \hbox (7.78917pt too wide) in paragraph at lines 108--108
@@ -2297,23 +2261,13 @@ Overfull \hbox (7.78917pt too wide) in paragraph at lines 108--108
 [][]\T1/pplx/m/n/10.95 (-20) Ankerobjekt 
  []
 
-[10]
-<figures/HololensMain.png, id=272, 657.95813pt x 338.76563pt>
+[11]
+<figures/HololensMain.png, id=283, 657.95813pt x 338.76563pt>
 File: figures/HololensMain.png Graphic file (type png)
 <use figures/HololensMain.png>
 Package pdftex.def Info: figures/HololensMain.png  used on input line 128.
 (pdftex.def)             Requested size: 313.69167pt x 161.51495pt.
- [11 <./figures/HololensMain.png>]
-Overfull \hbox (12.46878pt too wide) in paragraph at lines 152--152
-[][]\T1/pplx/m/n/10.95 (-20) Altersbereich 
- []
-
-
-Overfull \hbox (12.46878pt too wide) in paragraph at lines 152--152
-[][]\T1/pplx/m/n/10.95 (-20) Altersbereich 
- []
-
-
+ [12 <./figures/HololensMain.png>]
 Overfull \hbox (39.51611pt too wide) in paragraph at lines 162--162
 [][]\T1/pplx/m/n/10.95 (-20) Frage/Kommentar 
  []
@@ -2333,12 +2287,36 @@ Overfull \hbox (2.12303pt too wide) in paragraph at lines 171--171
 [][]\T1/pplx/m/n/10.95 (-20) Verlinkung 
  []
 
-) (chapters/04_results.tex [12]
+) (chapters/04_results.tex [13]
 chapter 4.
-) (chapters/05_conclusion.tex [13
+
+Overfull \hbox (0.83095pt too wide) in paragraph at lines 9--9
+[][]\T1/pplx/m/n/10.95 (-20) Refchapter 
+ []
+
+
+Overfull \hbox (0.83095pt too wide) in paragraph at lines 9--9
+[][]\T1/pplx/m/n/10.95 (-20) Refchapter 
+ []
+
+
+Overfull \hbox (8.53316pt too wide) in paragraph at lines 32--32
+[][]\T1/pplx/m/n/10.95 (-20) Vergleichbar 
+ []
+
+
+Overfull \hbox (8.53316pt too wide) in paragraph at lines 32--32
+[][]\T1/pplx/m/n/10.95 (-20) Vergleichbar 
+ []
+
+[14
 
 
 ]
+
+LaTeX Warning: Marginpar on page 15 moved.
+
+) (chapters/05_conclusion.tex [15]
 chapter 5.
 
 Overfull \hbox (12.46878pt too wide) in paragraph at lines 15--15
@@ -2351,19 +2329,19 @@ Overfull \hbox (12.46878pt too wide) in paragraph at lines 15--15
  []
 
 
-LaTeX Warning: Marginpar on page 14 moved.
+LaTeX Warning: Marginpar on page 16 moved.
 
-[14
+[16
 
 
-]) [15]
+]) [17]
 Package tocbasic Info: character protrusion at lof deactivated on input line 57
 .
  (main.lof)
 \tf@lof=\write10
 \openout10 = `main.lof'.
 
- [16
+ [18
 
 
 ]
@@ -2376,13 +2354,41 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 58
 
 No file main.gls.
 No file main.acr.
-[17
+[19
 
 
 ]
 chapter without number
+
+Package biblatex Warning: No driver for entry type 'miscellaneous'.
+(biblatex)                Using fallback driver on input line 61.
+
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplx/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 61.
+("D:\Eigene Dateien\Programme\MiKTeX\tex/latex/base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+Package biblatex Warning: No driver for entry type 'miscellaneous'.
+(biblatex)                Using fallback driver on input line 61.
+
+
+Package biblatex Warning: No driver for entry type 'miscellaneous'.
+(biblatex)                Using fallback driver on input line 61.
+
+
+Package biblatex Warning: No driver for entry type 'miscellaneous'.
+(biblatex)                Using fallback driver on input line 61.
+
 No complaints by nag.
-[18
+[20
 
 
 ]
@@ -2397,29 +2403,28 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 61057 strings out of 492946
- 1334150 string characters out of 3132440
- 2079017 words of memory out of 3000000
- 63666 multiletter control sequences out of 15000+200000
- 581916 words of font info for 250 fonts, out of 3000000 for 9000
+ 61114 strings out of 492946
+ 1335076 string characters out of 3132440
+ 2075776 words of memory out of 3000000
+ 63669 multiletter control sequences out of 15000+200000
+ 588714 words of font info for 284 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 81i,9n,136p,9085b,3190s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Eigene Dateien/Programme/MiKTeX/fonts/enc/dvips/base/8r.enc}<D:/Eigene Da
-teien/Programme/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Eigene Dat
-eien/Programme/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><D:/Eigene Dateien/Pr
-ogramme/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><D:/Eigene Dateien/Programme
-/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (25 pages, 896755 bytes).
+ 81i,9n,136p,9085b,3193s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\WIN-7\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
+ectt1095.pk>{D:/Eigene Dateien/Programme/MiKTeX/fonts/enc/dvips/base/8r.enc}<D:
+/Eigene Dateien/Programme/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/
+Eigene Dateien/Programme/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><D:/Eigene D
+ateien/Programme/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><D:/Eigene Dateien/
+Programme/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><D:/Eigene Dateien/Program
+me/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (27 pages, 1019077 bytes).
 PDF statistics:
- 478 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
- 34736 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 574 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
+ 41397 words of extra memory for PDF output out of 42996 (max. 10000000)
 
