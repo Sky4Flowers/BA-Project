@@ -4,35 +4,35 @@
 \contentsline {chapter}{Danksagungen}{iii}{Doc-Start}% 
 \contentsline {chapter}{\nonumberline Zusammenfassung}{iv}{chapter*.1}% 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Definition von VR und AR}{2}{section.1.1}% 
+\contentsline {section}{\numberline {1.1}Definitionen von virtueller und erweiterter Realit\IeC {\"a}t}{2}{section.1.1}% 
 \contentsline {section}{\numberline {1.2}Benutzeroberfl\IeC {\"a}chen}{4}{section.1.2}% 
 \contentsline {subsection}{\numberline {1.2.1}Element}{5}{subsection.1.2.1}% 
 \contentsline {subsection}{\numberline {1.2.2}Anker}{5}{subsection.1.2.2}% 
 \contentsline {section}{\numberline {1.3}Definition der Umgebungsabh\IeC {\"a}ngigkeit}{6}{section.1.3}% 
 \contentsline {chapter}{\numberline {2}Verwandte Arbeiten}{7}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Priorisieren von Benutzeroberfl\IeC {\"a}chen}{7}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Positionierung in 2D}{7}{section.2.2}% 
+\contentsline {section}{\numberline {2.2}Positionierung in 2D}{8}{section.2.2}% 
 \contentsline {section}{\numberline {2.3}Positionierung in 3D (VR/AR auch ohne)}{8}{section.2.3}% 
-\contentsline {chapter}{\numberline {3}Problemdiskussion}{9}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Problembeschreibung}{9}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Ansatz}{9}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}Umsetzung der Priorit\IeC {\"a}tsstufen}{10}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}R\IeC {\"u}ckfallarten}{10}{subsection.3.2.2}% 
-\contentsline {subsection}{\numberline {3.2.3}Erweiterung}{11}{subsection.3.2.3}% 
-\contentsline {section}{\numberline {3.3}Umsetzung}{11}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}UIAnchor}{11}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}UIContainer}{12}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}AnchoredUI}{12}{subsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.3.4}AnchorManager}{13}{subsection.3.3.4}% 
-\contentsline {section}{\numberline {3.4}Evaluierung}{13}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Studienablauf}{13}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Szenario-Beschreibung}{13}{subsection.3.4.2}% 
-\contentsline {chapter}{\numberline {4}Ergebnisse}{14}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Priorit\IeC {\"a}ten}{14}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Bewertung der Szenarien}{15}{section.4.2}% 
-\contentsline {chapter}{\numberline {5}Fazit}{16}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{16}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Ausblick}{16}{section.5.2}% 
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{18}{chapter*.66}% 
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{19}{chapter*.67}% 
-\contentsline {chapter}{\nonumberline Literatur}{20}{chapter*.68}% 
+\contentsline {chapter}{\numberline {3}Problemdiskussion}{10}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Problembeschreibung}{10}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Ansatz}{10}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Umsetzung der Priorit\IeC {\"a}tsstufen}{11}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}R\IeC {\"u}ckfallarten}{11}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}Erweiterung}{12}{subsection.3.2.3}% 
+\contentsline {section}{\numberline {3.3}Umsetzung}{12}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}UIAnchor}{12}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}UIContainer}{13}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}AnchoredUI}{13}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}AnchorManager}{14}{subsection.3.3.4}% 
+\contentsline {section}{\numberline {3.4}Evaluierung}{14}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Studienablauf}{14}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Szenario-Beschreibung}{15}{subsection.3.4.2}% 
+\contentsline {chapter}{\numberline {4}Ergebnisse}{16}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Priorit\IeC {\"a}ten}{16}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Bewertung der Szenarien}{17}{section.4.2}% 
+\contentsline {chapter}{\numberline {5}Fazit}{18}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{18}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Ausblick}{18}{section.5.2}% 
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{20}{chapter*.62}% 
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{21}{chapter*.63}% 
+\contentsline {chapter}{\nonumberline Literatur}{22}{chapter*.64}% 

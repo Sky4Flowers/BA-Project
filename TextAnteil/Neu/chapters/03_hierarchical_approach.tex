@@ -149,7 +149,7 @@
 	\section{Evaluierung}
 		%- Studie
 		%- 13 Teilnehmer
-		Um die beschriebene Umsetzung zu evaluieren wurde eine Nutzerstudie durchgeführt, an der dreizehn Freiwillige im Alter zwischen 16 und 26 Jahren teilnahmen. \todo{mehr} 
+		Um die beschriebene Umsetzung zu evaluieren wurde eine Nutzerstudie durchgeführt, an der dreizehn Freiwillige im Alter zwischen 16 und 26 Jahren teilnahmen. Dieses Kapitel beschreibt deren Aufbau und Ablauf.
 	
 		\subsection{Studienablauf}
 			%- 4 Szenarien
@@ -158,21 +158,32 @@
 			
 						
 			Zu Anfang sollten die Tester ein paar einleitende Fragen beantworten, dann führten sie die Aufgaben ein erstes Mal in einem der Szenarien durch und beantworteten danach Fragen zu diesem Testfall und einzelnen Elementen darin. 
-			Dies beinhaltete zwei Fragen nach der gefühlten Schwierigkeit der Aufgabe innerhalb des Testfalls. Einmal sollten sie angeben ob sie gefühlt viel Zeit für die Aufgabe gebraucht haben, beim zweiten Mal mussten sie deren Schwierigkeit auf einer Skala von eins bis fünf bewerten, wobei eins für sehr leicht und fünf für sehr schwierig steht.
-			\todo{Frage/Kommentar zur Umsetztung fehlt noch}
-			Danach folgten jeweils drei Fragen zu sieben Elementen der Benutzeroberfläche aus der Testszene.
-			- störend - anstrengend anzusehen - nicht findbar
+			Dies beinhaltete zwei Fragen nach der gefühlten Schwierigkeit der Aufgabe innerhalb des Testfalls. Einmal sollten sie angeben ob sie gefühlt viel Zeit für die Aufgabe gebraucht haben, beim zweiten Mal mussten sie deren Schwierigkeit auf einer Skala von eins bis fünf bewerten, wobei eins für sehr leicht und fünf für sehr schwierig steht. Zusätzlich sollten sie angeben, ob sie die Positionierung der Benutzeroberfläche übersichtlich oder willkürlich fanden.
+			
+			
+			Danach folgten jeweils drei Fragen zu sieben Elementen der Benutzeroberfläche aus der Testszene. Bei diesen konnten sie jeweils aus einer gegebenen Liste auswählen, ob und warum sie nach dem Element suchen mussten, es anstrengen anzusehen fanden oder es störend fanden. Eine nicht gelistete Antwort konnte ebenfalls angegeben werden.
+			%- störend - anstrengend anzusehen - nicht findbar
 			%- Aufzählung der Fragen
 			
 			Die zu bewertenden Elemente wurden so ausgewählt, dass jeweils mindestens zwei Beispiele aus den Prioritätsklassen \term{high}, \term{medium}, \term{low} und zwei kontextabhängige Exemplare bewertet wurden.
 			%- Wie wurden zu bewertende Elemente ausgewählt?
 			Die Auswahl dieser Elemente war ebenfalls in jedem Szenario gleich.
 			
-			Dies wurde viermal wiederholt. Zum Abschluss sollten sie noch angeben, wie schwierig sie die Aufgabenstellung und die Steuerung unabhängig von den Szenarien fanden und in welche der Prioritätskategorien (siehe \todo{Verlinkung zu Prioritäten}) sie die ausgewählten Elemente einordnen würden.
+			Dies wurde viermal wiederholt. Zum Abschluss sollten sie noch angeben, wie schwierig sie die Aufgabenstellung und die Steuerung unabhängig von den Szenarien fanden und als wie wichtig sie die ausgewählten Elemente auf einer Skala von eins bis fünf einordnen würden. Die genauen Definitionen der verschiedenen Stufen wird in \refChapter{chapter:resultsPrio} beschrieben.
 		
 		\subsection{Szenario-Beschreibung}\label{chapter:szenario}
-			In jedem der Testfälle hatten die Tester die Aufgabe mit einem Gegenstand zu interagieren, woraufhin ein verborgenes Menü geöffnet wird.
-			- Szenenbeschreibung
-			- verwendete UI Elemente
+			In jedem der Testfälle hatten die Tester die Aufgabe mit einem offen sichtbaren Gegenstand zu interagieren. Dazu musste der \term{Cursor} auf diesen ausgerichtet werden. Der \term{Cursor} ist in der Mitte des Sichtfeldes platziert und bewegt sich beim Drehen und Neigen des Kopfes mit. Man wählt also im Groben ein Objekt aus indem man darauf schaut.
+			Nach dem Interagieren mit dem Gegenstand öffnet sich ein verborgenes Menü. Dieses heißt im Folgenden \term{Handelsfenster}. Es beinhaltet zwölf Elemente mit je einem farbigen Würfel und einer Preisangabe, welche alle ausgewählt werden können.
+			
+			Als nächstes sollten die Tester herausfinden, wie viel Geld ihnen zur Verfügung steht und dann einen Würfel auswählen, dessen Preis die verfügbare Geldmenge nicht überschreitet. Diese Menge wird im Infofeld \term{Vermögen} angezeigt, welches nur bei geöffnetem Handelsfenster verfügbar ist.
+			Daraufhin wird der ausgewählte Würfel gekauft und in das Feld \term{Ausgewähltes Objekt} verschoben, welches zu jeder Zeit angezeigt wird. Es informiert darüber, ob etwas gerade ausgewählt ist und um was es sich dabei handelt.
+			
+			Die letzten drei Schritte beinhalten das Legen des gekauften Würfels in eines der \term{Inventar}-Felder, das erneute Auswählen des Würfels und das Ablegen in ein Feld der \term{Ausrüstung}. Sowohl das \term{Inventar} als auch die \term{Ausrüstung} können manuell ein- und ausgeblendet werden. Wie dies funktioniert und wie die beiden Elemente erkannt werden können wurde den Teilnehmern vor dem Ausführen der Aufgabe erklärt.
+			Danach gilt die Aufgabe als abgeschlossen.
+			
+			Die vier Szenarien unterscheiden sich nur in der Platzierung der genannten Elemente der Nutzeroberfläche.
+			\todo{Beschreiben}
+			%- Szenenbeschreibung
+			%- verwendete UI Elemente
 			- Unterschiedliche Fälle
 		

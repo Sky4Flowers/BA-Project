@@ -124,6 +124,36 @@
       \field{pages}{282\bibrangedash 292}
       \range{pages}{11}
     \endentry
+    \entry{GUI}{miscellaneous}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=0de9cca3c851d4776b9e7ce3f9cad5a3}{%
+           family={Reimer},
+           familyi={R\bibinitperiod},
+           given={Jeremy},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0de9cca3c851d4776b9e7ce3f9cad5a3}
+      \strng{fullhash}{0de9cca3c851d4776b9e7ce3f9cad5a3}
+      \strng{bibnamehash}{0de9cca3c851d4776b9e7ce3f9cad5a3}
+      \strng{authorbibnamehash}{0de9cca3c851d4776b9e7ce3f9cad5a3}
+      \strng{authornamehash}{0de9cca3c851d4776b9e7ce3f9cad5a3}
+      \strng{authorfullhash}{0de9cca3c851d4776b9e7ce3f9cad5a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{Zuletzt eingesehen am 11.03.2019}
+      \field{title}{A History of the GUI}
+      \field{year}{2005}
+      \verb{urlraw}
+      \verb https://arstechnica.com/features/2005/05/gui/
+      \endverb
+      \verb{url}
+      \verb https://arstechnica.com/features/2005/05/gui/
+      \endverb
+    \endentry
     \entry{unity}{miscellaneous}{}
       \field{sortinit}{1}
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
@@ -166,6 +196,20 @@
       \endverb
       \verb{url}
       \verb https://medium.com/@thewanderlust/considering-the-narrative-in-user-interface-design-for-video-games-c45953c22760
+      \endverb
+    \endentry
+    \entry{unityCurved}{miscellaneous}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{note}{Eingesehen am 9.03.2019}
+      \field{title}{User Interfaces for VR}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://unity3d.com/de/learn/tutorials/topics/virtual-reality/user-interfaces-vr
+      \endverb
+      \verb{url}
+      \verb https://unity3d.com/de/learn/tutorials/topics/virtual-reality/user-interfaces-vr
       \endverb
     \endentry
     \entry{hololens}{miscellaneous}{}

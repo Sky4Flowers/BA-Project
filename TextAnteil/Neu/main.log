@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.12)  13 MAR 2019 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.12)  13 MAR 2019 23:29
 entering extended mode
 **./main.tex
 (main.tex
@@ -2102,15 +2102,10 @@ Package pdftex.def Info: figures/mixed_reality.png  used on input line 60.
 
 LaTeX Warning: Marginpar on page 4 moved.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--81
-\T1/pplx/m/n/10.95 (+20) Schnitt-stel-le.
- []
-
 [4]
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 90.
-<figures/Ui_Anchor_Unity.png, id=207, 261.97874pt x 300.12125pt>
+<figures/Ui_Anchor_Unity.png, id=208, 261.97874pt x 300.12125pt>
 File: figures/Ui_Anchor_Unity.png Graphic file (type png)
 <use figures/Ui_Anchor_Unity.png>
 Package pdftex.def Info: figures/Ui_Anchor_Unity.png  used on input line 103.
@@ -2123,20 +2118,20 @@ LaTeX Warning: Marginpar on page 5 moved.
 LaTeX Warning: Marginpar on page 5 moved.
 
 [5 <./figures/Ui_Anchor_Unity.png>]
-<figures/diegeticUI.jpeg, id=225, 803.0pt x 451.6875pt>
+<figures/diegeticUI.jpeg, id=227, 803.0pt x 451.6875pt>
 File: figures/diegeticUI.jpeg Graphic file (type jpg)
 <use figures/diegeticUI.jpeg>
 Package pdftex.def Info: figures/diegeticUI.jpeg  used on input line 122.
-(pdftex.def)             Requested size: 167.29967pt x 94.10591pt.
+(pdftex.def)             Requested size: 292.7776pt x 164.68881pt.
 ) (chapters/02_background.tex [6 <./figures/diegeticUI.jpeg>]
 chapter 2.
 
-Overfull \hbox (8.61787pt too wide) in paragraph at lines 29--29
+Overfull \hbox (8.61787pt too wide) in paragraph at lines 28--28
 [][]\T1/pplx/m/n/10.95 (-20) Formulieren  
  []
 
 
-Overfull \hbox (8.61787pt too wide) in paragraph at lines 29--29
+Overfull \hbox (8.61787pt too wide) in paragraph at lines 28--28
 [][]\T1/pplx/m/n/10.95 (-20) Formulieren  
  []
 
@@ -2153,28 +2148,34 @@ LaTeX Warning: Marginpar on page 7 moved.
 LaTeX Warning: Marginpar on page 7 moved.
 
 
-LaTeX Warning: Marginpar on page 7 moved.
+Overfull \hbox (8.21817pt too wide) in paragraph at lines 58--58
+[][]\T1/pplx/m/n/10.95 (-20) Fertigstellen  
+ []
 
 
-LaTeX Warning: Marginpar on page 7 moved.
+Overfull \hbox (8.21817pt too wide) in paragraph at lines 58--58
+[][]\T1/pplx/m/n/10.95 (-20) Fertigstellen  
+ []
 
-
-LaTeX Warning: Marginpar on page 7 moved.
-
-<figures/cylinder_mapping.png, id=236, 702.625pt x 428.60126pt>
-File: figures/cylinder_mapping.png Graphic file (type png)
-<use figures/cylinder_mapping.png>
-Package pdftex.def Info: figures/cylinder_mapping.png  used on input line 65.
-(pdftex.def)             Requested size: 313.69167pt x 191.35805pt.
 [7
 
 
-]) (chapters/03_hierarchical_approach.tex [8 <./figures/cylinder_mapping.png>]
+]
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+<figures/cylinder_mapping.png, id=249, 702.625pt x 428.60126pt>
+File: figures/cylinder_mapping.png Graphic file (type png)
+<use figures/cylinder_mapping.png>
+Package pdftex.def Info: figures/cylinder_mapping.png  used on input line 75.
+(pdftex.def)             Requested size: 313.69167pt x 191.35805pt.
+) (chapters/03_hierarchical_approach.tex [8] [9 <./figures/cylinder_mapping.png
+>]
 chapter 3.
 
-LaTeX Warning: Marginpar on page 9 moved.
+LaTeX Warning: Marginpar on page 10 moved.
 
-[9
+[10
 
 
 ]
@@ -2227,9 +2228,9 @@ Overfull \hbox (8.61787pt too wide) in paragraph at lines 78--78
 [][]\T1/pplx/m/n/10.95 (-20) Formulieren  
  []
 
-[10]
+[11]
 
-LaTeX Warning: Marginpar on page 11 moved.
+LaTeX Warning: Marginpar on page 12 moved.
 
 
 Overfull \hbox (11.8131pt too wide) in paragraph at lines 83--83
@@ -2249,7 +2250,7 @@ Underfull \hbox (badness 3168) in paragraph at lines 103--104
  []
 
 
-LaTeX Warning: Marginpar on page 11 moved.
+LaTeX Warning: Marginpar on page 12 moved.
 
 
 Overfull \hbox (7.78917pt too wide) in paragraph at lines 108--108
@@ -2261,33 +2262,23 @@ Overfull \hbox (7.78917pt too wide) in paragraph at lines 108--108
 [][]\T1/pplx/m/n/10.95 (-20) Ankerobjekt 
  []
 
-[11]
-<figures/HololensMain.png, id=283, 657.95813pt x 338.76563pt>
+[12]
+<figures/HololensMain.png, id=293, 657.95813pt x 338.76563pt>
 File: figures/HololensMain.png Graphic file (type png)
 <use figures/HololensMain.png>
 Package pdftex.def Info: figures/HololensMain.png  used on input line 128.
 (pdftex.def)             Requested size: 313.69167pt x 161.51495pt.
- [12 <./figures/HololensMain.png>]
-Overfull \hbox (39.51611pt too wide) in paragraph at lines 162--162
-[][]\T1/pplx/m/n/10.95 (-20) Frage/Kommentar 
+ [13 <./figures/HololensMain.png>] [14]
+Overfull \hbox (6.48946pt too wide) in paragraph at lines 185--185
+[][]\T1/pplx/m/n/10.95 (-20) Beschreiben  
  []
 
 
-Overfull \hbox (39.51611pt too wide) in paragraph at lines 162--162
-[][]\T1/pplx/m/n/10.95 (-20) Frage/Kommentar 
+Overfull \hbox (6.48946pt too wide) in paragraph at lines 185--185
+[][]\T1/pplx/m/n/10.95 (-20) Beschreiben  
  []
 
-
-Overfull \hbox (2.12303pt too wide) in paragraph at lines 171--171
-[][]\T1/pplx/m/n/10.95 (-20) Verlinkung 
- []
-
-
-Overfull \hbox (2.12303pt too wide) in paragraph at lines 171--171
-[][]\T1/pplx/m/n/10.95 (-20) Verlinkung 
- []
-
-) (chapters/04_results.tex [13]
+) (chapters/04_results.tex [15]
 chapter 4.
 
 Overfull \hbox (0.83095pt too wide) in paragraph at lines 9--9
@@ -2309,14 +2300,14 @@ Overfull \hbox (8.53316pt too wide) in paragraph at lines 32--32
 [][]\T1/pplx/m/n/10.95 (-20) Vergleichbar 
  []
 
-[14
+[16
 
 
 ]
 
-LaTeX Warning: Marginpar on page 15 moved.
+LaTeX Warning: Marginpar on page 17 moved.
 
-) (chapters/05_conclusion.tex [15]
+) (chapters/05_conclusion.tex [17]
 chapter 5.
 
 Overfull \hbox (12.46878pt too wide) in paragraph at lines 15--15
@@ -2329,19 +2320,19 @@ Overfull \hbox (12.46878pt too wide) in paragraph at lines 15--15
  []
 
 
-LaTeX Warning: Marginpar on page 16 moved.
+LaTeX Warning: Marginpar on page 18 moved.
 
-[16
+[18
 
 
-]) [17]
+]) [19]
 Package tocbasic Info: character protrusion at lof deactivated on input line 57
 .
  (main.lof)
 \tf@lof=\write10
 \openout10 = `main.lof'.
 
- [18
+ [20
 
 
 ]
@@ -2354,7 +2345,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 58
 
 No file main.gls.
 No file main.acr.
-[19
+[21
 
 
 ]
@@ -2387,8 +2378,16 @@ Package biblatex Warning: No driver for entry type 'miscellaneous'.
 Package biblatex Warning: No driver for entry type 'miscellaneous'.
 (biblatex)                Using fallback driver on input line 61.
 
+
+Package biblatex Warning: No driver for entry type 'miscellaneous'.
+(biblatex)                Using fallback driver on input line 61.
+
+
+Package biblatex Warning: No driver for entry type 'miscellaneous'.
+(biblatex)                Using fallback driver on input line 61.
+
 No complaints by nag.
-[20
+[22
 
 
 ]
@@ -2408,11 +2407,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 61114 strings out of 492946
- 1335076 string characters out of 3132440
- 2075776 words of memory out of 3000000
- 63669 multiletter control sequences out of 15000+200000
- 588714 words of font info for 284 fonts, out of 3000000 for 9000
+ 61117 strings out of 492946
+ 1334762 string characters out of 3132440
+ 2077315 words of memory out of 3000000
+ 63642 multiletter control sequences out of 15000+200000
+ 590347 words of font info for 307 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  81i,9n,136p,9085b,3193s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\WIN-7\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
@@ -2422,9 +2421,9 @@ Eigene Dateien/Programme/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><D:/Eigene D
 ateien/Programme/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><D:/Eigene Dateien/
 Programme/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><D:/Eigene Dateien/Program
 me/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (27 pages, 1019077 bytes).
+Output written on main.pdf (29 pages, 1026658 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
+ 592 PDF objects out of 1000 (max. 8388607)
  133 named destinations out of 1000 (max. 500000)
  41397 words of extra memory for PDF output out of 42996 (max. 10000000)
 
