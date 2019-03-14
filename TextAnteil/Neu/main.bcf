@@ -1995,26 +1995,35 @@
     <bcf:datasource type="file" datatype="bibtex">bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">asc_notes</bcf:citekey>
-    <bcf:citekey order="2">asc_notes</bcf:citekey>
-    <bcf:citekey order="3">tidjane</bcf:citekey>
-    <bcf:citekey order="4">azuma</bcf:citekey>
-    <bcf:citekey order="5">milgram</bcf:citekey>
-    <bcf:citekey order="6">milgram</bcf:citekey>
-    <bcf:citekey order="7">milgram</bcf:citekey>
-    <bcf:citekey order="8">milgram</bcf:citekey>
+    <bcf:citekey order="1">verkaufVR</bcf:citekey>
+    <bcf:citekey order="2">verkaufVR</bcf:citekey>
+    <bcf:citekey order="3">verkaufVR</bcf:citekey>
+    <bcf:citekey order="4">verkauf2</bcf:citekey>
+    <bcf:citekey order="5">verkaufVR</bcf:citekey>
+    <bcf:citekey order="6">verkauf2</bcf:citekey>
+    <bcf:citekey order="7">crossCB</bcf:citekey>
+    <bcf:citekey order="8">tidjane</bcf:citekey>
     <bcf:citekey order="9">azuma</bcf:citekey>
-    <bcf:citekey order="10">GUI</bcf:citekey>
-    <bcf:citekey order="11">unity</bcf:citekey>
-    <bcf:citekey order="12">unity</bcf:citekey>
-    <bcf:citekey order="13">diegetic</bcf:citekey>
-    <bcf:citekey order="14">diegetic</bcf:citekey>
-    <bcf:citekey order="15">diegetic</bcf:citekey>
-    <bcf:citekey order="16">unityCurved</bcf:citekey>
-    <bcf:citekey order="17">unityCurved</bcf:citekey>
-    <bcf:citekey order="18">hololens</bcf:citekey>
-    <bcf:citekey order="19">hololens</bcf:citekey>
-    <bcf:citekey order="20">milgram</bcf:citekey>
+    <bcf:citekey order="10">milgram</bcf:citekey>
+    <bcf:citekey order="11">milgram</bcf:citekey>
+    <bcf:citekey order="12">milgram</bcf:citekey>
+    <bcf:citekey order="13">milgram</bcf:citekey>
+    <bcf:citekey order="14">azuma</bcf:citekey>
+    <bcf:citekey order="15">GUI</bcf:citekey>
+    <bcf:citekey order="16">GUI</bcf:citekey>
+    <bcf:citekey order="17">unity</bcf:citekey>
+    <bcf:citekey order="18">unity</bcf:citekey>
+    <bcf:citekey order="19">diegetic</bcf:citekey>
+    <bcf:citekey order="20">diegetic</bcf:citekey>
+    <bcf:citekey order="21">diegetic</bcf:citekey>
+    <bcf:citekey order="22">firefox</bcf:citekey>
+    <bcf:citekey order="23">crossCB</bcf:citekey>
+    <bcf:citekey order="24">UXNatoli</bcf:citekey>
+    <bcf:citekey order="25">unityCurved</bcf:citekey>
+    <bcf:citekey order="26">unityCurved</bcf:citekey>
+    <bcf:citekey order="27">hololens</bcf:citekey>
+    <bcf:citekey order="28">hololens</bcf:citekey>
+    <bcf:citekey order="29">milgram</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -1,5 +1,5 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'bibliography.blg'
-[55] biber-MSWIN64:315> INFO - === 
-[517] Utils.pm:209> ERROR - Cannot find control file 'bibliography.bcf'! - Did latex run successfully on your .tex file before you ran biber?
-[517] Biber.pm:114> INFO - ERRORS: 1
+[37] biber-MSWIN64:315> INFO - === 
+[456] Utils.pm:209> ERROR - Cannot find control file 'bibliography.bcf'! - Did latex run successfully on your .tex file before you ran biber?
+[456] Biber.pm:114> INFO - ERRORS: 1

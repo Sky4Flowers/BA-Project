@@ -1,14 +1,13 @@
 % !TeX root = ../main.tex
 
 \chapter{Ergebnisse}\label{chapter:results}
-	Dieses Kapitel gibt die Ergebnisse der Studie wieder und vergleicht diese mit den ursprünglichen Annahmen. Dazu werden zuerst die angenommenen Prioritäten mit den Bewertung durch die Tester gegenübergestellt.
+	Dieses Kapitel gibt die Ergebnisse der Studie wieder und vergleicht diese mit den ursprünglichen Annahmen. Dazu werden zuerst die angenommenen Prioritäten mit den Bewertung durch die Tester gegenübergestellt. Danach werden die Zusammenhänge zwischen den Umsetzungen der betrachteten Elemente und deren Nutzerbewertung betrachtet.
 
 	\section{Prioritäten}\label{chapter:resultsPrio}
-		Die nachfolgende Tabelle (siehe \autoref{tab:priority}) stellt die Nutzerbewertung der, in \refChapter{chapter:szenario} erwähnten, Elemente der Benutzeroberfläche dar. Die einzelnen Abstufungen werden wie folgt definiert:
+		Die nachfolgende Tabelle (siehe \autoref{tab:priority}) stellt die Nutzerbewertung der, in \refChapter{chapter:szenario} erwähnten, Elemente der Benutzeroberfläche dar. Die einzelnen Abstufungen werden darunter definiert.
 		
-		\todo{Refchapter prios}
 		\begin{table}[htpb]
-			\caption[Example table]{Bewertung der Wichtigkeit von Elementen aus den Szenarien} \label{tab:priority}
+			\caption[Prioritätsbewertung]{Bewertung der Wichtigkeit von Elementen aus den Szenarien} \label{tab:priority}
 			\centering
 			\begin{tabular}{l c c c c c}
 				\toprule
@@ -29,14 +28,31 @@
 		
 		Ein Objekt ist \term{sehr wichtig}, wenn es zu jedem Zeitpunkt angezeigt wird und sich ebenso immer im Sichtfeld des Nutzers befindet. Es kann sich somit weder verbergen lassen, noch sich aus dem Sichtfeld bewegen. Diese Stufe ist äquivalent mit der Priorität \term{high}, welche in Kapitel \todo{Referenz} erläutert wird. Kontextabhängige Varianten davon bilden eine Ausnahme, da sie nur in bestimmten Situationen als \term{sehr wichtig} gelten und deshalb nur dort auf die beschriebene Weise angezeigt werden. In anderen Situationen sind diese Informationen versteckt.
 		
-		Als \term{wichtig} gilt ein Element allerdings bereits, wenn es lediglich zu jeder Zeit angezeigt wird, aber nicht immer sichtbar ist. Es kann sich also auch aus dem Sichtfeld hinaus bewegen, aber lässt sich auf keine Weise ausschalten. \todo{Vergleichbar mit Medium} Wie bei der Stufe \term{sehr wichtig} bilden auch hierbei kontextabhängige Objekte die selbe Ausnahme.
+		Als \term{wichtig} gilt ein Element allerdings bereits, wenn es lediglich zu jeder Zeit angezeigt wird, aber nicht immer sichtbar ist. Es kann sich also auch aus dem Sichtfeld hinaus bewegen, aber lässt sich auf keine Weise ausschalten. Dies entspricht der Priorität \term{medium} Wie bei der Stufe \term{sehr wichtig} bilden auch hierbei kontextabhängige Objekte die selbe Ausnahme.
 		
-		\term{Neutral} sind ...
-		Die Objekte der Priorität \term{low}, welche vom aktuellen Kontext abhängen, werden als eigene Stufe gehandhabt. Sie werden als \term{unwichtig} bezeichnet.
+		\term{Neutral} sind Informationen, die der Benutzer jederzeit manuell ein- und ausblenden kann. Dazu zählen alle kontextunabhängigen Inhalte mit Priorität \term{low}.
+		Die Objekte hingegen, welche vom aktuellen Kontext abhängen, werden als eigene Stufe gehandhabt. Sie werden als \term{unwichtig} bezeichnet.
 		
 		Die letzte Stufe ist äquivalent zu der Priorität \term{none}. Bei diesen, als \term{unnötig} erachteten, Elementen macht es keinen Unterschied für die Bewältigung der Aufgabe, ob diese Elemente vorhanden sind oder nicht.
 		
-		
-		Es ist eindeutig erkennbar...
+		Im Vergleich mit der angenommenen Priorität der UI-Elemente fallen ein paar Abweichungen in der Nutzerbewertung auf. Die \term{Ausrüstung} wird zum Beispiel von etwa zwei Drittel der Befragten als \term{wichtig} oder sogar \term{sehr wichtig} angesehen und nicht als \term{neutral}. Auch das \term{Vermögen} wird von mehr als drei Viertel der Tester wichtiger eingestuft als angenommen (\term{unwichtig}). Beim \term{Handelsfenster} und dessen Elementen gehen hingegen die Meinungen stark auseinander. Die durchschnittliche Bewertung der anderen Objekte stimmen mit der Annahme überein.
 	
-	\section{Bewertung der Szenarien}
+	\section{Bewertung der Szenarien}\label{chapter:resultsSzen}
+	
+		Die Aufgabenstellung wurde insgesamt von allen Nutzern als einfach empfunden. Zwei Drittel bewerteten sie mit Schwierigkeit eins von fünf und das andere Drittel mit zwei von fünf. Innerhalb der Szenarien wurde sie meist als schwieriger empfunden. Dabei gab es häufig kleine und vereinzelte große Schwankungen zwischen den Bewertungen innerhalb der verschiedenen Fälle. Eine klare Verbindung zwischen Fall und diesen Schwankungen lässt sich dabei allerdings nicht erkennen.
+		
+		Mit dem \term{Curor} waren alle Tester zufrieden, lediglich die Geschwindigkeit, mit der ein Objekt ausgewählt wurde, war ihnen vereinzelt zu schnell. Dies war auf die Dauer einer Sekunde festgelegt.
+		Ebenso positiv wurde das \term{Handelsfenster} bewertet. Einzelne Tester merkten aber an, dass es auf Dauer stören könnte, da sich dessen Elemente auf der Augenhöhe befinden und somit der Blick gesenkt oder gehoben werden muss, um sich umzusehen ohne etwas auszuwählen. Dies liegt an der gewählten Steuerungsform, die insgesamt zwar als eher verständlich aber nicht als intuitiv empfunden wurde.
+		
+		Deutlich negativ wurde die Umsetzung der Schaltfläche im Szenario mit nur der rechten Hand bewertet. Aufgrund dieser haben drei Viertel der Nutzer nicht das \term{Inventar} gefunden. Die Gründe dafür waren bei einem Drittel, dass die Schaltfläche nicht bemerkt wurde. Die anderen fanden dessen Funktion und Benennung (Switch) nicht intuitiv und somit verwirrend.
+		
+		%- Switch negativ bewertet
+		
+		Die Bewertungen im Szenario ohne Hände fiel, wie erwartet, an einigen Stellen schlechter aus, als in den anderen Fällen. Dies hing einerseits damit zusammen, dass etwa die Hälfte der Tester die Umsetzung von \term{Vermögen} und \term{Ausgewähltes Objekt} als störend angaben. Sie waren ihnen zu nah und verdeckten einen zu großen Teil des Sichtbereiches. Andererseits bemängelte ebenfalls ungefähr die Hälfte, dass die einzelnen UI-Elemente sich die meiste Zeit lang gegenseitig überlappten. Dadurch würden sie gestaffelt wirken und die Nutzer bei der Ausführung der Aufgabe behindern.
+		
+		
+		Bei der Verwendung von nur der linken Hand fanden zwei Drittel der Teilnehmer die Menge an Elementen zu umfangreich. Durch die Platzierung von \term{Ausrüstung}, \term{Vermögen} und \term{Ausgewähltes Objekt} in der Verlängerung des Inventars wurde es ihnen zu sperrig und die \term{Ausrüstung} war ihnen zu weit entfernt und damit zu klein.
+		%- deutlich negativere Bewertung von ohne Hände
+		%- DauerUI wurde vor allem negativ bewertet 
+		%- Platzierung an einer Hand links zu viel
+		

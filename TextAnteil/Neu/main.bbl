@@ -19,6 +19,96 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{verkaufVR}{miscellaneous}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=50cfcae3dd3c0d18f4b0ad699750335e}{%
+           family={Grohganz},
+           familyi={G\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{50cfcae3dd3c0d18f4b0ad699750335e}
+      \strng{fullhash}{50cfcae3dd3c0d18f4b0ad699750335e}
+      \strng{bibnamehash}{50cfcae3dd3c0d18f4b0ad699750335e}
+      \strng{authorbibnamehash}{50cfcae3dd3c0d18f4b0ad699750335e}
+      \strng{authornamehash}{50cfcae3dd3c0d18f4b0ad699750335e}
+      \strng{authorfullhash}{50cfcae3dd3c0d18f4b0ad699750335e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Zuletzt eingesehen am 10.03.2019}
+      \field{title}{IDC: Verkaufszahlen von AR- und VR-Brillen um 30 \% gesunken, großer Verkaufsboom steht bevor}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.vrnerds.de/idc-verkaufszahlen-von-ar-und-vr-brillen-um-30-gesunken-grosser-verkaufsboom-steht-bevor/
+      \endverb
+      \verb{url}
+      \verb https://www.vrnerds.de/idc-verkaufszahlen-von-ar-und-vr-brillen-um-30-gesunken-grosser-verkaufsboom-steht-bevor/
+      \endverb
+    \endentry
+    \entry{verkauf2}{miscellaneous}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=14362a6ff6f9ce683ab1880b131cced2}{%
+           family={Bastian},
+           familyi={B\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{14362a6ff6f9ce683ab1880b131cced2}
+      \strng{fullhash}{14362a6ff6f9ce683ab1880b131cced2}
+      \strng{bibnamehash}{14362a6ff6f9ce683ab1880b131cced2}
+      \strng{authorbibnamehash}{14362a6ff6f9ce683ab1880b131cced2}
+      \strng{authornamehash}{14362a6ff6f9ce683ab1880b131cced2}
+      \strng{authorfullhash}{14362a6ff6f9ce683ab1880b131cced2}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Zuletzt eingesehen am 7.03.2019}
+      \field{title}{Bericht: Verkaufszahlen von VR- und AR-Brillen fallen um 30 Prozent}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://mixed.de/bericht-verkaufszahlen-von-vr-und-ar-brillen-fallen-um-30-prozent/
+      \endverb
+      \verb{url}
+      \verb https://mixed.de/bericht-verkaufszahlen-von-vr-und-ar-brillen-fallen-um-30-prozent/
+      \endverb
+    \endentry
+    \entry{crossCB}{miscellaneous}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=676b9c83594d7608e6aa386eb19b9b96}{%
+           family={Bauer},
+           familyi={B\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{676b9c83594d7608e6aa386eb19b9b96}
+      \strng{fullhash}{676b9c83594d7608e6aa386eb19b9b96}
+      \strng{bibnamehash}{676b9c83594d7608e6aa386eb19b9b96}
+      \strng{authorbibnamehash}{676b9c83594d7608e6aa386eb19b9b96}
+      \strng{authornamehash}{676b9c83594d7608e6aa386eb19b9b96}
+      \strng{authorfullhash}{676b9c83594d7608e6aa386eb19b9b96}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{Zuletzt eingesehen am 10.03.2019}
+      \field{title}{Eve Valkyrie: Crossplay für Rift, Vive und PS VR bestätigt}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.computerbild.de/artikel/cbs-News-PC-Eve-Valkyrie-Crossplay-Rift-Vive-PlayStation-VR-15463857.html
+      \endverb
+      \verb{url}
+      \verb https://www.computerbild.de/artikel/cbs-News-PC-Eve-Valkyrie-Crossplay-Rift-Vive-PlayStation-VR-15463857.html
+      \endverb
+    \endentry
     \entry{tidjane}{miscellaneous}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=e6f3d6a8786c7dfdc6b5234909c92e62}{%
@@ -34,8 +124,8 @@
       \strng{authorbibnamehash}{e6f3d6a8786c7dfdc6b5234909c92e62}
       \strng{authornamehash}{e6f3d6a8786c7dfdc6b5234909c92e62}
       \strng{authorfullhash}{e6f3d6a8786c7dfdc6b5234909c92e62}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Eingesehen am 10.03.2019}
@@ -63,8 +153,8 @@
       \strng{authorbibnamehash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
       \strng{authornamehash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
       \strng{authorfullhash}{5ce52a12ff948b0f7fd7ec3f1abef63a}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1054-7460}
@@ -113,8 +203,8 @@
       \strng{authorbibnamehash}{8bc402c6751d7350ecaa8c16f1805d46}
       \strng{authornamehash}{8bc402c6751d7350ecaa8c16f1805d46}
       \strng{authorfullhash}{8bc402c6751d7350ecaa8c16f1805d46}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Telemanipulator and telepresence technologies}
@@ -198,9 +288,69 @@
       \verb https://medium.com/@thewanderlust/considering-the-narrative-in-user-interface-design-for-video-games-c45953c22760
       \endverb
     \endentry
+    \entry{firefox}{miscellaneous}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=67e15eda6c6208fcfeece904a30a39f6}{%
+           family={Siegle},
+           familyi={S\bibinitperiod},
+           given={Jochen},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{67e15eda6c6208fcfeece904a30a39f6}
+      \strng{fullhash}{67e15eda6c6208fcfeece904a30a39f6}
+      \strng{bibnamehash}{67e15eda6c6208fcfeece904a30a39f6}
+      \strng{authorbibnamehash}{67e15eda6c6208fcfeece904a30a39f6}
+      \strng{authornamehash}{67e15eda6c6208fcfeece904a30a39f6}
+      \strng{authorfullhash}{67e15eda6c6208fcfeece904a30a39f6}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{note}{Zuletzt eingesehen am 10.03.2019}
+      \field{title}{Virtual Reality plattformübergreifend: Firefox bringt VR-Browser}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb http://www.techfieber.de/2019/01/25/virtual-reality-plattformuebergreifend-firefox-bringt-vr-browser/
+      \endverb
+      \verb{url}
+      \verb http://www.techfieber.de/2019/01/25/virtual-reality-plattformuebergreifend-firefox-bringt-vr-browser/
+      \endverb
+    \endentry
+    \entry{UXNatoli}{miscellaneous}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=d3e78f96ce47e442597656e912571eff}{%
+           family={Natoli},
+           familyi={N\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d3e78f96ce47e442597656e912571eff}
+      \strng{fullhash}{d3e78f96ce47e442597656e912571eff}
+      \strng{bibnamehash}{d3e78f96ce47e442597656e912571eff}
+      \strng{authorbibnamehash}{d3e78f96ce47e442597656e912571eff}
+      \strng{authornamehash}{d3e78f96ce47e442597656e912571eff}
+      \strng{authorfullhash}{d3e78f96ce47e442597656e912571eff}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{note}{Zuletzt eingesehen am 12.03.2019}
+      \field{title}{The Power of Progressive Disclosure}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.givegoodux.com/the-power-of-progressive-disclosure/
+      \endverb
+      \verb{url}
+      \verb https://www.givegoodux.com/the-power-of-progressive-disclosure/
+      \endverb
+    \endentry
     \entry{unityCurved}{miscellaneous}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labeltitlesource}{title}
       \field{note}{Eingesehen am 9.03.2019}
       \field{title}{User Interfaces for VR}
@@ -227,8 +377,8 @@
       \strng{authorbibnamehash}{316cd2ab016674872b2aae85990c9c22}
       \strng{authornamehash}{316cd2ab016674872b2aae85990c9c22}
       \strng{authorfullhash}{316cd2ab016674872b2aae85990c9c22}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{4}
@@ -243,7 +393,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{asc_notes}
 \endrefsection
 \endinput
 
