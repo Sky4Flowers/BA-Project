@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.12)  15 MAR 2019 03:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.12)  15 MAR 2019 04:03
 entering extended mode
 **./main.tex
 (main.tex
@@ -2146,10 +2146,7 @@ File: figures/HololensMain.png Graphic file (type png)
 <use figures/HololensMain.png>
 Package pdftex.def Info: figures/HololensMain.png  used on input line 115.
 (pdftex.def)             Requested size: 313.69167pt x 161.51495pt.
- [14 <./figures/HololensMain.png>]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 143.
- [15] [16])
+ [14 <./figures/HololensMain.png>] [15] [16])
 (chapters/04_results.tex [17]
 chapter 4.
 [18
@@ -2247,7 +2244,7 @@ Package biblatex Warning: No driver for entry type 'miscellaneous'.
 
 (chapters/06_appendix.tex [26]
 chapter A.
-<Fragen/UmsetzungO1.png, id=421, 1051.67906pt x 539.76656pt>
+<Fragen/UmsetzungO1.png, id=427, 1051.67906pt x 539.76656pt>
 File: Fragen/UmsetzungO1.png Graphic file (type png)
 <use Fragen/UmsetzungO1.png>
 Package pdftex.def Info: Fragen/UmsetzungO1.png  used on input line 8.
@@ -2255,7 +2252,7 @@ Package pdftex.def Info: Fragen/UmsetzungO1.png  used on input line 8.
 
 Package nag Warning: figure with no \caption on input line 9.
 
-<Fragen/UmsetzungL1.png, id=422, 850.67813pt x 497.60907pt>
+<Fragen/UmsetzungL1.png, id=428, 850.67813pt x 497.60907pt>
 File: Fragen/UmsetzungL1.png Graphic file (type png)
 <use Fragen/UmsetzungL1.png>
 Package pdftex.def Info: Fragen/UmsetzungL1.png  used on input line 14.
@@ -2263,7 +2260,7 @@ Package pdftex.def Info: Fragen/UmsetzungL1.png  used on input line 14.
 
 Package nag Warning: figure with no \caption on input line 15.
 
-<Fragen/UmsetzungR1.png, id=423, 803.25093pt x 472.01344pt>
+<Fragen/UmsetzungR1.png, id=429, 803.25093pt x 472.01344pt>
 File: Fragen/UmsetzungR1.png Graphic file (type png)
 <use Fragen/UmsetzungR1.png>
 Package pdftex.def Info: Fragen/UmsetzungR1.png  used on input line 20.
@@ -2275,7 +2272,7 @@ Package nag Warning: figure with no \caption on input line 21.
 
 
  <./Fragen/UmsetzungO1.png> <./Fragen/UmsetzungL1.png>]
-<Fragen/UmsetzungR2.png, id=432, 1014.79124pt x 523.20468pt>
+<Fragen/UmsetzungR2.png, id=438, 1014.79124pt x 523.20468pt>
 File: Fragen/UmsetzungR2.png Graphic file (type png)
 <use Fragen/UmsetzungR2.png>
 Package pdftex.def Info: Fragen/UmsetzungR2.png  used on input line 26.
@@ -2285,7 +2282,7 @@ Package pdftex.def Info: Fragen/UmsetzungR2.png  used on input line 26.
 Package nag Warning: figure with no \caption on input line 27.
 
 [28 <./Fragen/UmsetzungR1.png> <./Fragen/UmsetzungR2.png>]
-<Fragen/UmsetzungB1.png, id=441, 1035.11719pt x 476.53032pt>
+<Fragen/UmsetzungB1.png, id=447, 1035.11719pt x 476.53032pt>
 File: Fragen/UmsetzungB1.png Graphic file (type png)
 <use Fragen/UmsetzungB1.png>
 Package pdftex.def Info: Fragen/UmsetzungB1.png  used on input line 33.
@@ -2296,7 +2293,7 @@ Package nag Warning: figure with no \caption on input line 34.
 
 ) (chapters/07_fragebogen.tex [29 <./Fragen/UmsetzungB1.png>]
 chapter B.
-<Fragen/1Einleitung.png, id=448, 341.02406pt x 305.64188pt>
+<Fragen/1Einleitung.png, id=454, 341.02406pt x 305.64188pt>
 File: Fragen/1Einleitung.png Graphic file (type png)
 <use Fragen/1Einleitung.png>
 Package pdftex.def Info: Fragen/1Einleitung.png  used on input line 6.
@@ -2304,7 +2301,7 @@ Package pdftex.def Info: Fragen/1Einleitung.png  used on input line 6.
 
 Package nag Warning: figure with no \caption on input line 7.
 
-<Fragen/2Einleitung.png, id=449, 341.02406pt x 202.50656pt>
+<Fragen/2Einleitung.png, id=455, 341.02406pt x 202.50656pt>
 File: Fragen/2Einleitung.png Graphic file (type png)
 <use Fragen/2Einleitung.png>
 Package pdftex.def Info: Fragen/2Einleitung.png  used on input line 11.
@@ -2317,7 +2314,7 @@ Package nag Warning: figure with no \caption on input line 12.
 
  <./Fragen/1Einleitung.png> <./Fragen/2Einleitung.png>]
 chapter C.
-<Fragen/1Szenario.png, id=459, 341.02406pt x 283.81032pt>
+<Fragen/1Szenario.png, id=465, 341.02406pt x 283.81032pt>
 File: Fragen/1Szenario.png Graphic file (type png)
 <use Fragen/1Szenario.png>
 Package pdftex.def Info: Fragen/1Szenario.png  used on input line 4.
@@ -2325,7 +2322,7 @@ Package pdftex.def Info: Fragen/1Szenario.png  used on input line 4.
 
 Package nag Warning: figure with no \caption on input line 5.
 
-<Fragen/2Szenario.png, id=460, 341.77687pt x 395.22656pt>
+<Fragen/2Szenario.png, id=466, 341.77687pt x 395.22656pt>
 File: Fragen/2Szenario.png Graphic file (type png)
 <use Fragen/2Szenario.png>
 Package pdftex.def Info: Fragen/2Szenario.png  used on input line 9.
@@ -2333,7 +2330,7 @@ Package pdftex.def Info: Fragen/2Szenario.png  used on input line 9.
 
 Package nag Warning: figure with no \caption on input line 10.
 
-<Fragen/3Szenario.png, id=461, 342.5297pt x 471.26062pt>
+<Fragen/3Szenario.png, id=467, 342.5297pt x 471.26062pt>
 File: Fragen/3Szenario.png Graphic file (type png)
 <use Fragen/3Szenario.png>
 Package pdftex.def Info: Fragen/3Szenario.png  used on input line 14.
@@ -2341,7 +2338,7 @@ Package pdftex.def Info: Fragen/3Szenario.png  used on input line 14.
 
 Package nag Warning: figure with no \caption on input line 15.
 
-<Fragen/4Szenario.png, id=462, 342.5297pt x 458.46281pt>
+<Fragen/4Szenario.png, id=468, 342.5297pt x 458.46281pt>
 File: Fragen/4Szenario.png Graphic file (type png)
 <use Fragen/4Szenario.png>
 Package pdftex.def Info: Fragen/4Szenario.png  used on input line 19.
@@ -2349,7 +2346,7 @@ Package pdftex.def Info: Fragen/4Szenario.png  used on input line 19.
 
 Package nag Warning: figure with no \caption on input line 20.
 
-<Fragen/5Szenario.png, id=463, 342.5297pt x 446.41782pt>
+<Fragen/5Szenario.png, id=469, 342.5297pt x 446.41782pt>
 File: Fragen/5Szenario.png Graphic file (type png)
 <use Fragen/5Szenario.png>
 Package pdftex.def Info: Fragen/5Szenario.png  used on input line 24.
@@ -2357,7 +2354,7 @@ Package pdftex.def Info: Fragen/5Szenario.png  used on input line 24.
 
 Package nag Warning: figure with no \caption on input line 25.
 
-<Fragen/6Szenario.png, id=464, 341.77687pt x 444.15938pt>
+<Fragen/6Szenario.png, id=470, 341.77687pt x 444.15938pt>
 File: Fragen/6Szenario.png Graphic file (type png)
 <use Fragen/6Szenario.png>
 Package pdftex.def Info: Fragen/6Szenario.png  used on input line 29.
@@ -2365,7 +2362,7 @@ Package pdftex.def Info: Fragen/6Szenario.png  used on input line 29.
 
 Package nag Warning: figure with no \caption on input line 30.
 
-<Fragen/7Szenario.png, id=465, 341.02406pt x 446.41782pt>
+<Fragen/7Szenario.png, id=471, 341.02406pt x 446.41782pt>
 File: Fragen/7Szenario.png Graphic file (type png)
 <use Fragen/7Szenario.png>
 Package pdftex.def Info: Fragen/7Szenario.png  used on input line 34.
@@ -2373,7 +2370,7 @@ Package pdftex.def Info: Fragen/7Szenario.png  used on input line 34.
 
 Package nag Warning: figure with no \caption on input line 35.
 
-<Fragen/8Szenario.png, id=466, 341.02406pt x 298.11375pt>
+<Fragen/8Szenario.png, id=472, 341.02406pt x 298.11375pt>
 File: Fragen/8Szenario.png Graphic file (type png)
 <use Fragen/8Szenario.png>
 Package pdftex.def Info: Fragen/8Szenario.png  used on input line 39.
@@ -2389,7 +2386,7 @@ o.png>] [34 <./Fragen/4Szenario.png>]
 [35 <./Fragen/5Szenario.png>] [36 <./Fragen/6Szenario.png>] [37 <./Fragen/7Szen
 ario.png>] [38 <./Fragen/8Szenario.png>]
 chapter D.
-<Fragen/1Ende.png, id=516, 342.5297pt x 161.85469pt>
+<Fragen/1Ende.png, id=522, 342.5297pt x 161.85469pt>
 File: Fragen/1Ende.png Graphic file (type png)
 <use Fragen/1Ende.png>
 Package pdftex.def Info: Fragen/1Ende.png  used on input line 6.
@@ -2397,7 +2394,7 @@ Package pdftex.def Info: Fragen/1Ende.png  used on input line 6.
 
 Package nag Warning: figure with no \caption on input line 7.
 
-<Fragen/2Ende.png, id=517, 342.5297pt x 442.65375pt>
+<Fragen/2Ende.png, id=523, 342.5297pt x 442.65375pt>
 File: Fragen/2Ende.png Graphic file (type png)
 <use Fragen/2Ende.png>
 Package pdftex.def Info: Fragen/2Ende.png  used on input line 11.
@@ -2429,11 +2426,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 61507 strings out of 492946
- 1339207 string characters out of 3132440
- 2054871 words of memory out of 3000000
- 63950 multiletter control sequences out of 15000+200000
- 592102 words of font info for 332 fonts, out of 3000000 for 9000
+ 61393 strings out of 492946
+ 1336657 string characters out of 3132440
+ 2052909 words of memory out of 3000000
+ 63846 multiletter control sequences out of 15000+200000
+ 591682 words of font info for 326 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  81i,9n,136p,9085b,3193s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\WIN-7\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
@@ -2443,9 +2440,9 @@ Eigene Dateien/Programme/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><D:/Eigene D
 ateien/Programme/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><D:/Eigene Dateien/
 Programme/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><D:/Eigene Dateien/Program
 me/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (47 pages, 2164660 bytes).
+Output written on main.pdf (47 pages, 2165172 bytes).
 PDF statistics:
- 772 PDF objects out of 1000 (max. 8388607)
- 132 named destinations out of 1000 (max. 500000)
+ 778 PDF objects out of 1000 (max. 8388607)
+ 130 named destinations out of 1000 (max. 500000)
  41554 words of extra memory for PDF output out of 42996 (max. 10000000)
 
