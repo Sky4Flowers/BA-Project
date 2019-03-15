@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.12)  15 MAR 2019 04:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.12)  15 MAR 2019 07:11
 entering extended mode
 **./main.tex
 (main.tex
@@ -2055,14 +2055,14 @@ Package pdftex.def Info: logos/tum.pdf  used on input line 8.
 
 ])
 (pages/disclaimer.tex [2]) (pages/acknowledgements.tex
-LaTeX Font Info:    Try loading font information for OMS+pplx on input line 22.
+LaTeX Font Info:    Try loading font information for OMS+pplx on input line 27.
 
-LaTeX Font Info:    No file OMSpplx.fd. on input line 22.
+LaTeX Font Info:    No file OMSpplx.fd. on input line 27.
 
 
 LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 22.
+(Font)              for symbol `textbullet' on input line 27.
 
 [3
 
@@ -2440,7 +2440,7 @@ Eigene Dateien/Programme/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><D:/Eigene D
 ateien/Programme/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><D:/Eigene Dateien/
 Programme/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><D:/Eigene Dateien/Program
 me/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (47 pages, 2165172 bytes).
+Output written on main.pdf (47 pages, 2165355 bytes).
 PDF statistics:
  778 PDF objects out of 1000 (max. 8388607)
  130 named destinations out of 1000 (max. 500000)
