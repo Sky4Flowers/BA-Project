@@ -7,10 +7,10 @@ public class UIAnchor : MonoBehaviour, UIContainer
     #region variables
     public bool isActiveAtStart = true;
     public AnchoredUI.Priority minPriority;
-    private AnchoredUI[] elements;
+    private List<AnchoredUI> elements;
     [SerializeField]
     private UIAnchor childAnchor;
-    private UIContainer[] subContainers;
+    private List<UIContainer> subContainers;
     [SerializeField]
     private bool isStaticToObject = true;
     [SerializeField]
@@ -46,16 +46,10 @@ public class UIAnchor : MonoBehaviour, UIContainer
     private float oldObjectXRotation = 0;
     #endregion
 
-    // Use this for initialization
-    void Start()
-    {
-        
-    }
-
     void Awake()
     {
-        elements = GetComponentsInChildren<AnchoredUI>();
-        subContainers = GetComponentsInChildren<UIContainer>();
+        elements = new List<AnchoredUI>(GetComponentsInChildren<AnchoredUI>());
+        subContainers = new List<UIContainer>(GetComponentsInChildren<UIContainer>());
 
         if (type == UIAnchorManager.AnchorType.HEAD)
         {
@@ -99,7 +93,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
         if (style == UIAnchorManager.AnchorStyle.CYLINDER)
         {
             move();
-            if(elements == null)
+            if (elements == null)
             {
                 Debug.Log(gameObject.name + " no elements found");
                 return;
@@ -120,7 +114,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 }
             }
         }
-        if(subContainers == null)
+        if (subContainers == null)
         {
             Debug.Log(gameObject.name + " no subcontainers found");
             return;
@@ -155,51 +149,6 @@ public class UIAnchor : MonoBehaviour, UIContainer
         {
             if (type == UIAnchorManager.AnchorType.HEAD && rotatesWithObject)
             {
-                /*if (anchorObjectTransform.rotation.eulerAngles.Equals(lastRotationState))
-                {
-                    return;
-                }
-                Vector3 eulerRotation = anchorObjectTransform.rotation.eulerAngles;
-                Debug.Log(eulerRotation);
-                rotationOffsetBuffer.x += eulerRotation.x - lastRotationState.x;
-                rotationOffsetBuffer.y += eulerRotation.y - lastRotationState.y;
-                rotationOffsetBuffer.z = eulerRotation.z - lastRotationState.z;
-                lastRotationState = anchorObjectTransform.rotation.eulerAngles;
-
-                if (eulerRotation.x < 260 && eulerRotation.x > 80)
-                {
-                    rotationOffsetBuffer.x = 0;
-                }
-
-                rotationOffsetBuffer = handleEndsOfAngles(rotationOffsetBuffer);
-
-                float rotationX = 0;
-                float rotationY = 0;
-
-                if (rotationOffsetBuffer.x > rotationDelayOffset)
-                {
-                    rotationX = rotationOffsetBuffer.x - rotationDelayOffset;
-                    rotationOffsetBuffer.x = rotationDelayOffset;
-                }
-                else if (rotationOffsetBuffer.x < -rotationDelayOffset)
-                {
-                    rotationX = rotationOffsetBuffer.x + rotationDelayOffset;
-                    rotationOffsetBuffer.x = -rotationDelayOffset;
-                }
-
-                if (rotationOffsetBuffer.y > rotationDelayOffset)
-                {
-                    rotationY = rotationOffsetBuffer.y - rotationDelayOffset;
-                    rotationOffsetBuffer.y = rotationDelayOffset;
-                }
-                else if (rotationOffsetBuffer.y < -rotationDelayOffset)
-                {
-                    rotationY = rotationOffsetBuffer.y + rotationDelayOffset;
-                    rotationOffsetBuffer.y = -rotationDelayOffset;
-                }
-                transform.RotateAround(anchorObjectTransform.position, transform.right, rotationX);
-                transform.RotateAround(anchorObjectTransform.position, Vector3.up, rotationY);
-                //transform.RotateAround(transform.position, transform.forward, rotationOffsetBuffer.z);*/
                 if (anchorObjectTransform.rotation.Equals(lastRotationStateQuat))
                 {
                     return;
@@ -210,7 +159,6 @@ public class UIAnchor : MonoBehaviour, UIContainer
                 rotationOffsetBuffer.x += deltaRotation.x;
                 rotationOffsetBuffer.y += deltaRotation.y;
                 rotationOffsetBuffer.z = deltaRotation.z;
-                //Debug.Log(lastRotationStateQuat.eulerAngles + " to " + anchorObjectTransform.rotation.eulerAngles + " with " + deltaRotation + " Buffer: " + rotationOffsetBuffer);
 
                 lastRotationStateQuat = anchorObjectTransform.rotation;
 
@@ -240,10 +188,8 @@ public class UIAnchor : MonoBehaviour, UIContainer
                     rotationY = rotationOffsetBuffer.y + rotationDelayOffset;
                     rotationOffsetBuffer.y = -rotationDelayOffset;
                 }
-                //Debug.Log(rotationY);
                 transform.RotateAround(anchorObjectTransform.position, transform.right, rotationX);
                 transform.RotateAround(anchorObjectTransform.position, Vector3.up, rotationY);
-                //transform.RotateAround(transform.position, transform.forward, rotationOffsetBuffer.z);
             }
             else
             {
@@ -269,7 +215,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
         yFactor -= Mathf.Atan2(2 * y * w - 2 * x * z, 1 - 2 * y * y - 2 * z * z);
         xFactor -= Mathf.Atan2(2 * x * w - 2 * y * z, 1 - 2 * x * x - 2 * z * z);
         zFactor -= Mathf.Asin(2 * x * y + 2 * z * w);
-        //Got it from: https://answers.unity.com/questions/416169/finding-pitchrollyaw-from-quaternions.html
+        //from: https://answers.unity.com/questions/416169/finding-pitchrollyaw-from-quaternions.html
 
         return (new Vector3(xFactor, yFactor, zFactor) * 180 / Mathf.PI);
     }
@@ -333,7 +279,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
             }
             else if (newXRotation > oldObjectXRotation + 3)
             {
-                for (int i = 0; i < elements.Length; i++)
+                for (int i = 0; i < elements.Count; i++)
                 {
                     if (elements[i].priority > AnchoredUI.Priority.LOW)
                     {
@@ -353,9 +299,17 @@ public class UIAnchor : MonoBehaviour, UIContainer
         if (anchorPosition == null)
         {
             isUsed = false;
-            for (int i = 0; i < elements.Length; i++)
+            bool shouldExpand = false;
+            UIAnchor newAnchor = UIAnchorManager.getAnchorFallback(this);
+            for (int i = 0; i < elements.Count; i++)
             {
-                elements[i].moveToFallbackAnchor(UIAnchorManager.getAnchorFallback(this));
+                if (!elements[i].moveToFallbackAnchor(newAnchor)){
+                    shouldExpand = true;
+                }
+            }
+            if (shouldExpand)
+            {
+                newAnchor.expand(this);
             }
         }
         else
@@ -400,50 +354,61 @@ public class UIAnchor : MonoBehaviour, UIContainer
         return type;
     }
 
-    public void addElement(AnchoredUI element)
+    public bool addElement(AnchoredUI element)
     {
-        //Add element to elements
-        //For testing UI is placed in the editor
-        //Check priority behaviour!
+        foreach (UIContainer container in subContainers){
+            if(!container.Equals(this) && container.addElement(element))
+            {
+                return true;
+            }
+        }
+        elements.Add(element);
+        return true;
     }
 
     public void addContainer(UIContainer container)
     {
-        //Add container to elements
-        //For testing UI is placed in the editor
-        //Check priority behaviour!
+        subContainers.Add(container);
+        //TODO set position
     }
 
     public bool expand(UIAnchor anchor)
     {
         if (anchor.minPriority >= minPriority)
         {
+            subContainers.Add(anchor);
             switch (expType)
             {
                 case UIAnchorManager.AnchorExpansionType.SWITCH:
-                    //Show switch
-                    System.Array.Copy(subContainers, subContainers, subContainers.Length);
-                    subContainers[subContainers.Length - 1] = anchor;
+                    if (switchElement)
+                    {
+                        switchElement.gameObject.SetActive(true);
+                        switchElement.setSelection(0, anchor.gameObject);
+                    }
                     anchor.transform.parent = transform;
                     anchor.transform.localPosition = Vector3.zero;
                     anchor.transform.localRotation.Set(0, 0, 0, 0);
+                    anchor.gameObject.SetActive(false);
                     break;
                 case UIAnchorManager.AnchorExpansionType.DIRECTION_TOP:
-                    //Expand...
-                    //height + new window height
-                    //move old elements (new window height / 2) down
+                    anchor.transform.parent = transform;
+                    anchor.transform.localPosition = new Vector3(0, transform.localScale.y / 2f + anchor.transform.localScale.y / 2f, 0);
+                    anchor.transform.localRotation.Set(0, 0, 0, 0);
                     break;
                 case UIAnchorManager.AnchorExpansionType.DIRECTION_LEFT:
-                    //width + new window
-                    //move old elements (new window width / 2) right
+                    anchor.transform.parent = transform;
+                    anchor.transform.localPosition = new Vector3(-transform.localScale.x / 2f - anchor.transform.localScale.x / 2f, 0, 0);
+                    anchor.transform.localRotation.Set(0, 0, 0, 0);
                     break;
                 case UIAnchorManager.AnchorExpansionType.DIRECTION_BOTTOM:
-                    //height + new window
-                    //move old elements (new window height / 2) up
+                    anchor.transform.parent = transform;
+                    anchor.transform.localPosition = new Vector3(0, -transform.localScale.y / 2f - anchor.transform.localScale.y / 2f, 0);
+                    anchor.transform.localRotation.Set(0, 0, 0, 0);
                     break;
                 case UIAnchorManager.AnchorExpansionType.DIRECTION_RIGHT:
-                    //width + new window
-                    //move old elements (new window width / 2) left
+                    anchor.transform.parent = transform;
+                    anchor.transform.localPosition = new Vector3(transform.localScale.x / 2f + anchor.transform.localScale.x / 2f, 0, 0);
+                    anchor.transform.localRotation.Set(0, 0, 0, 0);
                     break;
             }
             return true;
@@ -471,7 +436,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
             return false;
         }
 
-        for (int i = 0; i < elements.Length; i++)
+        for (int i = 0; i < elements.Count; i++)
         {
             if (elements[i].UIPositionID == ID)
             {
@@ -480,14 +445,14 @@ public class UIAnchor : MonoBehaviour, UIContainer
             }
         }
 
-        for (int i = 0; i < subContainers.Length; i++)
+        for (int i = 0; i < subContainers.Count; i++)
         {
             if (!subContainers[i].Equals(this) && subContainers[i].activateElementWithID(ID))
             {
-                if (expType == UIAnchorManager.AnchorExpansionType.SWITCH && subContainers[i].isAnchor())
+                /*if (expType == UIAnchorManager.AnchorExpansionType.SWITCH && subContainers[i].isAnchor())
                 {
-
-                }
+                    
+                }*/
                 return true;
             }
         }
@@ -515,7 +480,7 @@ public class UIAnchor : MonoBehaviour, UIContainer
     public Vector2 getRelativeSize()
     {
         //TODO
-        return Vector2.zero;
+        return Vector2.one;
     }
 
     public bool isAnchor()
@@ -537,17 +502,4 @@ public class UIAnchor : MonoBehaviour, UIContainer
     {
         return isUsed;
     }
-
-    /*IEnumerable addAnchorQueue(int tryCounter)
-    {
-        while (!UIAnchorManager.addAnchor(this))
-        {
-            tryCounter++;
-            yield return new WaitForSeconds(0.1f);
-            if (tryCounter > 10)
-            {
-                break;
-            }
-        }
-    }*/
 }

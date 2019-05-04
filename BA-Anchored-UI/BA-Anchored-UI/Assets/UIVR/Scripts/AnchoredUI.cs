@@ -52,29 +52,9 @@ public class AnchoredUI : MonoBehaviour
         mat.mainTexture = image.mainTexture;*/
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void setAnchor(UIAnchor anchor)
     {
         this.anchor = anchor;
-        //MOVED TO SlicedSpriteMesh
-        /*if (anchor.getType() == UIAnchorManager.AnchorType.HEAD && shouldBeDeformed) //TODO Typ abfragen
-        {
-            try
-            {
-                createCurvedMesh();
-                setLocal3DPosition(Vector3.zero);
-            }
-            catch (Exception e)
-            {
-                shouldBeDeformed = false;
-                Debug.Log("Changed shouldBeDeformed on " + gameObject.name + " to false. Caused by: " + e);
-            }
-        }*/
     }
 
     public Vector3 calculateSlicedSpriteInitValues()
@@ -88,24 +68,24 @@ public class AnchoredUI : MonoBehaviour
         return initValues;
     }
 
-    public void moveToFallbackAnchor(UIAnchor anchor)
+    public bool moveToFallbackAnchor(UIAnchor anchor)
     {
         if(anchor == null)
         {
             Debug.LogError("No Fallback found. Information is lost.");
             gameObject.SetActive(false);
-            return;
+            return true;
         }
         Debug.Log("Switching "+ gameObject.name);
         switch (type)
         {
             case PositioningType.KEEP_POSITION:
                 //Expand other canvas
-                break;
+                return false;
             case PositioningType.USE_PRIORITY:
                 if (priority == Priority.NONE && anchor.getType() == UIAnchorManager.AnchorType.HEAD)
                 {
-                    //Disable
+                    gameObject.SetActive(true);
                 }
                 else
                 {
@@ -120,6 +100,7 @@ public class AnchoredUI : MonoBehaviour
                 gameObject.SetActive(false);
                 break;
         }
+        return true;
     }
 
     public void createCurvedMesh()

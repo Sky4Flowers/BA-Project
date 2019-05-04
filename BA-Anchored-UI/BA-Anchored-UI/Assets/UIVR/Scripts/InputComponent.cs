@@ -139,7 +139,6 @@ public class InputComponent : MonoBehaviour
                 hoveringOver = hit.collider.gameObject;
                 triggerTimer = 0;
             }
-            //set selected object
         }
         else
         {
@@ -150,9 +149,6 @@ public class InputComponent : MonoBehaviour
         {
             cursorIndicator.fillAmount = triggerTimer;
         }
-
-
-        //if(trackedStaticControllerLeft.poseAction.actionSet.)
     }
 
     public static GameObject setSelectedObject(GameObject selected)

@@ -57,4 +57,20 @@ public class UISwitch : MonoBehaviour, ISelectable {
             selection2.SetActive(true);
         }
     }
+
+    public void setSelection(int index, GameObject obj)
+    {
+        switch (index)
+        {
+            case 1:
+                selection1 = obj;
+                break;
+            case 2:
+                selection2 = obj;
+                break;
+            default:
+                selection2Anchor = obj;
+                break;
+        }
+    }
 }

@@ -2,7 +2,7 @@
 
 public interface UIContainer {
 
-    void addElement(AnchoredUI element);
+    bool addElement(AnchoredUI element);
 
     void addContainer(UIContainer container);
 
